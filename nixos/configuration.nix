@@ -10,6 +10,9 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
+    
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -127,6 +130,14 @@
     };
   };
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      yanni = import ../home-manager/home.nix;
+    };
+  };
+
   programs.fish.enable = true;
 
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -163,6 +174,15 @@
   };
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  # vpn servers
+  services.openvpn.servers = {
+    imperialVPN = 
+      {
+        config = '' config /home/yanni/nix-config/nixos/imperialVPN.conf'';
+        autoStart = false;
+      };
+  };
 
   # Docker
   virtualisation.docker.enable = true;

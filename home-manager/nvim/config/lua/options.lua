@@ -68,3 +68,7 @@ end
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
+
+-- markdown preview settings
+g.mkdp_auto_close = 0
+g.mkdp_browser = 'firefox'

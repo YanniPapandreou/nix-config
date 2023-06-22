@@ -9,9 +9,9 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default ./hyprland/hyprland.nix
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
     ./atuin.nix
     ./firefox.nix
     ./fish.nix
@@ -65,10 +65,13 @@
     #exfat
     #ntfs3g
     brightnessctl
+    cachix
     choose
     cliphist
+    discord
     gh
     fd
+    gnome.eog
     gnome.nautilus
     gojq
     google-chrome
@@ -79,6 +82,7 @@
     networkmanagerapplet
     pamixer
     pavucontrol
+    ranger
     ripgrep
     rofi-wayland
     signal-desktop
@@ -86,6 +90,7 @@
     stow
     texlive.combined.scheme-full
     thunderbird
+    vlc
     wl-clipboard
     xdg-utils
     zotero
@@ -104,6 +109,10 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     TERMINAL = "kitty";
+  };
+
+  programs.password-store = {
+    enable = true;
   };
 
   # Nicely reload system units when changing configs

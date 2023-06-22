@@ -57,7 +57,7 @@ symbol = " "
 format = "[$symbol]($style)"
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
 symbol = " "
@@ -71,7 +71,7 @@ format = "[$symbol]($style)"
 disabled = true
 
 [package]
-symbol = " "
+symbol = " "
 
 [perl]
 symbol = " "

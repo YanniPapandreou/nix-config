@@ -29,8 +29,9 @@ in
         p.nix
         p.python
       ]))
-      vim-wakatime
       fidget-nvim
+      markdown-preview-nvim
+      vim-wakatime
     ] ++ (with pkgs.vimExtraPlugins; [
       dracula-nvim
       lualine-nvim

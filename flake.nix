@@ -66,24 +66,25 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
-	    hyprland.nixosModules.default
-	    {programs.hyprland.enable = true;}
+              hyprland.nixosModules.default
+              {programs.hyprland.enable = true;}
           ];
         };
       };
 
-      # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager --flake .#your-username@your-hostname'
-      homeConfigurations = {
-        "yanni@nixos" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            # > Our main home-manager configuration file <
-            ./home-manager/home.nix
-	    hyprland.homeManagerModules.default ./home-manager/hyprland/hyprland.nix
-          ];
-        };
-      };
+      # # Standalone home-manager configuration entrypoint
+      # # Available through 'home-manager --flake .#your-username@your-hostname'
+      # homeConfigurations = {
+      #   "yanni@nixos" = home-manager.lib.homeManagerConfiguration {
+      #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+      #     extraSpecialArgs = { inherit inputs outputs; };
+      #     modules = [
+      #       # > Our main home-manager configuration file <
+      #       ./home-manager/home.nix
+      #       hyprland.homeManagerModules.default ./home-manager/hyprland/hyprland.nix
+      #     ];
+      #   };
+      # };
+
     };
 }
