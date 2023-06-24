@@ -1,0 +1,159 @@
+{
+  "layer": "top",
+    //"output": "HDMI-A-1",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+      //"clock",
+      "custom/weather",
+      "wlr/workspaces"
+    ],
+    //"modules-center": ["hyprland/window"],
+    "modules-center": ["clock", "custom/spotify"],
+    "modules-right": [
+      "tray",
+      //"custom/language",
+      //"custom/updates",
+      "cpu",
+      "battery",
+      //"network",
+      "backlight",
+      "pulseaudio",
+      "pulseaudio#microphone"
+    ],
+
+    "hyprland/window": {
+      "format": "{}"
+    },
+    "wlr/workspaces": {
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1",
+      "all-outputs": true,
+      "on-click": "activate",
+      //"format": "{icon}",
+      "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": []
+      }
+    },
+    //"custom/updates": {
+      //"format": " {}",
+    //  "format": "󰇚 {}",
+    //  "interval": 7200,                     // every two hours
+    //  "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
+    //  "exec-if": "exit 0",                  // always run; consider advanced run conditions
+      //"on-click": "kitty -e sudo pacman -Syu", // update system
+    //  "on-click": "kitty -e paru",
+     // "signal": 8
+    //},
+    "custom/weather" : {
+      "tooltip" : true,
+      "format" : "{}",
+      "on-click": "firefox https://wttr.in/",
+      "interval" : 30,
+      "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
+      "return-type" : "json"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true,
+        "on-click": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl play-pause"
+    },
+    "tray": {
+      "icon-size": 13,
+      "show-passive-items": true,
+      "spacing": 10
+    },
+    "clock": {
+      //"format": "{: %R   %d/%m}",
+      "format": "{: %R}",
+      "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+      "on-click": "firefox https://calendar.google.com/"
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+      "format-icons": ["󰃞", "󰃟", "󰃠"],
+      "on-scroll-up": "brightnessctl set 1%+",
+      "on-scroll-down": "brightnessctl set 1%-",
+      "min-length": 6
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 20
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "tooltip": false,
+      "format-muted": " Muted",
+      "on-click": "pamixer -t",
+      "on-click-right": "pavucontrol",
+      "on-scroll-up": "pamixer -i 5",
+      "on-scroll-down": "pamixer -d 5",
+      "scroll-step": 5,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      }
+    },
+    "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": " Muted",
+      "on-click": "pamixer --default-source -t",
+      "on-click-right": "pavucontrol",
+      "on-scroll-up": "pamixer --default-source -i 5",
+      "on-scroll-down": "pamixer --default-source -d 5",
+      "scroll-step": 5
+    },
+    "cpu": {
+      "on-click": "kitty -e btop",
+      "interval": 1,
+      "format": "{}% ",
+      "max-length": 10
+    }
+    //"network": {
+    //  //"interface": "wlp2s0",
+    //  "format": "{ifname}",
+    //  "format-wifi": "  ",
+    //  //"format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    //  "format-ethernet": " 󰈀",
+    //  "format-disconnected": "", //An empty format will hide the module.
+    //  "tooltip-format": "{ifname} via {gwaddr} ",
+    //  "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    //  "tooltip-format-ethernet": "{ifname} ",
+    //  "tooltip-format-disconnected": "Disconnected",
+    //  "max-length": 50,
+    //  "on-click": "nm-connection-editor"
+   // }
+}

@@ -1,0 +1,10 @@
+set searchurls.w https://www.wikiwand.com/en/{%s}?fullSearch=false 
+set searchurls.yt https://www.youtube.com/search?hl=en&q={%s}
+set searchurls.nw https://nixos.wiki/index.php?search={%s}
+set searchurls.aw https://wiki.archlinux.org/?search={%s}
+set searchurls.n https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s
+
+quickmark h https://nix-community.github.io/home-manager/options.html
+quickmark n https://search.nixos.org/packages
+quickmark g https://github.com/
+quickmark y https://www.youtube.com/

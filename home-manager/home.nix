@@ -9,17 +9,18 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-    inputs.hyprland.homeManagerModules.default ./hyprland/hyprland.nix
+    inputs.hyprland.homeManagerModules.default ./hyprland
 
     # You can also split up your configuration and import pieces of it here:
     ./atuin.nix
     # ./defaultApps.nix
-    ./firefox.nix
+    ./firefox
     ./fish.nix
     ./fonts.nix
     ./git.nix
     ./nvim
     ./python.nix
+    ./ranger
     ./sioyek.nix
     ./starship.nix
     ./terminal.nix
@@ -65,10 +66,8 @@
     #dosfstools
     #exfat
     #ntfs3g
-    brightnessctl
     cachix
     choose
-    cliphist
     difftastic
     discord
     gh
@@ -76,18 +75,12 @@
     fd
     gnome.eog
     gnome.nautilus
-    gojq
     google-chrome
     ipe
     kitty
     neofetch
-    networkmanager_dmenu
     networkmanagerapplet
-    pamixer
-    pavucontrol
-    ranger
     ripgrep
-    rofi-wayland
     signal-desktop
     slack
     stow
