@@ -10,6 +10,7 @@
     exec = "firefox -new-window https://todoist.com/app/today";
     terminal = false;
     categories = [ "Application" ];
+    icon = "/home/yanni/nix-config/home-manager/desktop-icons/Todoist/Noir.png";
   };
 
 }

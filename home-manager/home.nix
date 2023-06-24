@@ -13,6 +13,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./atuin.nix
+    # ./defaultApps.nix
     ./firefox.nix
     ./fish.nix
     ./fonts.nix
@@ -68,8 +69,10 @@
     cachix
     choose
     cliphist
+    difftastic
     discord
     gh
+    gtg
     fd
     gnome.eog
     gnome.nautilus
