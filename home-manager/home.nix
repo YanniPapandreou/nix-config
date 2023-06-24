@@ -12,20 +12,10 @@
     inputs.hyprland.homeManagerModules.default ./hyprland
 
     # You can also split up your configuration and import pieces of it here:
-    ./atuin.nix
+    ./programs
     # ./defaultApps.nix
-    ./firefox
-    ./fish.nix
     ./fonts.nix
-    ./git.nix
-    ./nvim
-    ./python.nix
-    ./ranger
-    ./sioyek.nix
-    ./starship.nix
-    ./terminal.nix
     ./themes.nix
-    ./todoist.nix
   ];
 
   nixpkgs = {
@@ -61,37 +51,6 @@
     homeDirectory = "/home/yanni";
   };
 
-  # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [
-    #dosfstools
-    #exfat
-    #ntfs3g
-    cachix
-    choose
-    difftastic
-    discord
-    gh
-    gtg
-    fd
-    gnome.eog
-    gnome.nautilus
-    google-chrome
-    ipe
-    kitty
-    neofetch
-    networkmanagerapplet
-    ripgrep
-    signal-desktop
-    slack
-    stow
-    texlive.combined.scheme-full
-    thunderbird
-    vlc
-    wl-clipboard
-    xdg-utils
-    zotero
-  ];
-
   # Enable home-manager
   programs.home-manager.enable = true;
 
@@ -100,11 +59,6 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
-  };
-
-  home.sessionVariables = {
-    BROWSER = "firefox";
-    TERMINAL = "kitty";
   };
 
   programs.password-store = {

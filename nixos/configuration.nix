@@ -16,6 +16,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    ./hyprland.nix
+    ./networking.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -71,13 +73,6 @@
       options = "--delete-older-than 20d";
     };
   };
-
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -139,25 +134,9 @@
   };
 
   programs.fish.enable = true;
-
-  # This setups a SSH server. Very important if you're setting up a headless system.
-  # Feel free to remove if you don't need it.
-  services.openssh = {
-    enable = true;
-    # Forbid root login through SSH.
-    settings = {
-      PermitRootLogin = "no";
-      # Use keys only. Remove if you want to SSH using password (not recommended)
-      PasswordAuthentication = false;
-    };
-  };
-
+  
   services.xserver.displayManager.gdm.enable = true;
-  services.gvfs.enable = true;
-  services.gnome.sushi.enable = true;
-  security.polkit.enable = true;
-  security.pam.services.gtklock = {};
-
+  
   # enable sound with pipewire
   # Enable sound with pipewire.
   sound.enable = false;
@@ -175,43 +154,12 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # vpn servers
-  services.openvpn.servers = {
-    imperialVPN = 
-      {
-        config = '' config /home/yanni/nix-config/nixos/imperialVPN.conf'';
-        autoStart = false;
-      };
-  };
-
   # Docker
   virtualisation.docker.enable = true;
 
+  # Flatpak
   services.flatpak.enable = true;
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
-  };
-
-  systemd = {
-  user.services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
-
+  
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
 }
