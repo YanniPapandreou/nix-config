@@ -24,20 +24,24 @@
     choose
     difftastic
     discord
+    fragments
     gh
     gtg
     fd
     gnome.eog
+    gnome.gnome-disk-utility
     gnome.nautilus
     google-chrome
     ipe
     kitty
     neofetch
     networkmanagerapplet
+    obsidian
     ripgrep
     signal-desktop
     slack
     stow
+    # swaynotificationcenter
     texlive.combined.scheme-full
     thunderbird
     vlc
