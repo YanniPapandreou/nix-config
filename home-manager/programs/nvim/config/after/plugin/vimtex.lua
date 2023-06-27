@@ -5,7 +5,7 @@ syntax enable
 ]])
 
 vim.g.vimtex_view_method = 'sioyek'
-vim.g.vimtex_quickfix_autoclose_after_keystrokes = 1
+vim.g.vimtex_quickfix_autoclose_after_keystrokes = 2
 vim.g.vimtex_callback_progpath = "/home/yanni/.nix-profile/bin/nvim"
 vim.g.vimtex_syntax_conceal = {
   accents = 0,
