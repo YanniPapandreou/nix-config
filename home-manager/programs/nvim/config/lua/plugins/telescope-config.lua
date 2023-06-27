@@ -26,27 +26,28 @@ require('legendary').keymaps({
     opts = opts
   },
   { '<leader>/',
-    function ()
-      local function is_git_repo()
-        vim.fn.system("git rev-parse --is-inside-work-tree")
-        return vim.v.shell_error == 0
-      end
-
-      local function get_git_root()
-        local dot_git_path = vim.fn.finddir(".git", ".;")
-        return vim.fn.fnamemodify(dot_git_path, ":h")
-      end
-
-      local tele_opts = {}
-
-      if is_git_repo() then
-        tele_opts = {
-          cwd = get_git_root(),
-        }
-      end
-
-      require("telescope.builtin").live_grep(tele_opts)
-    end,
+    -- function ()
+    --   local function is_git_repo()
+    --     vim.fn.system("git rev-parse --is-inside-work-tree")
+    --     return vim.v.shell_error == 0
+    --   end
+    --
+    --   local function get_git_root()
+    --     local dot_git_path = vim.fn.finddir(".git", ".;")
+    --     return vim.fn.fnamemodify(dot_git_path, ":h")
+    --   end
+    --
+    --   local tele_opts = {}
+    --
+    --   if is_git_repo() then
+    --     tele_opts = {
+    --       cwd = get_git_root(),
+    --     }
+    --   end
+    --
+    --   require("telescope.builtin").live_grep(tele_opts)
+    -- end,
+    '<cmd>Telescope live_grep<cr>',
     description = "Telescope: Grep in files",
     opts = opts
   },
