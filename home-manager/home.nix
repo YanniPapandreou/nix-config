@@ -12,10 +12,8 @@
     inputs.hyprland.homeManagerModules.default ./hyprland
 
     # You can also split up your configuration and import pieces of it here:
-    ./programs
     # ./defaultApps.nix
-    ./fonts.nix
-    ./themes.nix
+    ./yanni
   ];
 
   nixpkgs = {
@@ -46,24 +44,10 @@
     };
   };
 
-  home = {
-    username = "yanni";
-    homeDirectory = "/home/yanni";
-  };
-
   # Enable home-manager
   programs.home-manager.enable = true;
 
   services.network-manager-applet.enable = true;
-
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-  };
-
-  programs.password-store = {
-    enable = true;
-  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
