@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "hp-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
@@ -22,7 +22,7 @@
   services.openvpn.servers = {
     imperialVPN = 
       {
-        config = '' config /home/yanni/nix-config/nixos/imperialVPN.conf'';
+        config = '' config /home/yanni/nix-config/hosts/hp-laptop/imperialVPN.conf'';
         autoStart = false;
       };
   };

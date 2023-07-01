@@ -61,11 +61,11 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        hp-laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./hosts/hp-laptop
               hyprland.nixosModules.default
               {programs.hyprland.enable = true;}
           ];
@@ -75,7 +75,7 @@
       # # Standalone home-manager configuration entrypoint
       # # Available through 'home-manager --flake .#your-username@your-hostname'
       # homeConfigurations = {
-      #   "yanni@nixos" = home-manager.lib.homeManagerConfiguration {
+      #   "yanni@hp-laptop" = home-manager.lib.homeManagerConfiguration {
       #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
       #     extraSpecialArgs = { inherit inputs outputs; };
       #     modules = [

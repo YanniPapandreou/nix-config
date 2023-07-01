@@ -134,7 +134,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      yanni = import ../home-manager/home.nix;
+      yanni = import ../../home-manager/yanni;
     };
   };
 
