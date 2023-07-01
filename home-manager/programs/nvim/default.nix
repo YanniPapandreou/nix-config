@@ -85,6 +85,7 @@ in
       neorg
       toggleterm-nvim
       nvim-colorizer-lua
+      nvim-web-devicons
     ]);
 
     extraPackages = with pkgs; [

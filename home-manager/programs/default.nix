@@ -2,6 +2,7 @@
 {
   imports = [
     ./atuin.nix 
+    ./direnv.nix
     ./firefox
     ./fish.nix
     ./git.nix
@@ -20,18 +21,19 @@
     #dosfstools
     #exfat
     #ntfs3g
+    #swaynotificationcenter
     cachix
     choose
     difftastic
     discord
+    fd
     fragments
     gh
-    gtg
-    fd
     gnome.eog
     gnome.gnome-disk-utility
     gnome.nautilus
     google-chrome
+    gtg
     ipe
     kitty
     neofetch
@@ -41,7 +43,6 @@
     signal-desktop
     slack
     stow
-    # swaynotificationcenter
     texlive.combined.scheme-full
     thunderbird
     vlc

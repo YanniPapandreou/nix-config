@@ -72,6 +72,11 @@
       dates = "weekly";
       options = "--delete-older-than 20d";
     };
+
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+    '';
   };
 
   # Set your time zone.
