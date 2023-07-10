@@ -13,7 +13,7 @@
     ./sioyek.nix
     ./starship.nix
     ./terminal.nix
-    ./todoist.nix
+    # ./todoist.nix
     ./variables.nix
   ]; 
 
@@ -23,6 +23,7 @@
     #exfat
     #ntfs3g
     #swaynotificationcenter
+    brightnessctl
     cachix
     choose
     difftastic
@@ -32,16 +33,17 @@
     fd
     fragments
     gh
-    gnome.eog
-    gnome.gnome-disk-utility
-    gnome.nautilus
-    # google-chrome
+    # gnome.eog
+    gnome.gnome-tweaks
+    google-chrome
     gtg
     ipe
     kitty
     neofetch
     networkmanagerapplet
     obsidian
+    pamixer
+    pavucontrol
     ripgrep
     signal-desktop
     slack

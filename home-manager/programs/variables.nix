@@ -1,7 +1,7 @@
 { config, ... }:
 {
   home.sessionVariables = {
-    BROWSER = "firefox";
+    # BROWSER = "firefox";
     TERMINAL = "kitty";
   };
 }

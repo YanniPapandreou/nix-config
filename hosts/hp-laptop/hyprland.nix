@@ -1,6 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
 
+  services.xserver.displayManager.gdm.enable = true;
   services.gvfs.enable = true;
   services.gnome.sushi.enable = true;
   security.polkit.enable = true;

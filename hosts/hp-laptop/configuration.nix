@@ -16,7 +16,10 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-    ./hyprland.nix
+    # ./hyprland.nix
+    # ./kde.nix
+    ./gnome.nix
+    # ./pantheon.nix
     ./networking.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
@@ -62,8 +65,8 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      # substituters = ["https://hyprland.cachix.org"];
+      # trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
 
     # Automatic garbage collection
@@ -138,9 +141,11 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    vim
+  ];
+
   programs.fish.enable = true;
-  
-  services.xserver.displayManager.gdm.enable = true;
   
   # enable sound with pipewire
   # Enable sound with pipewire.
@@ -181,7 +186,7 @@
   #   "x-scheme-handler/http" = "firefox.desktop";
   #   "x-scheme-handler/https" = "firefox.desktop";
   # };
-  environment.sessionVariables.DEFAULT_BROSWER = "${pkgs.firefox}/bin/firefox";
+  # environment.sessionVariables.DEFAULT_BROSWER = "${pkgs.firefox}/bin/firefox";
   
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

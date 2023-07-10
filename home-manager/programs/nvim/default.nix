@@ -89,6 +89,7 @@ in
       toggleterm-nvim
       nvim-colorizer-lua
       nvim-web-devicons
+      obsidian-nvim
     ]);
 
     extraPackages = with pkgs; [

@@ -18,6 +18,9 @@
 
   #xdg.configFile."hypr/keybind".source = ./keybind;
   home.packages = with pkgs; [
+    gnome.eog
+    gnome.gnome-disk-utility
+    gnome.nautilus
     grim
     libsForQt5.qt5.qtwayland
     mpv

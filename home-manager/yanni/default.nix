@@ -7,13 +7,14 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-    inputs.hyprland.homeManagerModules.default ../hyprland
+    # inputs.hyprland.homeManagerModules.default ../hyprland
 
     # You can also split up your configuration and import pieces of it here:
     # ./defaultApps.nix
     ../programs
     ../fonts.nix
     ../themes.nix
+    ../hyprland/obs-studio.nix
   ];
 
   nixpkgs = {
