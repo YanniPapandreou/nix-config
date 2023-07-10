@@ -90,7 +90,7 @@ default_lsp_setup('bashls')
 default_lsp_setup('texlab')
 
 -- -- Haskell
--- default_lsp_setup('hls')
+default_lsp_setup('hls')
 
 -- Lua
 local runtime_path = vim.split(package.path, ';')
@@ -160,3 +160,6 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.black
     },
 })
+
+-- Julia
+default_lsp_setup("julials")

@@ -164,6 +164,24 @@
 
   # Flatpak
   services.flatpak.enable = true;
+
+  # # default apps
+  # environment.variables.XDG_CONFIG_DIRS = [ "/etc/xdg" ];
+  # environment.etc."xdg/mimeapps.list" = {
+  #   text = ''
+  #     [Default Applications]
+  #     text/html=firefox.desktop;
+  #   '';
+  # };
+  # xdg.mime.defaultApplications = {
+  #   "x-scheme-handler/http" = "firefox.desktop";
+  #   "x-scheme-handler/https" = "firefox.desktop";
+  # };
+  # xdg.mime.addedAssociations = {
+  #   "x-scheme-handler/http" = "firefox.desktop";
+  #   "x-scheme-handler/https" = "firefox.desktop";
+  # };
+  environment.sessionVariables.DEFAULT_BROSWER = "${pkgs.firefox}/bin/firefox";
   
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

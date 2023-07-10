@@ -25,13 +25,17 @@ in
         p.lua
         p.markdown
         p.markdown_inline
-        p.norg
         p.nix
+        # p.norg
         p.python
+        p.tree-sitter-lua
       ]))
       fidget-nvim
       markdown-preview-nvim
       vim-wakatime
+      neorg
+      neorg-telescope
+      # haskell-tools-nvim
     ] ++ (with pkgs.vimExtraPlugins; [
       dracula-nvim
       lualine-nvim
@@ -82,7 +86,6 @@ in
       nvim-spectre
       which-key-nvim
       undotree
-      neorg
       toggleterm-nvim
       nvim-colorizer-lua
       nvim-web-devicons
@@ -105,6 +108,8 @@ in
       black
       # latex
       texlab
+      # c++
+      llvmPackages_14.clangNoLibc
     ];
   };
 

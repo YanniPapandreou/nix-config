@@ -14,7 +14,7 @@ dashboard.section.buttons.val = {
   dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert<CR>"),
   dashboard.button("r", "󱋡 " .. " Recent files", ":Telescope oldfiles<CR>"),
   dashboard.button("g", " " .. " Find text", ":Telescope live_grep<CR>"),
-  dashboard.button("c", " " .. " Config", ":e ~/nix-config/home-manager/nvim/config/lua/init.lua<CR>"),
+  dashboard.button("c", " " .. " Config", ":e ~/nix-config/home-manager/programs/nvim/config/lua/init.lua<CR>"),
   -- dashboard.button("s", "勒" .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
   dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }

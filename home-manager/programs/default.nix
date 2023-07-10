@@ -6,6 +6,7 @@
     ./firefox
     ./fish.nix
     ./git.nix
+    ./glow
     ./nvim
     ./python.nix
     ./ranger
@@ -26,13 +27,15 @@
     choose
     difftastic
     discord
+    element-desktop
+    exercism
     fd
     fragments
     gh
     gnome.eog
     gnome.gnome-disk-utility
     gnome.nautilus
-    google-chrome
+    # google-chrome
     gtg
     ipe
     kitty
