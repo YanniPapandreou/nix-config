@@ -15,6 +15,7 @@
     ./terminal.nix
     # ./todoist.nix
     ./variables.nix
+    ./xdg.nix
   ]; 
 
   # Add stuff for your user as you see fit:
@@ -33,6 +34,7 @@
     fd
     fragments
     gh
+    # glib
     # gnome.eog
     gnome.gnome-tweaks
     google-chrome
