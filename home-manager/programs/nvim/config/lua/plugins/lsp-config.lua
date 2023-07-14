@@ -1,165 +1,179 @@
 -- Neodev setup
 require('neodev').setup({})
 
--- Setup lspconfig.
-local nvim_lsp = require('lspconfig')
--- Setup Lspsaga
-local lspsaga = require("lspsaga")
+local lspsaga = require('lspsaga')
 lspsaga.setup({
   ui = {
     border = "rounded",
   }
 })
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-    -- -- Enable completion triggered by <c-x><c-o>
-    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+local lsp = require('lsp-zero').preset({})
 
-    -- Mappings.
-    local opts = { noremap=true, silent=true, buffer=true }
-    require('legendary').keymaps({
-        { 'gD', vim.lsp.buf.declaration, description = 'LSP: Go to declaration', opts = opts },
-        { 'gd', '<cmd>Lspsaga goto_definition<cr>', description = 'LSP: Go to definition', opts = opts },
-        { 'gh', '<cmd>Lspsaga lsp_finder<cr>', description = 'LSP: Go Hunt', opts = opts },
-        { 'gp', '<cmd>Lspsaga peek_definition<cr>', description = 'LSP: Go Peek Definition', opts = opts },
-        { 'K', "<cmd>Lspsaga hover_doc<cr>", description = 'LSP: Hover', opts = opts },
-        { '<leader>K', "<cmd>Lspsaga hover_doc ++keep<cr>", description = 'LSP: Hover (Keep)', opts = opts },
-        { 'gi', vim.lsp.buf.implementation, description = 'LSP: Go to implementation', opts = opts },
-        { '<leader>cs', vim.lsp.buf.signature_help, description = 'LSP: Signature help', mode = { 'n', 'i' }, opts = opts },
-        { '<leader>wa', vim.lsp.buf.add_workspace_folder, description = 'LSP: Add workspace folder', opts = opts },
-        { '<leader>wr', vim.lsp.buf.remove_workspace_folder, description = 'LSP: Remove workspace folder', opts = opts },
-        { '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, description = 'LSP: List workspaces', opts = opts },
-        { '<leader>D', vim.lsp.buf.type_definition, description = 'LSP: Show type definition', opts = opts },
-        { '<F2>', "<cmd>Lspsaga rename<cr>", description = 'LSP: Rename', opts = opts },
-        { '<leader>ca', "<cmd>Lspsaga code_action<cr>", description = 'LSP: Code Action', opts = opts },
-        { '<leader>co', "<cmd>Lspsaga outline<cr>", description = 'LSP: Outline', opts = opts },
-        { '<leader>cb', "<cmd>Lspsaga show_buf_diagnostics<cr>", description = 'LSP: Show Buffer Diagnostics', opts = opts },
-        { 'gr', vim.lsp.buf.references, description = 'LSP: Show references', opts = opts },
-        { 'gl', "<cmd>Lspsaga show_line_diagnostics<cr>", description = 'LSP: Show Line Diagnostics', opts = opts },
-        { '<leader>e', function() vim.diagnostic.open_float(0, {scope="line"}) end, description = 'Diagnostics: Show window', opts = opts },
-        { '[d', function() vim.diagnostic.goto_prev({ float =  { border = "single" }}) end, description = 'Diagnostics: Previous', opts = opts },
-        { ']d', function() vim.diagnostic.goto_next({ float =  { border = "single" }}) end, description = 'Diagnostics: Next', opts = opts },
-        { '<leader>q', vim.diagnostic.setloclist, description = 'Diagnostic: Show location list', opts = opts },
-        { '<leader>f', vim.lsp.buf.formatting, description = 'LSP: Format file', opts = opts },
-    })
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+  local bind = vim.keymap.set
+  bind('n', 'gd', '<cmd>Lspsaga goto_definition<cr>', {desc = 'LSP: Go to definition', noremap=true, silent=true, buffer=true})
+  bind('n', 'gD', vim.lsp.buf.declaration, {desc = 'LSP: Go to Declaration', noremap=true, silent=true, buffer=true})
+  bind('n', 'gh', '<cmd>Lspsaga lsp_finder<cr>', {desc = 'LSP: Go Hunt', noremap=true, silent=true, buffer=true})
+  bind('n', 'K', '<cmd>Lspsaga hover_doc<cr>', {desc = 'LSP: Hover', noremap=true, silent=true, buffer=true})
+  bind('n', 'gp', '<cmd>Lspsaga peek_definition<cr>', {desc = 'LSP: Go Peek Definition', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>K', '<cmd>Lspsaga hover_doc ++keep<cr>', {desc = 'LSP: Hover (Keep)', noremap=true, silent=true, buffer=true})
+  bind('n', 'gs', vim.lsp.buf.signature_help, {desc = 'LSP: Signature Help', noremap=true, silent=true, buffer=true})
+  bind('n', 'gi', vim.lsp.buf.implementation, {desc = 'LSP: Go to Implementation', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', {desc = 'LSP: Code Action', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>co', '<cmd>Lspsaga outline<cr>', {desc = 'LSP: Code Outline', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>cb', '<cmd>Lspsaga show_buf_diagnostics<cr>', {desc = 'LSP: Show Buffer Diagnostics', noremap=true, silent=true, buffer=true})
+  bind('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<cr>', {desc = 'LSP: Show Line Diagnostics', noremap=true, silent=true, buffer=true})
+  bind('n', 'gr', vim.lsp.buf.references, {desc = 'LSP: Show References', noremap=true, silent=true, buffer=true})
+  bind('n', '[d', function() vim.diagnostic.goto_prev({ float = {border = "single"}}) end, { desc = 'Diagnostics: Previous', noremap=true, silent=true, buffer=true})
+  bind('n', ']d', function() vim.diagnostic.goto_next({ float = {border = "single"}}) end, { desc = 'Diagnostics: Next', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>q', vim.diagnostic.setloclist, {desc = 'Diagnostics: Show location list', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>cf', vim.lsp.buf.format, {desc = 'LSP: Format File', noremap=true, silent=true, buffer=true})
+end)
 
-    -- if client.server_capabilities.document_formatting then
-    --     vim.cmd([[
-    --         augroup LspFormatting
-    --             autocmd! * <buffer>
-    --             autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-    --         augroup END
-    --         ]])
-    -- end
-end
-
--- local notify = require('notify')
--- vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)
---   local client = vim.lsp.get_client_by_id(ctx.client_id)
---   local lvl = ({ 'ERROR', 'WARN', 'INFO', 'DEBUG' })[result.type]
---   notify({ result.message }, lvl, {
---     title = 'LSP | ' .. client.name,
---     timeout = 10000,
---     keep = function()
---       return lvl == 'ERROR' or lvl == 'WARN'
---     end,
---   })
--- end
-
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- Enable Language Servers
-local function default_lsp_setup(module)
-    nvim_lsp[module].setup{
-        on_attach = on_attach,
-        capabilities = capabilities
-    }
-end
--- Bash
-default_lsp_setup('bashls')
-
--- LaTeX
-default_lsp_setup('texlab')
-
--- -- Haskell
-default_lsp_setup('hls')
-
--- Lua
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-nvim_lsp.lua_ls.setup{
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-                -- Setup your lua path
-                path = runtime_path,
-            },
-            completion = {
-                callSnippet = 'Replace'
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {'vim'},
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            }
-        }
-    },
-    on_attach = on_attach,
-    capabilities = capabilities
-}
-
--- Nix
-nvim_lsp.rnix.setup{
-    on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-
-        -- Let statix format
-        client.server_capabilities.document_formatting = false
-        client.server_capabilities.document_range_formatting = false
-    end
-}
-
--- Python
-default_lsp_setup('pyright')
-
--- -- CSS
--- default_lsp_setup('cssls')
--- -- HTML
--- default_lsp_setup('html')
--- -- JSON
--- default_lsp_setup('jsonls')
-
--- NULL
-require("null-ls").setup({
-    sources = {
-        -- Nix
-        require("null-ls").builtins.formatting.nixpkgs_fmt,
-        require("null-ls").builtins.diagnostics.statix,
-        require("null-ls").builtins.code_actions.statix,
-
-        -- Python
-        require("null-ls").builtins.formatting.black
-    },
+-- set sign icons
+lsp.set_sign_icons({
+  error = ' ',
+  warn = ' ',
+  hint = ' ',
+  info = ' '
 })
 
--- Julia
-default_lsp_setup("julials")
+-- IMPORTANT: list servers installed in your system
+lsp.setup_servers({
+  'pyright',
+  'lua_ls',
+  'bashls',
+  'texlab',
+  'hls',
+  'julials',
+  'rnix'
+})
+
+-- (Optional) Configure lua language server for neovim and any other servers
+local lspconfig = require('lspconfig')
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()
+
+-- You need to setup `cmp` after lsp-zero
+local cmp = require('cmp')
+local luasnip = require("luasnip")
+local cmp_action = require('lsp-zero').cmp_action()
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
+local lspkind = require('lspkind')
+
+luasnip.config.set_config({
+  history = true,
+  --region_check_events = 'InsertEnter'
+  delete_check_events = 'InsertLeave',
+  updateevents = "TextChanged,TextChangedI",
+  enable_autosnippets = true,
+  ext_opts = {
+    [require("luasnip.util.types").choiceNode] = {
+      active = {
+        virt_text = { {" ", "Error" } ,}
+      },
+    },
+  },
+  -- store_selection_keys = '<c-s>'
+})
+
+require('luasnip.loaders.from_vscode').lazy_load()
+-- load custom snippets
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
+
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
+
+
+cmp.setup({
+  preselect = 'none',
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect'
+  },
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'buffer', keyword_length = 3},
+    {name = 'luasnip', keyword_length = 2},
+    {name = 'nvim_lsp_signature_help'},
+    {
+      name = 'latex_symbols',
+      option = {
+        strategy = 0, -- mixed
+      },
+    },
+  },
+  mapping = {
+    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ["<Up>"] = cmp.mapping.select_prev_item(cmp_select_opts),
+    ["<Down>"] = cmp.mapping.select_next_item(cmp_select_opts),
+    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+    -- `Enter` key to confirm completion
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ["<C-h>"] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {"i", "s"}),
+    ["<C-l>"] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, {"i", "s"}),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      local col = vim.fn.col('.') - 1
+      if cmp.visible() then
+        cmp.select_next_item(cmp_select_opts)
+      elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        fallback()
+      else
+        cmp.complete()
+      end
+    end, {"i", "s"}),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item(cmp_select_opts)
+      else
+        fallback()
+      end
+    end, {"i", "s"})
+  },
+  formatting = {
+    -- use `lspkind` to format
+    format = lspkind.cmp_format({
+       -- before = function(entry, vim_item)
+      --   -- source
+      --   vim_item.menu = ({
+      --     buffer = "[Buffer]",
+      --     nvim_lsp = "[LSP]",
+      --     luasnip = "[Snippet]",
+      --     nvim_lua = "[Lua]",
+      --     latex_symbols = "[LaTeX]",
+      --   })[entry.source.name]
+      --   return vim_item
+      -- end
+    })
+  },
+  experimental = {
+    ghost_text = true,
+  },
+  -- window = {
+  --   completion = cmp.config.window.bordered(),
+  --   documentation = cmp.config.window.bordered()
+  -- },
+})
+
+

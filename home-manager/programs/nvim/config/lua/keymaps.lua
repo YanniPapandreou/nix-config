@@ -1,4 +1,3 @@
---local Util = require("utils")
 -- TODO: change to legendary style keymaps
 
 local bind = vim.keymap.set
@@ -94,7 +93,7 @@ bind("n", "<leader>uw", function() Toggle("wrap") end, { desc = "Toggle Word Wra
 bind("n", "<leader>ul", function() Toggle("relativenumber") Toggle("number") end, { desc = "Toggle Line Numbers"} )
 bind("n", "<leader>uc", function() Toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal"} )
 
-vim.cmd([[
-imap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
-smap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
-]])
+--vim.cmd([[
+--imap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
+--smap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
+--]])

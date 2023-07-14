@@ -1,11 +1,11 @@
 local opt = vim.opt
 local g = vim.g
 
--- set leader and localleader key
+-- set leader and localleader
 g.mapleader = " "
 g.maplocalleader = ","
 
--- -- Themeing
+-- Themeing
 -- local ColorMyPencils = function (color)
 --   color = color or "dracula"
 --   vim.cmd.colorscheme(color)
@@ -33,18 +33,19 @@ opt.softtabstop = 2
 opt.signcolumn = 'yes'
 
 opt.autoindent = true
-opt.smartindent = false
+opt.smartindent = true
 
 opt.swapfile = false
 opt.backup = false
---opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
 opt.hlsearch = true -- highlight search options
 opt.incsearch = true
+
 opt.showcmd = true
 opt.cmdheight = 1
 opt.laststatus = 2
+
 opt.expandtab = true
 opt.scrolloff = 8
 opt.breakindent = true
@@ -59,19 +60,12 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
 opt.termguicolors = true -- True color support
 
--- vim.opt.updatetime = 50
-
-if vim.fn.has("nvim-0.9.0") == 1 then
-  opt.splitkeep = "screen"
-  opt.shortmess:append { C = true }
-end
-
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
 
 -- markdown preview settings
-g.mkdp_auto_close = 0
-g.mkdp_browser = 'firefox'
+--g.mkdp_auto_close = 0
+--g.mkdp_browser = 'firefox'
 
 -- conceal settings - Neorg
 opt.conceallevel = 3

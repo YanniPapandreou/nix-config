@@ -23,7 +23,4 @@ vim.g.vimtex_syntax_conceal = {
   styles = 0,
 }
 
-local opts = { noremap = true }
-require("legendary").keymaps({
-  { "<M-f>", ":VimtexView<cr>", description = "Vimtex: Forward Search", opts = opts }
-})
+vim.keymap.set("n", "<M-f>", ":VimtexView<cr>", { desc = "Vimtex: Forward Search", noremap = true })

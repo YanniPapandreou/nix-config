@@ -19,7 +19,7 @@ wk.register({
   ["<leader>g"] = { name = "+git" },
   ["<leader>gh"] = { name = "+hunks" },
   ["<leader>q"] = { name = "+quit/session" },
-  ["<leader>s"] = { name = "+search" },
+  ["<leader>f"] = { name = "+find" },
   -- ["<leader>sn"] = { name = "+noice" },
   ["<leader>u"] = { name = "+ui" },
   ["<leader>w"] = { name = "+windows" },

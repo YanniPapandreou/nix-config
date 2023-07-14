@@ -24,10 +24,10 @@ end
 vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 -- keymaps
-local opts = { noremap = true }
-require("legendary").keymaps({
-  { "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", description = "Open Lazygit", opts = { noremap = true, silent = true }},
-  { "<leader>th", ":ToggleTerm direction=horizontal<cr>", description = "Open terminal horizontally", opts = opts },
-  { "<leader>tv", ":ToggleTerm direction=vertical<cr>", description = "Open terminal vertically", opts = opts },
-  { "<leader>tf", ":ToggleTerm direction=float<cr>", description = "Open terminal as floating window", opts = opts },
-})
+local bind = vim.keymap.set
+
+bind("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", { desc = "Open Lazygit", noremap = true, silent = true})
+bind("n", "<leader>th", ":ToggleTerm direction=horizontal<cr>", { desc = "Open terminal horizontally", noremap = true })
+bind("n", "<leader>tv", ":ToggleTerm direction=vertical<cr>", { desc = "Open terminal vertically", noremap = true })
+bind("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { desc = "Open terminal as floating window", noremap = true })
+

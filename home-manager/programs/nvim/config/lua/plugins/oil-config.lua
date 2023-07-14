@@ -1,6 +1,4 @@
 require("oil").setup()
 
-local opts = { noremap = true }
-require("legendary").keymaps({
-  { "<leader>o", ":Oil<cr>", description = "Oil: Open File Explorer", opts = opts },
-})
+vim.keymap.set('n', '<leader>o', '<cmd>Oil<cr>', { desc = "Oil: Open File Explorer", noremap = true })
+
