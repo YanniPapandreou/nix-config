@@ -5,6 +5,7 @@
     ./direnv.nix
     ./firefox
     ./fish.nix
+    ./nushell.nix
     ./git.nix
     ./glow
     ./nvim
@@ -38,9 +39,8 @@
     # gnome.eog
     gnome.gnome-tweaks
     google-chrome
-    gtg
+    # gtg
     ipe
-    kitty
     neofetch
     networkmanagerapplet
     obsidian
