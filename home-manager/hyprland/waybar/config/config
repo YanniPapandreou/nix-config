@@ -113,6 +113,8 @@
       "format-icons": ["󰃞", "󰃟", "󰃠"],
       "on-scroll-up": "brightnessctl set 1%+",
       "on-scroll-down": "brightnessctl set 1%-",
+      "on-click": "brightnessctl set 1%-",
+      "on-click-right": "brightnessctl set 1%+",
       "min-length": 6
     },
     "battery": {
