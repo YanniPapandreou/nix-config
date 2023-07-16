@@ -55,6 +55,11 @@ in
        nui-nvim
        searchbox-nvim
        dressing-nvim
+       glow-nvim
+       telescope-manix
+       telescope-project-nvim
+       telescope-frecency-nvim
+       nvim-neoclip-lua
      ] ++ (with pkgs.vimExtraPlugins; [
        lsp-zero-nvim 
        nvim-colorizer-lua

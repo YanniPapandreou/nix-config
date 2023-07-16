@@ -41,6 +41,7 @@
     google-chrome
     # gtg
     ipe
+    manix
     neofetch
     networkmanagerapplet
     obsidian

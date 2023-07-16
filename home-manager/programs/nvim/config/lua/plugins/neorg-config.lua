@@ -17,6 +17,7 @@ require('neorg').setup({
     },
     ["core.summary"] = {},
     ["core.integrations.telescope"] = {},
+    ["core.ui.calendar"] = {},
   },
 })
 

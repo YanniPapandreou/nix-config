@@ -1,17 +1,32 @@
 local actions = require("telescope.actions")
 local bind = vim.keymap.set
+local telescope = require("telescope")
+local project_actions = require("telescope._extensions.project.actions")
 
-require('telescope').setup({
+telescope.setup({
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
---    mappings = {
---      i = {
---        ["<esc>"] = actions.close
---      },
---    },
+  },
+  extensions = {
+    project = {
+      base_dirs = {
+        '~/projects/',
+        {path='~/nix-config/', max_depth=0},
+      },
+      hidden_files = true,
+      theme = "dropdown",
+      on_project_selected = function (prompt_bufnr)
+        -- Do anything you want in here. For example:
+        project_actions.change_working_directory(prompt_bufnr, false)
+        -- require("harpoon.ui").nav_file(1)
+      end
+    }
   },
 })
+
+telescope.load_extension('manix')
+telescope.load_extension('project')
 
 -- keymaps
 function vim.find_files_from_project_git_root()
@@ -67,3 +82,6 @@ bind('n', '<leader>.', '<cmd>Telescope oldfiles<cr>', { desc = 'Telescope: Recen
 bind('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', { desc = 'Telescope: Diagnostics', noremap = true  })
 bind('n', '<leader>fC', '<cmd>Telescope colorscheme<cr>', { desc = 'Telescope: Colorschemes', noremap = true  })
 bind('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', { desc = 'Telescope: Keymaps', noremap = true  })
+bind('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Telescope: Help Tags', noremap = true  })
+
+bind('n', '<leader>fp', "<cmd>lua require'telescope'.extensions.project.project{}<cr>", { desc = 'Telescope: Find Project', noremap = true })
