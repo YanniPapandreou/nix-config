@@ -2,13 +2,15 @@
 {
 
   imports = [
-    ./dunst
-    ./gammastep.nix
-    ./gtklock
-    ./network-manager-dmenu
-    ./obs-studio.nix
-    ./rofi
-    ./waybar
+    ../programs/dunst
+    ../programs/gammastep.nix
+    ../programs/gtklock
+    ../programs/network-manager-dmenu
+    ../programs/obs-studio.nix
+    ../programs/rofi
+    ../programs/waybar
+    ../programs/swappy
+    # ../programs/eww
   ];
 
   wayland.windowManager.hyprland = {
@@ -18,6 +20,7 @@
 
   #xdg.configFile."hypr/keybind".source = ./keybind;
   home.packages = with pkgs; [
+    eww-wayland
     gnome.eog
     gnome.gnome-disk-utility
     gnome.nautilus
@@ -27,7 +30,6 @@
     polkit_gnome
     qt6.qtwayland
     slurp
-    swappy
     swaybg
   ];
 }

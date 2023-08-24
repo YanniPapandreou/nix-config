@@ -90,6 +90,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/London";
+  # time.timeZone = "Asia/Nicosia";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -133,7 +134,7 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "networkmanager" "wheel" "docker" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
 
       shell = pkgs.fish;
     };
@@ -193,6 +194,9 @@
   #   "x-scheme-handler/https" = "firefox.desktop";
   # };
   # environment.sessionVariables.DEFAULT_BROSWER = "${pkgs.firefox}/bin/firefox";
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
   
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

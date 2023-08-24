@@ -60,6 +60,10 @@ in
        telescope-project-nvim
        telescope-frecency-nvim
        nvim-neoclip-lua
+       nvim-spectre
+       yuck-vim
+       vim-parinfer
+       markdown-preview-nvim
      ] ++ (with pkgs.vimExtraPlugins; [
        lsp-zero-nvim 
        nvim-colorizer-lua
