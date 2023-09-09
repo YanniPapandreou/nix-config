@@ -37,7 +37,7 @@ in
        # lsp-zero-nvim
        vim-wakatime
        neodev-nvim
-       lspsaga-nvim-original
+       lspsaga-nvim
        fidget-nvim
        lualine-nvim
        alpha-nvim
@@ -45,8 +45,8 @@ in
        vim-illuminate
        indent-blankline-nvim
        leap-nvim
-       neorg
-       neorg-telescope
+       # neorg
+       # neorg-telescope
        todo-comments-nvim
        trouble-nvim
        toggleterm-nvim

@@ -27,7 +27,9 @@
     ],
 
     "hyprland/window": {
-      "format": "{}"
+      "format": "{icon}",
+      "max-length": 200,
+      "separate-outputs": true
     },
     "wlr/workspaces": {
       "on-scroll-up": "hyprctl dispatch workspace e+1",

@@ -20,7 +20,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    # neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!

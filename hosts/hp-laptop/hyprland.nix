@@ -4,6 +4,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.gvfs.enable = true;
   services.gnome.sushi.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+
   security.polkit.enable = true;
   security.pam.services.gtklock = {};
 

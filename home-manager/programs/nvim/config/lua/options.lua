@@ -68,4 +68,4 @@ g.mkdp_auto_close = 0
 g.mkdp_browser = 'firefox'
 
 -- conceal settings - Neorg
-opt.conceallevel = 3
+-- opt.conceallevel = 3

@@ -9,6 +9,7 @@
     ./git.nix
     ./glow
     ./nvim
+    # ./nvim_barebones.nix
     ./python.nix
     ./ranger
     ./sioyek.nix
@@ -16,6 +17,8 @@
     ./terminal.nix
     # ./todoist.nix
     ./variables.nix
+    # ./vim.nix
+    # ./vscode.nix
     ./xdg.nix
   ]; 
 
@@ -41,12 +44,14 @@
     google-chrome
     # gtg
     ipe
+    mailspring
     manix
     neofetch
     networkmanagerapplet
     obsidian
     pamixer
     pavucontrol
+    remmina
     ripgrep
     signal-desktop
     slack

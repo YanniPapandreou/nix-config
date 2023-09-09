@@ -19,12 +19,13 @@
 
     # "audio/*" = ["mpv.desktop"];
     # "video/*" = ["mpv.dekstop"];
-    # "image/*" = ["imv.desktop"];
     # "application/json" = browser;
     "application/pdf" = ["sioyek.desktop"];
     # "x-scheme-handler/discord" = ["discordcanary.desktop"];
     # "x-scheme-handler/spotify" = ["spotify.desktop"];
     # "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
+    "image/jpeg" = ["org.gnome.eog.desktop"];
+    "image/png" = ["org.gnome.eog.desktop"];
   };
 in {
   xdg = {
