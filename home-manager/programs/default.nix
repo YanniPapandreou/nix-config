@@ -43,6 +43,7 @@
     gnome.gnome-tweaks
     google-chrome
     # gtg
+    helix
     ipe
     mailspring
     manix

@@ -5,9 +5,10 @@ let
     jsonpickle
     pycairo
     pygobject3
+    python-lsp-server
+    pyyaml
     requests
     wheel
-    pyyaml
   ];
 in
 {

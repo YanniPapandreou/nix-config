@@ -25,6 +25,11 @@
         config = '' config /home/yanni/nix-config/hosts/hp-laptop/imperialVPN.conf'';
         autoStart = false;
       };
+    bayforestVPN = 
+      {
+        config = '' config /home/yanni/nix-config/hosts/hp-laptop/bayforestVPN.conf'';
+        autoStart = false;
+      };
   };
 
 }
