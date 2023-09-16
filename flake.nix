@@ -70,6 +70,15 @@
               {programs.hyprland.enable = true;}
           ];
         };
+        dell-desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./hosts/dell-desktop
+              # hyprland.nixosModules.default
+              # {programs.hyprland.enable = true;}
+          ];
+        };
       };
 
       # # Standalone home-manager configuration entrypoint
