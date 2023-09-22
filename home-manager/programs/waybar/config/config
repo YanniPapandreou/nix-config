@@ -10,7 +10,8 @@
     "modules-left": [
       //"clock",
       //"custom/weather",
-      "wlr/workspaces"
+      //"wlr/workspaces",
+      "hyprland/workspaces"
     ],
     //"modules-center": ["hyprland/window"],
     "modules-center": ["clock", "custom/spotify"],
@@ -25,7 +26,12 @@
       "pulseaudio",
       "pulseaudio#microphone"
     ],
-
+    "hyprland/workspaces": {
+      //"persistent-workspaces": {
+      //  "eDP-1": [1,2,3,4,5,6],
+      //  "HDMI-A-1": [7,8,9,10,11,12],
+     // }
+    },
     "hyprland/window": {
       "format": "{icon}",
       "max-length": 200,

@@ -9,13 +9,13 @@ let
     python-lsp-server
     pyyaml
     requests
+    setuptools
     wheel
     # nwg-panel deps
-    dasbus
-    i3ipc
-    netifaces
-    psutil
-    setuptools
+    # dasbus
+    # i3ipc
+    # netifaces
+    # psutil
   ];
 in
 {
