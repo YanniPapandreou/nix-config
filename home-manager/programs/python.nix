@@ -5,10 +5,17 @@ let
     jsonpickle
     pycairo
     pygobject3
+    pympler
     python-lsp-server
     pyyaml
     requests
     wheel
+    # nwg-panel deps
+    dasbus
+    i3ipc
+    netifaces
+    psutil
+    setuptools
   ];
 in
 {

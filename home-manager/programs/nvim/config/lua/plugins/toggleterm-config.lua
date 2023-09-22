@@ -7,7 +7,7 @@ require("toggleterm").setup{
       return vim.o.columns * 0.4
     end
   end,
-  open_mapping = [[<c-`>]],
+  open_mapping = [[<M-t>]],
   autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened
   direction = 'float',
 }

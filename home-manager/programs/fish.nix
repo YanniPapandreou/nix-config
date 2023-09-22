@@ -16,6 +16,7 @@
       #cat = "bat --style header --style snip --style changes --style header";
       rip = "rip --graveyard ~/.local/share/Trash";
       todoist-cli = "todoist";
+      gits = "git status";
     };
 
     plugins = [

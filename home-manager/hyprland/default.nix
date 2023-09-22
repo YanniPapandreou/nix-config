@@ -31,5 +31,14 @@
     qt6.qtwayland
     slurp
     swaybg
+    # nwg-panel and dependencies
+    nwg-panel
+    bluez
+    gtk-layer-shell
+    gtk3
+    pulseaudio
+    playerctl
+    wlr-randr
+    ddcutil
   ];
 }
