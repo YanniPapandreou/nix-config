@@ -25,7 +25,7 @@
     };
     lazygit.enable = true;
 
-    exa = {
+    eza = {
       enable = true;
     };
 
