@@ -69,8 +69,8 @@
           modules = [
             # > Our main nixos configuration file <
             ./hosts/hp-laptop
-              hyprland.nixosModules.default
-              {programs.hyprland.enable = true;}
+              # hyprland.nixosModules.default
+              # {programs.hyprland.enable = true;}
           ];
         };
         dell-desktop = nixpkgs.lib.nixosSystem {

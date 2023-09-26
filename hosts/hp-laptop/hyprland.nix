@@ -1,6 +1,10 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
 
+  programs.hyprland.enable = true;
+  # Optional, hint electron apps to use wayland:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   services.xserver.displayManager.gdm.enable = true;
   services.gvfs.enable = true;
   services.gnome.sushi.enable = true;
