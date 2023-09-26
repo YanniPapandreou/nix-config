@@ -7,6 +7,9 @@
         init = {
             defaultBranch = "main";
         };
+        core = {
+          editor = "nvim";
+        };
       };
   };
 }
