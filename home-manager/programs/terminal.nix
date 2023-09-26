@@ -11,12 +11,18 @@
   ];
 
   programs = {
-    bat.enable = true;
+    bat = {
+      enable = true;
+      config = {
+        theme = "Dracula";
+      };
+      extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep ];
+    };
     btop = {
       enable = true;
       settings = {
         color_theme = "dracula";
-	update_ms = 900;
+        update_ms = 900;
       };
     };
     fzf = {
