@@ -45,6 +45,7 @@
     # gtg
     helix
     ipe
+    just
     mailspring
     manix
     marksman
