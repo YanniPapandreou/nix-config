@@ -8,16 +8,15 @@ in
     enable = true;
     defaultEditor = true;
 
-    extraConfig =
-    # vim
-    ''
+    extraConfig = ''
       :luafile ~/.config/nvim/lua/init.lua
     '';
 
      withNodeJs = true;
+     withPython3 = true;
 
      plugins = with pkgs.vimPlugins; [
-       alpha-nvim
+       # alpha-nvim
        cmp-buffer
        cmp-latex-symbols
        cmp-nvim-lsp
@@ -26,13 +25,8 @@ in
        cmp_luasnip
        comment-nvim
        dracula-nvim
-       dressing-nvim
        fidget-nvim
        gitsigns-nvim
-       glow-nvim
-       hmts-nvim
-       indent-blankline-nvim
-       leap-nvim
        lspkind-nvim
        lspsaga-nvim
        lualine-nvim
@@ -40,18 +34,18 @@ in
        markdown-preview-nvim
        mini-nvim
        neodev-nvim
-       nui-nvim
-       nvim-autopairs
+       # nui-nvim
+       # nvim-autopairs
        nvim-cmp
        nvim-lspconfig
-       nvim-neoclip-lua
+       # nvim-neoclip-lua
        nvim-spectre
        nvim-treesitter-textobjects
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
-       oil-nvim
+       # oil-nvim
        plenary-nvim
-       searchbox-nvim
+       # searchbox-nvim
        telescope-frecency-nvim
        telescope-manix
        telescope-nvim
@@ -60,7 +54,6 @@ in
        toggleterm-nvim
        trouble-nvim
        undotree
-       vim-illuminate
        vim-parinfer
        vim-wakatime
        vimtex
@@ -85,7 +78,7 @@ in
        nixpkgs-fmt
        statix
        # Python
-       pyright
+       nodePackages.pyright
        python-debug
        black
        # latex

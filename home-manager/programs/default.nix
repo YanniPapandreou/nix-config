@@ -9,6 +9,7 @@
     ./git.nix
     ./glow
     ./nvim
+    # ./nvim_bayforest.nix
     # ./nvim_barebones.nix
     ./python.nix
     ./ranger
@@ -37,6 +38,7 @@
     exercism
     fd
     fragments
+    frogmouth
     gh
     # glib
     # gnome.eog
