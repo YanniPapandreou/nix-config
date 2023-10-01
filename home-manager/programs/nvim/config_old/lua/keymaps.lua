@@ -25,13 +25,13 @@ bind("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 bind("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 bind("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
--- -- Move Lines
--- bind("n", "<A-j>", ":m .+1<cr>==", { desc = "Move down" })
--- bind("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
--- bind("i", "<A-j>", "<Esc>:m .+1<cr>==gi", { desc = "Move down" })
--- bind("n", "<A-k>", ":m .-2<cr>==", { desc = "Move up" })
--- bind("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
--- bind("i", "<A-k>", "<Esc>:m .-2<cr>==gi", { desc = "Move up" })
+-- Move Lines
+bind("n", "<A-j>", ":m .+1<cr>==", { desc = "Move down" })
+bind("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+bind("i", "<A-j>", "<Esc>:m .+1<cr>==gi", { desc = "Move down" })
+bind("n", "<A-k>", ":m .-2<cr>==", { desc = "Move up" })
+bind("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+bind("i", "<A-k>", "<Esc>:m .-2<cr>==gi", { desc = "Move up" })
 
 -- buffers
 bind("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })

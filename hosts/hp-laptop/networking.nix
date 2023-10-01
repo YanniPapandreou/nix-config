@@ -20,14 +20,14 @@
 
   # vpn servers
   services.openvpn.servers = {
-    imperialVPN = 
+    imperialVPN =
       {
         config = '' config /home/yanni/nix-config/hosts/hp-laptop/imperialVPN.conf'';
         autoStart = false;
       };
-    bayforestVPN = 
+    bayforestVPN =
       {
-        config = '' config /home/yanni/nix-config/hosts/hp-laptop/bayforestVPN.conf'';
+        config = '' config /home/yanni/vpns/bayforestVPN.conf'';
         autoStart = false;
       };
   };

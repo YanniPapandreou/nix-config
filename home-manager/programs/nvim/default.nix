@@ -17,7 +17,6 @@ in
      withNodeJs = true;
 
      plugins = with pkgs.vimPlugins; [
-       alpha-nvim
        cmp-buffer
        cmp-latex-symbols
        cmp-nvim-lsp
@@ -31,25 +30,19 @@ in
        gitsigns-nvim
        glow-nvim
        hmts-nvim
-       indent-blankline-nvim
-       leap-nvim
        lspkind-nvim
        lspsaga-nvim
-       lualine-nvim
        luasnip
        markdown-preview-nvim
        mini-nvim
        neodev-nvim
        nui-nvim
-       nvim-autopairs
        nvim-cmp
        nvim-lspconfig
-       nvim-neoclip-lua
        nvim-spectre
        nvim-treesitter-textobjects
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
-       oil-nvim
        plenary-nvim
        searchbox-nvim
        telescope-frecency-nvim
@@ -60,12 +53,9 @@ in
        toggleterm-nvim
        trouble-nvim
        undotree
-       vim-illuminate
-       vim-parinfer
        vim-wakatime
        vimtex
        which-key-nvim
-       yuck-vim
      ] ++ (with pkgs.vimExtraPlugins; [
        lsp-zero-nvim
        nvim-colorizer-lua
