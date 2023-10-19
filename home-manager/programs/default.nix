@@ -2,6 +2,7 @@
 {
   imports = [
     ./atuin.nix 
+    ./bash.nix
     ./direnv.nix
     ./firefox
     ./fish.nix

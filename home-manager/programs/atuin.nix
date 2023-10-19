@@ -1,7 +1,7 @@
 {
   programs.atuin = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = false;
     enableFishIntegration = true;
     flags = [
       "--disable-up-arrow"

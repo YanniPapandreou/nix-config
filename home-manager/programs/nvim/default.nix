@@ -36,6 +36,7 @@ in
        markdown-preview-nvim
        mini-nvim
        neodev-nvim
+       neogit
        nui-nvim
        nvim-cmp
        nvim-lspconfig
@@ -51,6 +52,7 @@ in
        telescope-project-nvim
        todo-comments-nvim
        toggleterm-nvim
+       tokyonight-nvim
        trouble-nvim
        undotree
        vim-wakatime
