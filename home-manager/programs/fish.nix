@@ -5,6 +5,7 @@
 
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      zoxide init fish | source
       '';
 
     shellAliases = {
@@ -28,18 +29,17 @@
       # Enable a plugin (here grc for colorized command output) from nixpkgs
       # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       # Manually packaging and enable a plugin
-    {
-      name = "z";
-      src = pkgs.fetchFromGitHub {
-        owner = "jethrokuan";
-        repo = "z";
-        # rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
-        rev = "85f863f20f24faf675827fb00f3a4e15c7838d76";
-        # sha256 = "0000000000000000000000000000000000000000000000000000";
-        sha256 = "+FUBM7CodtZrYKqU542fQD+ZDGrd2438trKM0tIESs0=";
-      };
-    }
-
+    # {
+    #   name = "z";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "jethrokuan";
+    #     repo = "z";
+    #     # rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
+    #     rev = "85f863f20f24faf675827fb00f3a4e15c7838d76";
+    #     # sha256 = "0000000000000000000000000000000000000000000000000000";
+    #     sha256 = "+FUBM7CodtZrYKqU542fQD+ZDGrd2438trKM0tIESs0=";
+    #   };
+    # }
     {
       name = "fzf-fish";
       src = pkgs.fetchFromGitHub {
@@ -92,7 +92,7 @@
 
     shellInit = ''
       fzf_configure_bindings
-      set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/Documents/
+      set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/.config/ /home/yanni/Documents/
       '';
   };
 }

@@ -137,6 +137,7 @@
       extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
 
       shell = pkgs.fish;
+      # shell = pkgs.nushellFull;
     };
   };
 
@@ -153,7 +154,7 @@
   ];
 
   programs.fish.enable = true;
-  
+
   # enable sound with pipewire
   # Enable sound with pipewire.
   sound.enable = false;

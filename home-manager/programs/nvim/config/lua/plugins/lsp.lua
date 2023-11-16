@@ -60,7 +60,6 @@ lsp.setup()
 -- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
 local luasnip = require("luasnip")
-local cmp_action = require('lsp-zero').cmp_action()
 local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 local lspkind = require('lspkind')
 

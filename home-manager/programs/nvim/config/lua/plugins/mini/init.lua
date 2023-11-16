@@ -3,7 +3,11 @@ require("mini.cursorword").setup()
 require("mini.files").setup()
 require("mini.indentscope").setup()
 require("mini.jump").setup()
-require("mini.jump2d").setup()
+require("mini.jump2d").setup({
+  mappings = {
+    start_jumping = '<leader><CR>'
+  },
+})
 require("mini.map").setup()
 require("mini.move").setup()
 require("mini.pairs").setup()
@@ -36,9 +40,10 @@ starter.setup({
 })
 
 require("mini.statusline").setup()
-require("mini.tabline").setup()
+-- require("mini.tabline").setup()
 require("mini.trailspace").setup()
 require("mini.sessions").setup()
 
 local bind = vim.keymap.set
-bind('n', '<leader>o', ':lua MiniFiles.open()<cr>', { desc = "Open File Explorer", noremap = true })
+bind('n', '<leader>o', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>', { desc = "Open File Explorer", noremap = true })
+bind('n', '<leader>O', ':lua MiniFiles.open()<cr>', { desc = "Open File Explorer (from CWD)", noremap = true })

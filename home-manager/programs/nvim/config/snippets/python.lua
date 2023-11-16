@@ -7,14 +7,15 @@ local d = ls.dynamic_node
 local c = ls.choice_node
 local f = ls.function_node
 local sn = ls.snippet_node
+local l = require("luasnip.extras").lambda
 
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
 local snippets, autosnippets = {}, {} --}}}
 
-local group = vim.api.nvim_create_augroup("Markdown Snippets", { clear = true })
-local file_pattern = "*.md"
+local group = vim.api.nvim_create_augroup("Python Snippets", { clear = true })
+local file_pattern = "*.py"
 
 local function cs(trigger, nodes, opts) --{{{
 	local snippet = s(trigger, nodes)
@@ -70,89 +71,40 @@ end --}}}
 
 -- Start Refactoring --
 
--- Delimiters --
-
--- Environments --
-
-cs( -- latex beginend environment snippet
-  "env",
+cs(
+  "ifmain",
   fmt(
     [[
-  \begin{{{}}}
+  if __name__ == "__main__":
     {}
-  \end{{{}}}
     ]], {
-      i(1, ""),
-      i(2, ""),
-      rep(1),
+      i(1, "main()"),
     }
   )
 )
 
-cs( -- latex beginend regex env snippet
-  { trig = "begin([%w_]+)", regTrig = true, hidden = true },
+cs(
+  "docstring",
   fmt(
     [[
-  \begin{{{}}}
-    {}
-  \end{{{}}}
+  """
+  {}
+
+  Inputs:
+  -------
+  - {}
+
+  Returns:
+  --------
+  - {}
+  """
     ]], {
-      d(1, function(_, snip)
-        return sn(1, i(1, snip.captures[1]))
-      end),
-      i(2, ""),
-      rep(1),
+      i(1, "description"),
+      i(2, "input"),
+      i(3, "return")
     }
   )
 )
-
-cs( -- latex equation(*) env snippet
-  "eqn",
-  fmt(
-    [[
-  \begin{{{}}}
-    {}
-  \end{{{}}}
-    ]], {
-      c(1, {t"equation", t"equation*"}),
-      i(2, ""),
-      rep(1),
-    }
-  )
-)
-
-cs( -- latex align(*) env snippet
-  "align",
-  fmt(
-    [[
-  \begin{{{}}}
-    {}
-  \end{{{}}}
-    ]], {
-      c(1, {t"align", t"align*"}),
-      i(2, ""),
-      rep(1),
-    }
-  )
-)
-
-
--- Fonts --
-
--- -- Math -- 
--- cs( -- latex \frac snippet
---   "frac",
---   fmt(
---     [[
---   \frac{{{}}}{{{}}}
---     ]], { 
---       i(1, ""),
---       i(2, ""),
---     }
---   ),
---   "ff"
--- )
 
 -- End Refactoring --
-
 return snippets, autosnippets

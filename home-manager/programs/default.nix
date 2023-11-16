@@ -6,9 +6,10 @@
     ./direnv.nix
     ./firefox
     ./fish.nix
-    ./nushell.nix
+    ./nushell
     ./git.nix
     ./glow
+    ./lf.nix
     ./nvim
     # ./nvim_bayforest.nix
     # ./nvim_barebones.nix
@@ -22,6 +23,7 @@
     # ./vim.nix
     # ./vscode.nix
     ./xdg.nix
+    ./zoxide.nix
   ]; 
 
   # Add stuff for your user as you see fit:
@@ -47,9 +49,12 @@
     google-chrome
     # gtg
     helix
+    hledger
+    hledger-ui
+    hledger-web
     ipe
     just
-    mailspring
+    # mailspring
     manix
     marksman
     neofetch

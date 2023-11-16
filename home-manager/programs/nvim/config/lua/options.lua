@@ -16,7 +16,8 @@ g.maplocalleader = ","
 --   vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
 --   -- vim.g.jukit_highlight_markers = 0
 -- end
-vim.cmd.colorscheme("dracula")
+-- vim.cmd.colorscheme("dracula")
+vim.cmd[[colorscheme tokyonight]]
 -- ColorMyPencils()
 
 vim.scriptencoding = 'utf-8'

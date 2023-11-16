@@ -16,7 +16,7 @@ require("plugins.icon-picker")
 require("plugins.glow")
 -- require("plugins.neoclip")
 require("plugins.spectre")
-
+require("plugins.neogit")
 -- require("plugins.oil")
 -- require("plugins.alpha")
 --require("plugins.autopairs")

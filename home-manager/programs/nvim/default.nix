@@ -1,6 +1,15 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   python-debug = pkgs.python3.withPackages (p: with p; [ debugpy ]);
+  fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
+    pname = "${lib.strings.sanitizeDerivationName repo}";
+    version = ref;
+    src = builtins.fetchGit {
+      url = "https://github.com/${repo}.git";
+      ref = ref;
+      rev = rev;
+    };
+  };
 in
 {
   programs.neovim = {
@@ -40,10 +49,12 @@ in
        nui-nvim
        nvim-cmp
        nvim-lspconfig
+       # nvim-nu
        nvim-spectre
        nvim-treesitter-textobjects
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
+       # null-ls-nvim
        plenary-nvim
        searchbox-nvim
        telescope-frecency-nvim
@@ -58,6 +69,7 @@ in
        vim-wakatime
        vimtex
        which-key-nvim
+       (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
      ] ++ (with pkgs.vimExtraPlugins; [
        lsp-zero-nvim
        nvim-colorizer-lua
@@ -87,8 +99,8 @@ in
      ];
   };
 
-   # xdg.configFile.nvim = {
-   #   source = ./config;
-   #   recursive = true;
-   # };
+   xdg.configFile.nvim = {
+     source = ./config;
+     recursive = true;
+   };
 }
