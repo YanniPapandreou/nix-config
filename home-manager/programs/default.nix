@@ -67,9 +67,6 @@
     signal-desktop
     slack
     stow
-    tectonic
-    texlive.combined.scheme-full
-    texlab
     thunderbird
     vlc
     wl-clipboard
