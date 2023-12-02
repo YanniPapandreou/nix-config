@@ -97,3 +97,4 @@ bind("n", "<leader>uc", function() Toggle("conceallevel", false, {0, concealleve
 --imap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
 --smap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
 --]])
+vim.cmd([[:tnoremap <Esc> <C-\><C-n>]])

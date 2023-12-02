@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  python-debug = pkgs.python3.withPackages (p: with p; [ debugpy ]);
+  # python-debug = pkgs.python3.withPackages (p: with p; [ debugpy ]);
   fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
@@ -35,6 +35,7 @@ in
        comment-nvim
        dracula-nvim
        dressing-nvim
+       FixCursorHold-nvim
        fidget-nvim
        gitsigns-nvim
        glow-nvim
@@ -46,16 +47,22 @@ in
        mini-nvim
        neodev-nvim
        neogit
+       neotest
+       neotest-python
        nui-nvim
        nvim-cmp
+       nvim-dap
+       nvim-dap-python
+       nvim-dap-ui
+       nvim-dap-virtual-text
        nvim-lspconfig
-       # nvim-nu
        nvim-spectre
        nvim-treesitter-textobjects
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
-       # null-ls-nvim
+       otter-nvim
        plenary-nvim
+       quarto-nvim
        searchbox-nvim
        telescope-frecency-nvim
        telescope-manix
@@ -70,6 +77,7 @@ in
        vimtex
        which-key-nvim
        (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
+       (fromGitHub "c0ec78ef10ba01ab841b3e870421c33b1bbd6292" "main" "milanglacier/yarepl.nvim")
      ] ++ (with pkgs.vimExtraPlugins; [
        lsp-zero-nvim
        nvim-colorizer-lua
@@ -90,7 +98,7 @@ in
        statix
        # Python
        pyright
-       python-debug
+       # python-debug
        black
        # latex
        texlab
@@ -99,8 +107,8 @@ in
      ];
   };
 
-   xdg.configFile.nvim = {
-     source = ./config;
-     recursive = true;
-   };
+   # xdg.configFile.nvim = {
+   #   source = ./config;
+   #   recursive = true;
+   # };
 }

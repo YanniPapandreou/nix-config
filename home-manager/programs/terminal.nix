@@ -27,7 +27,15 @@
     };
     fzf = {
       enable = true;
-      enableFishIntegration = false;
+      # enableFishIntegration = false;
+      package = pkgs.fzf.overrideAttrs (final: prev: {
+          postInstall = (prev.postInstall or "") + ''
+            cat << EOF > $out/share/fish/vendor_conf.d/load-fzf-key-bindings.fish
+              status is-interactive; or exit 0
+              fzf_key_bindings
+            EOF
+          '';
+      });
     };
     lazygit.enable = true;
 
@@ -44,6 +52,9 @@
       };
       keybindings = {
         "kitty_mod+e" = "kitten hints";
+        # "ctrl+shift+enter" = "no_op";
+        # "shift+enter" = "send_text all \x1b[13;2u";
+        # "ctrl+enter" = "send_text all \x1b[13;5u";
       };
       settings = {
         bold_font = "Fira Code Bold Nerd Font Complete";

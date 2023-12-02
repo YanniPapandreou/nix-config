@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let
   my-python-packages = ps: with ps; [
+    debugpy
     ipython
     jsonpickle
     ptpython
@@ -9,16 +10,11 @@ let
     pympler
     python-lsp-server
     pyyaml
-    rich
     requests
+    rich
     setuptools
     ward
     wheel
-    # nwg-panel deps
-    # dasbus
-    # i3ipc
-    # netifaces
-    # psutil
   ];
 in
 {
