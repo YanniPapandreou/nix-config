@@ -33,6 +33,7 @@
     #ntfs3g
     #swaynotificationcenter
     brightnessctl
+    brave
     cachix
     choose
     difftastic
@@ -45,6 +46,7 @@
     gh
     # glib
     # gnome.eog
+    gnome.gnome-boxes
     gnome.gnome-tweaks
     google-chrome
     # gtg

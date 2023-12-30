@@ -4,12 +4,13 @@
   imports = [
     ../programs/dunst
     ../programs/gammastep.nix
-    ../programs/gtklock
+    # ../programs/gtklock
     ../programs/network-manager-dmenu
     ../programs/obs-studio.nix
     ../programs/rofi
     ../programs/waybar
     ../programs/swappy
+    ../programs/swaylock
     # ../programs/eww
   ];
 

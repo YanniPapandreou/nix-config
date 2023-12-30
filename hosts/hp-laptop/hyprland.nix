@@ -13,6 +13,7 @@
 
   security.polkit.enable = true;
   security.pam.services.gtklock = {};
+  security.pam.services.swaylock = {};
 
   xdg.portal = {
     enable = true;
