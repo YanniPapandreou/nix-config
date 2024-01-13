@@ -10,7 +10,7 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
-    
+
     # Import home-manager's NixOS module
     inputs.home-manager.nixosModules.home-manager
 
@@ -89,8 +89,8 @@
   };
 
   # Set your time zone.
-  # time.timeZone = "Europe/London";
-  time.timeZone = "Asia/Nicosia";
+  time.timeZone = "Europe/London";
+  # time.timeZone = "Asia/Nicosia";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -110,6 +110,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.luks.devices."luks-ab614ac9-9747-4ef5-afb9-9a6da7ff4599".device = "/dev/disk/by-uuid/ab614ac9-9747-4ef5-afb9-9a6da7ff4599";
 
   # Configure keymap in X11
   services.xserver = {
@@ -121,19 +122,10 @@
   # Configure console keymap
   console.keyMap = "uk";
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     yanni = {
-      # TODO: You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
-      initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
       description = "Yanni Papandreou";
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
 
       shell = pkgs.fish;
@@ -155,8 +147,8 @@
 
   programs.fish.enable = true;
 
-  # enable sound with pipewire
   # Enable sound with pipewire.
+  # FIXME: might set this to true as new installed config had it as true
   sound.enable = false;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -171,6 +163,9 @@
   };
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Docker
   virtualisation.docker.enable = true;
@@ -206,5 +201,6 @@
   };
   
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  #system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

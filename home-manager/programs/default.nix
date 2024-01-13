@@ -4,12 +4,12 @@
     ./atuin.nix 
     ./bash.nix
     ./direnv.nix
-    ./firefox
+    # ./firefox
     ./fish.nix
     ./nushell
     ./git.nix
     ./glow
-    ./lf.nix
+    ./lf
     ./nvim
     # ./nvim_bayforest.nix
     # ./nvim_barebones.nix
@@ -24,7 +24,7 @@
     # ./vscode.nix
     ./xdg.nix
     ./zoxide.nix
-  ]; 
+  ];
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
@@ -61,7 +61,7 @@
     marksman
     neofetch
     networkmanagerapplet
-    obsidian
+    # obsidian
     pamixer
     pavucontrol
     remmina

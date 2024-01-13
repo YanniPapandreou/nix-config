@@ -23,15 +23,15 @@
     eww-wayland
     gnome.eog
     gnome.gnome-disk-utility
-    gnome.nautilus
     grim
+    killall
     libsForQt5.qt5.qtwayland
     mpv
     polkit_gnome
     qt6.qtwayland
     slurp
     swaybg
-    killall
+    xfce.thunar
     # nwg-panel and dependencies
     # nwg-panel
     # bluez
