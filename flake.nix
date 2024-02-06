@@ -9,7 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
     # stylix.url = "github:danth/stylix";

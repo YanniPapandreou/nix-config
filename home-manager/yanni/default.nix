@@ -7,7 +7,7 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-    inputs.hyprland.homeManagerModules.default {wayland.windowManager.hyprland.enable = true;}
+    # inputs.hyprland.homeManagerModules.default {wayland.windowManager.hyprland.enable = true;}
     # inputs.stylix.homeManagerModules.stylix
     ../hyprland
 
