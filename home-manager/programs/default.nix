@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./atuin.nix 
+    ./atuin.nix
     ./bash.nix
     ./direnv.nix
     # ./firefox
@@ -15,6 +15,7 @@
     # ./nvim_barebones.nix
     ./python.nix
     ./ranger
+    ./rofi
     ./sioyek.nix
     ./starship.nix
     ./terminal.nix
@@ -35,6 +36,7 @@
     brightnessctl
     brave
     cachix
+    calibre
     choose
     difftastic
     discord
@@ -42,12 +44,12 @@
     exercism
     fd
     fragments
-    frogmouth
+    # frogmouth
     gh
     # glib
     # gnome.eog
     gnome.gnome-boxes
-    gnome.gnome-tweaks
+    # gnome.gnome-tweaks
     google-chrome
     # gtg
     helix
@@ -60,6 +62,7 @@
     manix
     marksman
     neofetch
+    neovide
     networkmanagerapplet
     # obsidian
     pamixer
@@ -69,6 +72,7 @@
     signal-desktop
     slack
     stow
+    # texlive.combined.scheme-full
     thunderbird
     vlc
     wl-clipboard

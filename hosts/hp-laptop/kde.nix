@@ -6,4 +6,10 @@
 
   services.xserver.displayManager.defaultSession = "plasmawayland";
   programs.dconf.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.plasma-browser-integration
+  ];
+
+  # programs.kdeconnect.enable = true;
 }

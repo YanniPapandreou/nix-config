@@ -73,6 +73,7 @@ in
        tokyonight-nvim
        trouble-nvim
        undotree
+       vim-beancount
        vim-wakatime
        vimtex
        which-key-nvim

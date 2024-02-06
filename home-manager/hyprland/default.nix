@@ -2,6 +2,7 @@
 {
 
   imports = [
+    ../programs/ags.nix
     ../programs/dunst
     ../programs/gammastep.nix
     # ../programs/gtklock
@@ -27,11 +28,14 @@
     killall
     libsForQt5.qt5.qtwayland
     mpv
+    nwg-displays
     polkit_gnome
     qt6.qtwayland
     slurp
     swaybg
     xfce.thunar
+    xfce.thunar-archive-plugin
+    wlr-randr
     # nwg-panel and dependencies
     # nwg-panel
     # bluez

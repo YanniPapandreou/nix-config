@@ -10,7 +10,7 @@
       "application/xhtml+xml" = ["brave.desktop"];
       "text/html" = ["brave.desktop"];
       "x-scheme-handler/about" = ["brave.desktop"];
-      "x-scheme-handler/chrome" = ["brave.desktop"];
+      "x-scheme-handler/brave" = ["brave.desktop"];
       "x-scheme-handler/ftp" = ["brave.desktop"];
       "x-scheme-handler/http" = ["brave.desktop"];
       "x-scheme-handler/https" = ["brave.desktop"];
@@ -25,7 +25,7 @@
     #   "application/xhtml+xml" = ["firefox.desktop"];
     #   "text/html" = ["firefox.desktop"];
     #   "x-scheme-handler/about" = ["firefox.desktop"];
-    #   "x-scheme-handler/chrome" = ["firefox.desktop"];
+    #   "x-scheme-handler/brave" = ["firefox.desktop"];
     #   "x-scheme-handler/ftp" = ["firefox.desktop"];
     #   "x-scheme-handler/http" = ["firefox.desktop"];
     #   "x-scheme-handler/https" = ["firefox.desktop"];

@@ -1,10 +1,13 @@
 { pkgs, ... }:
+let
+  theme-name = "Dracula";
+in
 {
   gtk = {
     enable = true;
 
     theme = {
-      name = "Dracula";
+      name = theme-name;
     };
 
     iconTheme = {
@@ -13,20 +16,21 @@
 
     cursorTheme = {
       name = "BreezeX-Light";
+      size = 24;
     };
 
     gtk3.extraConfig = {
-      Settings = ''
+      settings = ''
         gtk-application-prefer-dark-theme=1
       '';
     };
 
     gtk4.extraConfig = {
-      Settings = ''
+      settings = ''
         gtk-application-prefer-dark-theme=1
       '';
     };
   };
 
-  home.sessionVariables.GTK_THEME = "Dracula";
+  home.sessionVariables.GTK_THEME = theme-name;
 }

@@ -21,6 +21,8 @@ in
 
   home.packages = with pkgs; [
     (python311.withPackages my-python-packages)
+    ruff
+    ruff-lsp
   ];
 
 }

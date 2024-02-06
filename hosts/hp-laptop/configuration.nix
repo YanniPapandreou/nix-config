@@ -21,7 +21,7 @@
     # ./gnome.nix
     # ./pantheon.nix
     ./networking.nix
-
+    ./steam.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
@@ -61,6 +61,7 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
+      builders-use-substitutes = true;
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
@@ -115,8 +116,10 @@
   # Configure keymap in X11
   services.xserver = {
     enable = true;
-    layout = "gb";
-    xkbVariant = "";
+    xkb = {
+      variant = "";
+      layout = "gb";
+    };
   };
 
   # Configure console keymap
@@ -126,7 +129,7 @@
     yanni = {
       isNormalUser = true;
       description = "Yanni Papandreou";
-      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "audio" ];
 
       shell = pkgs.fish;
       # shell = pkgs.nushellFull;
@@ -149,7 +152,7 @@
 
   # Enable sound with pipewire.
   # FIXME: might set this to true as new installed config had it as true
-  sound.enable = false;
+  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -159,10 +162,11 @@
     pulse.enable = true;
     wireplumber.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
   };
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  services.upower.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -199,7 +203,7 @@
       ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
     };
   };
-  
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   #system.stateVersion = "23.05";
   system.stateVersion = "23.11";

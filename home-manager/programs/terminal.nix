@@ -65,6 +65,8 @@
         initial_window_width = "80c";
         initial_window_height = "24c";
         confirm_os_window_close = "0";
+        # hide_window_decorations = "yes";
+        # wayland_titlebar_color = "#21232D";
       };
     };
 

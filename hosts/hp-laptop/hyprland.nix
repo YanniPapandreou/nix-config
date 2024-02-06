@@ -15,6 +15,11 @@
   security.pam.services.gtklock = {};
   security.pam.services.swaylock = {};
 
+  environment.systemPackages = with pkgs; [
+    kora-icon-theme
+    # adw-gtk3
+  ];
+
   xdg.portal = {
     enable = true;
     # xdgOpenUsePortal = true;

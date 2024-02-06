@@ -83,7 +83,7 @@
       "format": "{: %d/%m  %R}",
       //"format": "{: %R}",
       "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-      "on-click": "brave https://calendar.google.com/calendar/u/1/r"
+      "on-click": "brave https://calendar.google.com/calendar/u/0/r"
     },
     "backlight": {
       "device": "intel_backlight",
