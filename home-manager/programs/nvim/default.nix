@@ -26,6 +26,7 @@ in
      withNodeJs = true;
 
      plugins = with pkgs.vimPlugins; [
+       FixCursorHold-nvim
        cmp-buffer
        cmp-latex-symbols
        cmp-nvim-lsp
@@ -35,11 +36,10 @@ in
        comment-nvim
        dracula-nvim
        dressing-nvim
-       FixCursorHold-nvim
        fidget-nvim
        gitsigns-nvim
        glow-nvim
-       hmts-nvim
+       # hmts-nvim
        lspkind-nvim
        lspsaga-nvim
        luasnip
@@ -74,17 +74,19 @@ in
        trouble-nvim
        undotree
        vim-beancount
+       vim-fugitive
+       vim-nix
        vim-wakatime
        vimtex
        which-key-nvim
-       (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
-       (fromGitHub "c0ec78ef10ba01ab841b3e870421c33b1bbd6292" "main" "milanglacier/yarepl.nvim")
+       # (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
+       # (fromGitHub "c0ec78ef10ba01ab841b3e870421c33b1bbd6292" "main" "milanglacier/yarepl.nvim")
        # (fromGitHub "70703d6ce1da56a07c50ad2dadc894410b9ebe34" "harpoon2" "ThePrimeagen/harpoon")
      ] ++ (with pkgs.vimExtraPlugins; [
+       icon-picker-nvim
        lsp-zero-nvim
        nvim-colorizer-lua
        obsidian-nvim
-       icon-picker-nvim
      ]);
 
      extraPackages = with pkgs; [
@@ -95,7 +97,6 @@ in
        # TODO: switch to unstable nixpkgs and use this
        lua-language-server
        # Nix
-       rnix-lsp
        nixpkgs-fmt
        statix
        # Python

@@ -22,7 +22,7 @@
     # ./todoist.nix
     ./variables.nix
     # ./vim.nix
-    # ./vscode.nix
+    ./vscode.nix
     ./xdg.nix
     ./zoxide.nix
   ];

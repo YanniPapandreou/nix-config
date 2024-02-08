@@ -3,4 +3,5 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
+  sec-edgar-downloader = pkgs.python3Packages.callPackage ./sec-edgar-downloader { };
 }

@@ -1,35 +1,56 @@
-{
-  xdg.mimeApps = {
+let
+  browser = "brave.desktop";
+  file-manager = "org.gnome.Nautilus.desktop";
+  image-viewer = "org.gnome.Loupe.desktop";
+  pdf-viewer = "sioyek.desktop";
+  # torrent = "transmission-gtk.desktop";
+in {
+  xdg.mimeApps = rec {
     enable = true;
+    associations.added = defaultApplications;
     defaultApplications = {
-      "application/x-extension-htm" = ["brave.desktop"];
-      "application/x-extension-html" = ["brave.desktop"];
-      "application/x-extension-shtml" = ["brave.desktop"];
-      "application/x-extension-xht" = ["brave.desktop"];
-      "application/x-extension-xhtml" = ["brave.desktop"];
-      "application/xhtml+xml" = ["brave.desktop"];
-      "text/html" = ["brave.desktop"];
-      "x-scheme-handler/about" = ["brave.desktop"];
-      "x-scheme-handler/brave" = ["brave.desktop"];
-      "x-scheme-handler/ftp" = ["brave.desktop"];
-      "x-scheme-handler/http" = ["brave.desktop"];
-      "x-scheme-handler/https" = ["brave.desktop"];
-      "x-scheme-handler/unknown" = ["brave.desktop"];
+      "inode/directory" = file-manager;
+      "x-scheme-handler/http" = browser;
+      "x-scheme-handler/https" = browser;
+      "application/xhtml+xml" = browser;
+      "application/x-extension-htm" = browser;
+      "application/x-extension-html" = browser;
+      "application/x-extension-shtml" = browser;
+      "application/x-extension-xht" = browser;
+      "application/x-extension-xhtml" = browser;
+      "x-scheme-handler/about" = browser;
+      "x-scheme-handler/brave" = browser;
+      "x-scheme-handler/ftp" = browser;
+      "x-scheme-handler/unknown" = browser;
+      "text/html" = browser;
+
+      # "x-scheme-handler/magnet" = torrent;
+      "application/pdf" = pdf-viewer;
+
+      "image/jpeg" = image-viewer;
+      "image/bmp" = image-viewer;
+      "image/gif" = image-viewer;
+      "image/jpg" = image-viewer;
+      "image/pjpeg" = image-viewer;
+      "image/png" = image-viewer;
+      "image/tiff" = image-viewer;
+      "image/webp" = image-viewer;
+      "image/x-bmp" = image-viewer;
+      "image/x-gray" = image-viewer;
+      "image/x-icb" = image-viewer;
+      "image/x-ico" = image-viewer;
+      "image/x-png" = image-viewer;
+      "image/x-portable-anymap" = image-viewer;
+      "image/x-portable-bitmap" = image-viewer;
+      "image/x-portable-graymap" = image-viewer;
+      "image/x-portable-pixmap" = image-viewer;
+      "image/x-xbitmap" = image-viewer;
+      "image/x-xpixmap" = image-viewer;
+      "image/x-pcx" = image-viewer;
+      "image/svg+xml" = image-viewer;
+      "image/svg+xml-compressed" = image-viewer;
+      "image/vnd.wap.wbmp" = image-viewer;
+      "image/x-icns" = image-viewer;
     };
-    # associations.removed = {
-    #   "application/x-extension-htm" = ["firefox.desktop"];
-    #   "application/x-extension-html" = ["firefox.desktop"];
-    #   "application/x-extension-shtml" = ["firefox.desktop"];
-    #   "application/x-extension-xht" = ["firefox.desktop"];
-    #   "application/x-extension-xhtml" = ["firefox.desktop"];
-    #   "application/xhtml+xml" = ["firefox.desktop"];
-    #   "text/html" = ["firefox.desktop"];
-    #   "x-scheme-handler/about" = ["firefox.desktop"];
-    #   "x-scheme-handler/brave" = ["firefox.desktop"];
-    #   "x-scheme-handler/ftp" = ["firefox.desktop"];
-    #   "x-scheme-handler/http" = ["firefox.desktop"];
-    #   "x-scheme-handler/https" = ["firefox.desktop"];
-    #   "x-scheme-handler/unknown" = ["firefox.desktop"];
-    # };
   };
 }

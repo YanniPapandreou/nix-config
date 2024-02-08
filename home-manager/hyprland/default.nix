@@ -12,7 +12,6 @@
     ../programs/waybar
     ../programs/swappy
     ../programs/swaylock
-    # ../programs/eww
   ];
 
   wayland.windowManager.hyprland = {
@@ -22,21 +21,25 @@
 
   #xdg.configFile."hypr/keybind".source = ./keybind;
   home.packages = with pkgs; [
-    eww-wayland
     gnome.eog
+    gnome.gnome-calendar
+    gnome.gnome-clocks
     gnome.gnome-disk-utility
+    gnome.gnome-system-monitor
+    gnome.nautilus
     grim
     killall
     libsForQt5.qt5.qtwayland
+    loupe
     mpv
     nwg-displays
     polkit_gnome
     qt6.qtwayland
     slurp
     swaybg
+    wlr-randr
     xfce.thunar
     xfce.thunar-archive-plugin
-    wlr-randr
     # nwg-panel and dependencies
     # nwg-panel
     # bluez

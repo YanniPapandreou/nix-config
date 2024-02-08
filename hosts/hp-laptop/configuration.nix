@@ -1,29 +1,17 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
+{ inputs, outputs, lib, config, pkgs, ... }:
+let
+  username = "yanni";
+in
+{
 
-{ inputs, outputs, lib, config, pkgs, ... }: {
-  # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # Import home-manager's NixOS module
-    inputs.home-manager.nixosModules.home-manager
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
-    ./hyprland.nix
-    # ./kde.nix
-    # ./gnome.nix
-    # ./pantheon.nix
+    ./hardware-configuration.nix
+    ./audio.nix
+    ./locale.nix
     ./networking.nix
     ./steam.nix
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    ./hyprland.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   nixpkgs = {
@@ -32,7 +20,6 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
-      # outputs.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -67,11 +54,9 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
       substituters = [
-        # "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"
       ];
       trusted-public-keys = [
-        # "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };
@@ -89,44 +74,36 @@
     '';
   };
 
-  # Set your time zone.
-  time.timeZone = "Europe/London";
-  # time.timeZone = "Asia/Nicosia";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_GB.UTF-8";
-    LC_IDENTIFICATION = "en_GB.UTF-8";
-    LC_MEASUREMENT = "en_GB.UTF-8";
-    LC_MONETARY = "en_GB.UTF-8";
-    LC_NAME = "en_GB.UTF-8";
-    LC_NUMERIC = "en_GB.UTF-8";
-    LC_PAPER = "en_GB.UTF-8";
-    LC_TELEPHONE = "en_GB.UTF-8";
-    LC_TIME = "en_GB.UTF-8";
+  # bootloader config
+  boot = {
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 10;
+      systemd-boot.enable = true;
+    };
+    # encryption
+    initrd.luks.devices."luks-ab614ac9-9747-4ef5-afb9-9a6da7ff4599".device = "/dev/disk/by-uuid/ab614ac9-9747-4ef5-afb9-9a6da7ff4599";
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-ab614ac9-9747-4ef5-afb9-9a6da7ff4599".device = "/dev/disk/by-uuid/ab614ac9-9747-4ef5-afb9-9a6da7ff4599";
-
-  # Configure keymap in X11
-  services.xserver = {
-    enable = true;
-    xkb = {
-      variant = "";
-      layout = "gb";
+  # services
+  services = {
+    blueman.enable = true;
+    flatpak.enable = true;
+    printing.enable = true;
+    xserver = {
+      enable = true;
     };
   };
 
-  # Configure console keymap
-  console.keyMap = "uk";
+  systemd.services.NetworkManager-wait-online = {
+    serviceConfig = {
+      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+    };
+  };
 
+  # users
   users.users = {
-    yanni = {
+    ${username} = {
       isNormalUser = true;
       description = "Yanni Papandreou";
       extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "audio" ];
@@ -136,73 +113,28 @@
     };
   };
 
+  # enable home-manager to be build when running sudo nixos-rebuild --switch...
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = { inherit inputs outputs username; };
     users = {
       # Import your home-manager configuration
-      yanni = import ../../home-manager/yanni;
+      ${username} = import ../../home-manager/${username};
     };
   };
 
+  # packages and programs
   environment.systemPackages = with pkgs; [
+    nil
     vim
   ];
-
   programs.fish.enable = true;
-
-  # Enable sound with pipewire.
-  # FIXME: might set this to true as new installed config had it as true
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-  services.upower.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Docker
   virtualisation.docker.enable = true;
 
-  # Flatpak
-  services.flatpak.enable = true;
-
-  # # default apps
-  # environment.variables.XDG_CONFIG_DIRS = [ "/etc/xdg" ];
-  # environment.etc."xdg/mimeapps.list" = {
-  #   text = ''
-  #     [Default Applications]
-  #     text/html=firefox.desktop;
-  #   '';
-  # };
-  # xdg.mime.defaultApplications = {
-  #   "x-scheme-handler/http" = "firefox.desktop";
-  #   "x-scheme-handler/https" = "firefox.desktop";
-  # };
-  # xdg.mime.addedAssociations = {
-  #   "x-scheme-handler/http" = "firefox.desktop";
-  #   "x-scheme-handler/https" = "firefox.desktop";
-  # };
-  # environment.sessionVariables.DEFAULT_BROSWER = "${pkgs.firefox}/bin/firefox";
+  # hardware
+  hardware.bluetooth.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
-
-  systemd.services.NetworkManager-wait-online = {
-    serviceConfig = {
-      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
-    };
-  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   #system.stateVersion = "23.05";
