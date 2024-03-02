@@ -5,14 +5,6 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = ","
 
--- neovide options
-if g.neovide then
-  g.neovide_remember_window_size = false
-  vim.o.guifont = "FiraCode Nerd Font Mono:h11"
-end
-
-
-
 -- Themeing
 -- local ColorMyPencils = function (color)
 --   color = color or "dracula"
@@ -74,7 +66,7 @@ g.markdown_recommended_style = 0
 
 -- markdown preview settings
 g.mkdp_auto_close = 0
-g.mkdp_browser = 'brave'
+g.mkdp_browser = 'firefox'
 
 -- conceal settings - Neorg
 -- opt.conceallevel = 3

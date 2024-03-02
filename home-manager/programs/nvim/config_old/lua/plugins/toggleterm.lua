@@ -15,18 +15,18 @@ require("toggleterm").setup{
 
 -- custom terminals
 local Terminal  = require('toggleterm.terminal').Terminal
--- local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
--- function _lazygit_toggle()
---   lazygit:toggle()
--- end
+function _lazygit_toggle()
+  lazygit:toggle()
+end
 
--- vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 -- keymaps
 local bind = vim.keymap.set
 
--- bind("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", { desc = "Open Lazygit", noremap = true, silent = true})
+bind("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<cr>", { desc = "Open Lazygit", noremap = true, silent = true})
 bind("n", "<leader>th", ":ToggleTerm direction=horizontal<cr>", { desc = "Open terminal horizontally", noremap = true })
 bind("n", "<leader>tv", ":ToggleTerm direction=vertical<cr>", { desc = "Open terminal vertically", noremap = true })
 bind("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { desc = "Open terminal as floating window", noremap = true })

@@ -113,8 +113,8 @@ in
      ];
   };
 
-   # xdg.configFile.nvim = {
-   #   source = ./config;
-   #   recursive = true;
-   # };
+   xdg.configFile.nvim = {
+     source = ./config;
+     recursive = true;
+   };
 }

@@ -48,31 +48,12 @@ lsp.setup_servers({
   'texlab',
   'hls',
   'julials',
-  'marksman',
-  -- 'rnix',
-  'nil_ls',
-  'ruff_lsp'
+  'rnix'
 })
 
 -- (Optional) Configure lua language server for neovim and any other servers
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-
-lspconfig.ruff_lsp.setup({
-  on_init = function(client)
-    client.server_capabilities.hoverProvider = false
-  end,
-})
-
-lspconfig.nil_ls.setup({
-  settings = {
-    ['nil'] = {
-      formatting = {
-        command = {"nixpkgs-fmt"},
-      }
-    }
-  }
-})
 
 lsp.setup()
 

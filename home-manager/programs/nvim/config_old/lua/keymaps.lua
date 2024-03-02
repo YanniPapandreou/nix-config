@@ -2,11 +2,6 @@
 
 local bind = vim.keymap.set
 
-if vim.g.neovide then
-  bind('n', '<C-c>', '"+y', { noremap = true, silent = true })
-  bind('n', '<C-v>', '"+p', { noremap = true, silent = true })
-end
-
 bind('n', '<C-s>', '<cmd>w<cr><esc>', { desc = "Save file" })
 bind('n', '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
 --bind('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = "Toggle Explorer" })
@@ -103,6 +98,3 @@ bind("n", "<leader>uc", function() Toggle("conceallevel", false, {0, concealleve
 --smap <silent><expr> <S-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<S-E>'
 --]])
 vim.cmd([[:tnoremap <Esc> <C-\><C-n>]])
-
-bind("n", "<C-d>", "<C-d>zz")
-bind("n", "<C-u>", "<C-u>zz")
