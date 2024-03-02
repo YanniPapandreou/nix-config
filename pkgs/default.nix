@@ -3,5 +3,6 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
+  pandantic = pkgs.python3Packages.callPackage ./pandantic { };
   sec-edgar-downloader = pkgs.python3Packages.callPackage ./sec-edgar-downloader { };
 }

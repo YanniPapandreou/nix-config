@@ -41,6 +41,7 @@
     difftastic
     discord
     element-desktop
+    elvish
     exercism
     fd
     fragments
@@ -53,6 +54,7 @@
     google-chrome
     # gtg
     helix
+    hilbish
     hledger
     hledger-ui
     hledger-web
@@ -61,12 +63,14 @@
     # mailspring
     manix
     marksman
+    nb
     neofetch
     neovide
     networkmanagerapplet
     # obsidian
     pamixer
     pavucontrol
+    pfetch
     remmina
     ripgrep
     signal-desktop
@@ -75,8 +79,11 @@
     # texlive.combined.scheme-full
     thunderbird
     vlc
+    wezterm
     wl-clipboard
     xdg-utils
+    xonsh
+    zola
     zotero
   ];
 

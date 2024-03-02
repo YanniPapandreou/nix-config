@@ -28,6 +28,7 @@
     gnome.gnome-system-monitor
     gnome.nautilus
     grim
+    hyprpicker
     killall
     libsForQt5.qt5.qtwayland
     loupe

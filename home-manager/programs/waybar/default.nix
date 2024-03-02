@@ -12,9 +12,9 @@
     package = pkgs.waybar;
   };
 
-  xdg.configFile.waybar = {
-    source = ./config; 
-    recursive = true;
-  };
+  # xdg.configFile.waybar = {
+  #   source = ./config; 
+  #   recursive = true;
+  # };
 
 }

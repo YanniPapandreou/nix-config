@@ -11,6 +11,7 @@ in
     ./networking.nix
     ./steam.nix
     ./hyprland.nix
+    # ./kde.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
