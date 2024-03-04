@@ -103,11 +103,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    enable = true;
+  services.xserver.xkb = {
     layout = "gb";
-    xkbVariant = "";
+    variant = "";
   };
+
+
 
   # Configure console keymap
   console.keyMap = "uk";
@@ -139,7 +140,7 @@
       isNormalUser = true;
       description = "Melissa Economou";
       openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connectnil
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "networkmanager" ];
@@ -158,6 +159,11 @@
     };
   };
 
+  # packages and programs
+  environment.systemPackages = with pkgs; [
+    nil
+    vim
+  ];
   programs.fish.enable = true;
   
   services.xserver.displayManager.gdm.enable = true;
