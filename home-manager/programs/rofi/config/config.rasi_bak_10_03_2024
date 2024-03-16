@@ -1,0 +1,31 @@
+configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
+}
+
+@theme "android_notification"
+
+/* Insert theme modifcations after this */
+
+
+element {
+  orientation: horizontal;
+  children: [ element-icon, element-text ];
+  spacing: 5px;
+}
+
+element-icon {
+    size: 1.25em;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+#window {
+    background-color: #161616;
+    border:           3;
+    border-radius:    6;
+    border-color:     #2FC6E8;
+    padding:          15;
+}

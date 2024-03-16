@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  gtk-theme = "Dracula";
-  cursor-theme = "BreezeX-Light";
+  # gtk-theme = "Dracula";
+  # cursor-theme = "BreezeX-Light";
   nerdfonts = (pkgs.nerdfonts.override { fonts = [
     "Ubuntu"
     "UbuntuMono"
@@ -28,10 +28,10 @@ in
       source-code-pro
       nerdfonts
     ];
-    sessionVariables = {
-      XCURSOR_THEME = cursor-theme;
-      XCURSOR_SIZE = "24";
-    };
+    # sessionVariables = {
+    #   XCURSOR_THEME = cursor-theme;
+    #   XCURSOR_SIZE = "24";
+    # };
     # pointerCursor = {
     #   package = cursor-package;
     #   name = cursor-theme;
@@ -47,44 +47,44 @@ in
         recursive = true;
         source = "${nerdfonts}/share/fonts/truetype/NerdFonts";
       };
-      ".config/gtk-4.0/gtk.css" = {
-        text = ''
-          window.messagedialog .response-area > button,
-          window.dialog.message .dialog-action-area > button,
-          .background.csd{
-            border-radius: 0;
-          }
-        '';
-      };
+      # ".config/gtk-4.0/gtk.css" = {
+      #   text = ''
+      #     window.messagedialog .response-area > button,
+      #     window.dialog.message .dialog-action-area > button,
+      #     .background.csd{
+      #       border-radius: 0;
+      #     }
+      #   '';
+      # };
     };
   };
 
-  gtk = {
-    enable = true;
-    font.name = "Ubuntu Nerd Font";
-    theme.name = gtk-theme;
-    cursorTheme = {
-      name = cursor-theme;
-      size = 24;
-    };
-    iconTheme.name = "kora";
+  # gtk = {
+  #   enable = true;
+  #   font.name = "Ubuntu Nerd Font";
+  #   theme.name = gtk-theme;
+  #   cursorTheme = {
+  #     name = cursor-theme;
+  #     size = 24;
+  #   };
+  #   iconTheme.name = "kora";
+  #
+  #   gtk3.extraConfig = {
+  #     settings = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
+  #
+  #   gtk4.extraConfig = {
+  #     settings = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
+  # };
 
-    gtk3.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
-
-  home.sessionVariables.GTK_THEME = gtk-theme;
-  qt = {
-    enable = true;
-    platformTheme = "kde";
-  };
+  # home.sessionVariables.GTK_THEME = gtk-theme;
+  # qt = {
+  #   enable = true;
+  #   platformTheme = "kde";
+  # };
 }

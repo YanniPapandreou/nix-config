@@ -1,33 +1,11 @@
-/*
-
-Theme based on Oxocarbon dark
-
-scheme: "Oxocarbon Dark"
-author: "shaunsingh/IBM"
-base00: "#161616"
-base01: "#262626"
-base02: "#393939"
-base03: "#525252"
-base04: "#dde1e6"
-base05: "#f2f4f8"
-base06: "#ffffff"
-base07: "#08bdba"
-base08: "#3ddbd9"
-base09: "#78a9ff"
-base0A: "#ee5396"
-base0B: "#33b1ff"
-base0C: "#ff7eb6"
-base0D: "#42be65"
-base0E: "#be95ff"
-base0F: "#82cfff"
-*/
+/*Dracula theme based on the Purple official rofi theme*/
 
 * {
     font: "Jetbrains Mono 12";
     foreground: #f8f8f2;
-    background-color: #161616;
-    active-background: #525252;
-    urgent-background: #FF7EB6;
+    background-color: #282a36;
+    active-background: #6272a4;
+    urgent-background: #ff5555;
     urgent-foreground: #282a36;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
@@ -35,7 +13,6 @@ base0F: "#82cfff"
     separatorcolor: @active-background;
     bordercolor: @active-background;
 }
-
 
 configuration {
     show-icons:      true;
@@ -74,7 +51,6 @@ configuration {
 #element {
     border:  0;
     padding: 3px ;
-    spacing: 10px;
 }
 #element.normal.normal {
     background-color: @background-color;
@@ -155,8 +131,4 @@ configuration {
 element-text, element-icon {
     background-color: inherit;
     text-color: inherit;
-}
-
-element-text {
-  vertical-align: 0.5;
 }

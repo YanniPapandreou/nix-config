@@ -61,6 +61,7 @@ in
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
        otter-nvim
+       oxocarbon-nvim
        plenary-nvim
        quarto-nvim
        searchbox-nvim

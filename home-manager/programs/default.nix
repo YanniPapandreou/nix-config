@@ -83,6 +83,7 @@
     wl-clipboard
     xdg-utils
     xonsh
+    zellij
     zola
     zotero
   ];

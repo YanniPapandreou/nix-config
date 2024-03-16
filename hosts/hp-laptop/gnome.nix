@@ -4,6 +4,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  programs.dconf.enable = true;
+  # services.dbus.packages = [ pkgs.dconf ]; 
+
   # environment.gnome.excludePackages = (with pkgs; [
   #   gnome-photos
   #   gnome-tour
@@ -25,6 +28,8 @@
   environment.systemPackages = (with pkgs; [
     eyedropper
     kora-icon-theme
+    gnome.dconf-editor
+    gnome.gnome-tweaks
   ]) ++ (with pkgs.gnomeExtensions; [
     appindicator
     arcmenu

@@ -21,7 +21,7 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "dracula";
+        # color_theme = "dracula";
         update_ms = 900;
       };
     };
@@ -45,11 +45,11 @@
 
     kitty = {
       enable = true;
-      theme = "Dracula";
-      font = {
-        name = "FiraCode Nerd Font";
-        size = 11.0;
-      };
+      # theme = "Dracula";
+      # font = {
+      #   name = "FiraCode Nerd Font";
+      #   size = 11.0;
+      # };
       keybindings = {
         "kitty_mod+e" = "kitten hints";
         # "ctrl+shift+enter" = "no_op";
@@ -57,10 +57,10 @@
         # "ctrl+enter" = "send_text all \x1b[13;5u";
       };
       settings = {
-        bold_font = "Fira Code Bold Nerd Font Complete";
-        italic_font = "auto";
-        bold_italic_font = "auto";
-        background_opacity = "0.95";
+        # bold_font = "Fira Code Bold Nerd Font Complete";
+        # italic_font = "auto";
+        # bold_italic_font = "auto";
+        # background_opacity = "0.95";
         remember_window_size = "no";
         initial_window_width = "80c";
         initial_window_height = "24c";

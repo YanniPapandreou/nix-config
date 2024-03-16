@@ -25,8 +25,15 @@ end
 --   -- vim.g.jukit_highlight_markers = 0
 -- end
 -- vim.cmd.colorscheme("dracula")
-vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd[[colorscheme tokyonight]]
 -- ColorMyPencils()
+vim.opt.background = "dark" -- set this to dark or light
+vim.cmd.colorscheme "oxocarbon"
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 
 vim.scriptencoding = 'utf-8'
 opt.encoding = 'utf-8'

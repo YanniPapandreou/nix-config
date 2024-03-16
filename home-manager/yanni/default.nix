@@ -10,14 +10,17 @@ in
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
+    inputs.stylix.homeManagerModules.stylix
     ../hyprland
 
     # You can also split up your configuration and import pieces of it here:
-    ../defaultApps.nix
+    # ../defaultApps.nix
     ../programs
-    ../themes.nix
-    # ../stylix.nix
     # ../fonts.nix
+    # ../themes.nix
+    ../stylix.nix
+    ../fonts.nix
+    # ../gnome.nix
   ];
 
   nixpkgs = {

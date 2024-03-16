@@ -1,6 +1,5 @@
 {
   "layer": "top",
-    //"output": "HDMI-A-1",
     "position": "top",
     "mod": "dock",
     "exclusive": true,
@@ -14,11 +13,8 @@
     "modules-center": ["clock", "custom/spotify"],
     "modules-right": [
       "tray",
-      //"custom/language",
-      //"custom/updates",
       "cpu",
       "battery",
-      //"network",
       "backlight",
       "pulseaudio",
       "pulseaudio#microphone"
@@ -26,38 +22,6 @@
     "hyprland/workspaces": {
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1",
-    },
-    "hyprland/window": {
-      "format": "{icon}",
-      "max-length": 200,
-      "separate-outputs": true
-    },
-    "wlr/workspaces": {
-      "on-scroll-up": "hyprctl dispatch workspace r-1",
-      "on-scroll-down": "hyprctl dispatch workspace r+1",
-      "all-outputs": true,
-      "on-click": "activate",
-      //"format": "{icon}",
-      "persistent_workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-        "6": [],
-        "7": [],
-        "8": [],
-        "9": [],
-        "10": []
-      }
-    },
-    "custom/weather" : {
-      "tooltip" : true,
-      "format" : "{}",
-      "on-click": "firefox https://wttr.in/",
-      "interval" : 30,
-      "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-      "return-type" : "json"
     },
     "custom/spotify": {
         "interval": 1,

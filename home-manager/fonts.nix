@@ -1,4 +1,15 @@
 { pkgs, ... }:
+let
+  nerdfonts = (pkgs.nerdfonts.override { fonts = [
+    "CascadiaCode"
+    "FantasqueSansMono"
+    "FiraCode"
+    "Mononoki"
+    "Noto"
+    "Ubuntu"
+    "UbuntuMono"
+  ]; });
+in
 {
   # to allow configuring fonts
   fonts.fontconfig.enable = true;
@@ -11,11 +22,6 @@
     hicolor-icon-theme
     jetbrains-mono
     source-code-pro
-    (nerdfonts.override {
-       fonts = [
-         "FiraCode"
-         "Noto"
-       ];
-     })
+    nerdfonts
   ];
 }
