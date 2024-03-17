@@ -24,6 +24,7 @@
     # ./vim.nix
     ./vscode.nix
     ./xdg.nix
+    ./wezterm
     ./zoxide.nix
   ];
 
@@ -79,7 +80,6 @@
     # texlive.combined.scheme-full
     thunderbird
     vlc
-    wezterm
     wl-clipboard
     xdg-utils
     xonsh
