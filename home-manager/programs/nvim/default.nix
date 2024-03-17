@@ -64,7 +64,7 @@ in
        oxocarbon-nvim
        plenary-nvim
        quarto-nvim
-       searchbox-nvim
+       # searchbox-nvim
        telescope-frecency-nvim
        telescope-manix
        telescope-nvim
