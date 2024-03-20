@@ -10,9 +10,9 @@ in
     ./locale.nix
     ./networking.nix
     ./steam.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     # ./kde.nix
-    # ./gnome.nix
+    ./gnome.nix
     # ./cosmic.nix
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -58,11 +58,11 @@ in
       auto-optimise-store = true;
       substituters = [
         "https://nix-community.cachix.org"
-        # "https://cosmic.cachix.org/"
+        "https://cosmic.cachix.org/"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        # "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+        "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       ];
     };
 
@@ -92,7 +92,6 @@ in
 
   # services
   services = {
-    blueman.enable = true;
     flatpak.enable = true;
     printing.enable = true;
     xserver = {

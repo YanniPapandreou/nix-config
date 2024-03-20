@@ -26,6 +26,7 @@
     ./xdg.nix
     ./wezterm
     ./zoxide.nix
+    ./zellij.nix
   ];
 
   # Add stuff for your user as you see fit:
@@ -80,10 +81,10 @@
     # texlive.combined.scheme-full
     thunderbird
     vlc
+    # warp-terminal
     wl-clipboard
     xdg-utils
     xonsh
-    zellij
     zola
     zotero
   ];

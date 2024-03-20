@@ -9,6 +9,7 @@ in
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services = {
+    blueman.enable = true;
     gvfs.enable = true;
     devmon.enable = true;
     udisks2.enable = true;

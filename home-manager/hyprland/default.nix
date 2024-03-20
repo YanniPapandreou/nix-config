@@ -29,6 +29,7 @@
     gnome.nautilus
     grim
     hyprpicker
+    hyprpaper
     killall
     libsForQt5.qt5.qtwayland
     loupe
@@ -39,8 +40,8 @@
     slurp
     swaybg
     wlr-randr
-    xfce.thunar
-    xfce.thunar-archive-plugin
+    # xfce.thunar
+    # xfce.thunar-archive-plugin
     # nwg-panel and dependencies
     # nwg-panel
     # bluez

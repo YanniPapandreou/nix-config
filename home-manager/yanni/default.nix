@@ -11,7 +11,7 @@ in
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
     inputs.stylix.homeManagerModules.stylix
-    ../hyprland
+    # ../hyprland
 
     # You can also split up your configuration and import pieces of it here:
     # ../defaultApps.nix
@@ -73,10 +73,10 @@ in
     "file://${homeDirectory}/Pictures"
     "file://${homeDirectory}/Videos"
     "file://${homeDirectory}/Downloads"
-    "file://${homeDirectory}/Desktop"
-    "file://${homeDirectory}/Projects"
-    "file://${homeDirectory}/.config Config"
-    "file://${homeDirectory}/.local/share Local"
+    "file://${homeDirectory}/nix-config Nix Config"
+    "file://${homeDirectory}/projects Projects"
+    "file://${homeDirectory}/.config Dotfiles"
+    "file://${homeDirectory}/.local/share Local (Share)"
   ];
 
   programs.password-store = {

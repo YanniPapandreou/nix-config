@@ -5,53 +5,64 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   programs.dconf.enable = true;
-  # services.dbus.packages = [ pkgs.dconf ]; 
+  # services.dbus.packages = [ pkgs.dconf ];
 
-  # environment.gnome.excludePackages = (with pkgs; [
-  #   gnome-photos
-  #   gnome-tour
-  # ]) ++ (with pkgs.gnome; [
-  #   gnome-music
-  #   gnome-terminal
-  #   gedit
-  #   epiphany
-  #   geary
-  #   evince
-  #   totem
-  #   tali
-  #   iagno
-  #   hitori
-  #   atomix
-  # ]);
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+    gedit
+  ]) ++ (with pkgs.gnome; [
+    gnome-music
+    gnome-terminal
+    geary
+    epiphany
+    geary
+    # evince
+    # totem
+    tali
+    iagno
+    hitori
+    atomix
+  ]);
 
   # gnome extensions
   environment.systemPackages = (with pkgs; [
     eyedropper
+    gnome-photos
     kora-icon-theme
     gnome.dconf-editor
+    gnome.eog
     gnome.gnome-tweaks
+    gnome.zenity
   ]) ++ (with pkgs.gnomeExtensions; [
     appindicator
     arcmenu
     caffeine
+    gnome-40-ui-improvements
+    gsconnect
+    pano
+    switcher
+    unblank
+    vitals
+    wsp-windows-search-provider
     # dash-to-dock
     # dash-to-panel
     # forge
-    gnome-40-ui-improvements
     # gsconnect
     # hide-activities-button
     # just-perfection
-    #material-shell
-    pano
     # pop-shell
     # remove-app-menu
     # status-area-horizontal-spacing
-    # switcher
     # tray-icons-reloaded
-    vitals
+    #material-shell
   ]);
 
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
 
   # xdg.portal.wlr.enable = true;
 

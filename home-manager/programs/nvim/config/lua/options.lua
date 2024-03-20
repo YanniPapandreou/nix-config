@@ -11,8 +11,6 @@ if g.neovide then
   vim.o.guifont = "FiraCode Nerd Font Mono:h11"
 end
 
-
-
 -- Themeing
 -- local ColorMyPencils = function (color)
 --   color = color or "dracula"

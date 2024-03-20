@@ -7,7 +7,7 @@ if vim.g.neovide then
   bind('n', '<C-v>', '"+p', { noremap = true, silent = true })
 end
 
-bind('n', '<leader>s', '<cmd>w<cr><esc>', { desc = "Save file" })
+bind('n', '<C-s>', '<cmd>w<cr><esc>', { desc = "Save file" })
 bind('n', '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
 --bind('n', '<leader>e', '<cmd>Neotree toggle<cr>', { desc = "Toggle Explorer" })
 

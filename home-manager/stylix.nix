@@ -8,8 +8,8 @@ let
   font-size = 11;
 in
 {
-  # stylix.image = ../resources/wallpapers/nix-wallpaper-simple-dark-gray.png;
-  stylix.image = ../resources/wallpapers/nix-wallpaper-dracula.png;
+  stylix.image = ../resources/wallpapers/nix-wallpaper-simple-dark-gray.png;
+  # stylix.image = ../resources/wallpapers/nix-wallpaper-dracula.png;
   # stylix.image = ../resources/wallpapers/retro_galaxies.png;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
