@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ../programs/ags.nix
+    # ../programs/ags.nix
     ../programs/dunst
     ../programs/gammastep.nix
     # ../programs/gtklock

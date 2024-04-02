@@ -13,7 +13,7 @@ let
     requests
     rich
     setuptools
-    ward
+    # ward
     wheel
     pkgs.sec-edgar-downloader
   ];

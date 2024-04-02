@@ -51,5 +51,15 @@
       # fzf_configure_bindings
       set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/.config/ /home/yanni/Documents/
       '';
+
+    functions = {
+      # flakify = ''
+      #   function flakify
+      #     if test ! -e flake.nix
+      #       nix flake new -t "github:numtide/devshell" .
+      #     end
+      #   end
+      # '';
+    };
   };
 }

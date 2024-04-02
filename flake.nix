@@ -11,7 +11,7 @@
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
-    ags.url = "github:Aylur/ags";
+    # ags.url = "github:Aylur/ags";
     stylix.url = "github:danth/stylix";
   };
 

@@ -5,7 +5,7 @@ let
   # theme = "tokyo-night-storm";
   theme = "oxocarbon-dark";
   opacity = 0.95;
-  font-size = 11;
+  font-size = 12;
 in
 {
   stylix.image = ../resources/wallpapers/nix-wallpaper-simple-dark-gray.png;
@@ -15,7 +15,6 @@ in
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
   stylix.targets.kitty.enable = true;
   stylix.targets.rofi.enable = false;
-  stylix.targets.wezterm.enable = false;
   stylix.targets.waybar.enable = false;
   stylix.targets.zellij.enable = false;
   stylix.targets.nixvim = {

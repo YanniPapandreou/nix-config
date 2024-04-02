@@ -10,9 +10,9 @@ in
     ./locale.nix
     ./networking.nix
     ./steam.nix
-    # ./hyprland.nix
+    ./hyprland.nix
     # ./kde.nix
-    ./gnome.nix
+    # ./gnome.nix
     # ./cosmic.nix
     inputs.home-manager.nixosModules.home-manager
   ];

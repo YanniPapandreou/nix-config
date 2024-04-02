@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:
-let
-  ags = inputs.ags.packages.${pkgs.system}.ags;
-in
+{ pkgs, ... }:
+# let
+#   ags = inputs.ags.packages.${pkgs.system}.ags;
+# in
 {
 
   programs.hyprland.enable = true;
@@ -34,7 +34,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-      ags
+      # ags
       kora-icon-theme
   ];
 

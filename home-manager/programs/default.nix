@@ -24,7 +24,6 @@
     # ./vim.nix
     ./vscode.nix
     ./xdg.nix
-    ./wezterm
     ./zoxide.nix
     ./zellij.nix
   ];
