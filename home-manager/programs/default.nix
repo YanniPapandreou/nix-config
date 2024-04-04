@@ -10,6 +10,7 @@
     ./git.nix
     ./glow
     ./lf
+    ./mailspring.nix
     ./nvim
     # ./nvim_bayforest.nix
     # ./nvim_barebones.nix
@@ -61,7 +62,6 @@
     hledger-web
     ipe
     just
-    # mailspring
     manix
     marksman
     nb
@@ -72,6 +72,7 @@
     pamixer
     pavucontrol
     pfetch
+    protonmail-desktop
     remmina
     ripgrep
     signal-desktop

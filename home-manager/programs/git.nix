@@ -1,7 +1,7 @@
 {
   programs.git = {
       enable = true;
-      userEmail = "nepo1y@gmail.com";
+      userEmail = "ypapandreou@proton.me";
       userName = "Yanni Papandreou";
       extraConfig = {
         color.ui = true;
