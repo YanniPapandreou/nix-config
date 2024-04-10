@@ -15,7 +15,8 @@ let
     setuptools
     # ward
     wheel
-    pkgs.sec-edgar-downloader
+    # pkgs.sec-edgar-downloader
+    # pkgs.edgartools
   ];
 in
 {
