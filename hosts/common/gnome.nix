@@ -1,6 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
-
   services = {
     xserver = {
       enable = true;
@@ -41,7 +40,6 @@
     gnome.dconf-editor
     gnome.eog
     gnome.gnome-tweaks
-    gnome.zenity
   ]) ++ (with pkgs.gnomeExtensions; [
     appindicator
     arcmenu
@@ -66,7 +64,6 @@
     # tray-icons-reloaded
     #material-shell
   ]);
-
 
   programs.kdeconnect = {
     enable = true;

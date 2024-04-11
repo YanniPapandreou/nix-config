@@ -12,7 +12,7 @@ in
     ./steam.nix
     # ./hyprland.nix
     # ./kde.nix
-    ./gnome.nix
+    ../common/gnome.nix
     # ./cosmic.nix
     inputs.home-manager.nixosModules.home-manager
   ];
