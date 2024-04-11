@@ -12,26 +12,26 @@ if g.neovide then
 end
 
 -- Themeing
--- local ColorMyPencils = function (color)
---   color = color or "dracula"
---   vim.cmd.colorscheme(color)
---
---   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
---   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---   vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
---   vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
---   -- vim.g.jukit_highlight_markers = 0
--- end
--- vim.cmd.colorscheme("dracula")
--- vim.cmd[[colorscheme tokyonight]]
--- ColorMyPencils()
-vim.opt.background = "dark" -- set this to dark or light
-vim.cmd.colorscheme "oxocarbon"
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+local ColorMyPencils = function (color)
+  color = color or "dracula"
+  vim.cmd.colorscheme(color)
 
-vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+  -- vim.g.jukit_highlight_markers = 0
+end
+-- vim.cmd.colorscheme("dracula")
+vim.cmd[[colorscheme tokyonight]]
+ColorMyPencils("tokyonight")
+-- vim.opt.background = "dark" -- set this to dark or light
+-- vim.cmd.colorscheme "oxocarbon"
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--
+-- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 
 vim.scriptencoding = 'utf-8'
 opt.encoding = 'utf-8'

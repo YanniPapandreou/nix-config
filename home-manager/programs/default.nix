@@ -66,13 +66,12 @@
     marksman
     nb
     neofetch
-    neovide
+    # neovide
     networkmanagerapplet
     # obsidian
     pamixer
     pavucontrol
     pfetch
-    protonmail-desktop
     remmina
     ripgrep
     signal-desktop

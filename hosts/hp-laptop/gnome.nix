@@ -1,11 +1,20 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+    };
+    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    #dbus.packages = [ pkgs.dconf ];
+    gnome = {
+      gnome-keyring.enable = true;
+    };
+  };
 
   programs.dconf.enable = true;
-  # services.dbus.packages = [ pkgs.dconf ];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
@@ -39,6 +48,7 @@
     caffeine
     gnome-40-ui-improvements
     gsconnect
+    media-controls
     pano
     switcher
     unblank
@@ -57,7 +67,6 @@
     #material-shell
   ]);
 
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   programs.kdeconnect = {
     enable = true;

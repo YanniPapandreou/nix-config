@@ -8,7 +8,7 @@
     # ../programs/gtklock
     ../programs/network-manager-dmenu
     ../programs/obs-studio.nix
-    ../programs/rofi
+    # ../programs/rofi
     ../programs/waybar
     ../programs/swappy
     ../programs/swaylock
