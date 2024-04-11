@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    choose
     cliphist
     gojq
     rofi-wayland
