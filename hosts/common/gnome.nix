@@ -52,8 +52,8 @@
     unblank
     vitals
     wsp-windows-search-provider
-    # dash-to-dock
-    # dash-to-panel
+    dash-to-dock
+    dash-to-panel
     # forge
     # gsconnect
     # hide-activities-button
