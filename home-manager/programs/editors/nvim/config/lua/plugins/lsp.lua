@@ -29,7 +29,7 @@ lsp.on_attach(function(client, bufnr)
   bind('n', '[d', function() vim.diagnostic.goto_prev({ float = {border = "single"}}) end, { desc = 'Diagnostics: Previous', noremap=true, silent=true, buffer=true})
   bind('n', ']d', function() vim.diagnostic.goto_next({ float = {border = "single"}}) end, { desc = 'Diagnostics: Next', noremap=true, silent=true, buffer=true})
   bind('n', '<leader>q', vim.diagnostic.setloclist, {desc = 'Diagnostics: Show location list', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>cf', vim.lsp.buf.format, {desc = 'LSP: Format File', noremap=true, silent=true, buffer=true})
+  bind('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end, {desc = 'LSP: Format File', noremap=true, silent=true, buffer=true})
 end)
 
 -- set sign icons

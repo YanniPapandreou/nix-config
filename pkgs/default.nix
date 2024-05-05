@@ -6,4 +6,5 @@
   pandantic = pkgs.python3Packages.callPackage ./pandantic { };
   sec-edgar-downloader = pkgs.python3Packages.callPackage ./sec-edgar-downloader { };
   edgartools = pkgs.python3Packages.callPackage ./edgartools { };
+  ward = pkgs.python3Packages.callPackage ./ward { };
 }
