@@ -44,6 +44,7 @@
     appindicator
     arcmenu
     caffeine
+    clipboard-indicator
     gnome-40-ui-improvements
     gsconnect
     media-controls
