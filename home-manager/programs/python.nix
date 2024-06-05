@@ -9,6 +9,7 @@ let
     pygobject3
     pympler
     python-lsp-server
+    pylatexenc
     pyyaml
     requests
     rich

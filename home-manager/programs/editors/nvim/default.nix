@@ -60,6 +60,7 @@ in
        nvim-treesitter-textobjects
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
+       oil-nvim
        otter-nvim
        oxocarbon-nvim
        plenary-nvim
@@ -81,6 +82,8 @@ in
        vimwiki
        vimtex
        which-key-nvim
+       # (fromGitHub "43bbefd410333a04baf62ddfa8bb2a2d30a1bbc1" "main" "MeanderingProgrammer/markdown.nvim")
+       (fromGitHub "0c06ade8876fac93369183341d6d7125b859071b" "main" "yujinyuz/gitpad.nvim")
        # (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
        # (fromGitHub "c0ec78ef10ba01ab841b3e870421c33b1bbd6292" "main" "milanglacier/yarepl.nvim")
        # (fromGitHub "70703d6ce1da56a07c50ad2dadc894410b9ebe34" "harpoon2" "ThePrimeagen/harpoon")

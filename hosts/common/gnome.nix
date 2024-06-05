@@ -44,11 +44,13 @@
     appindicator
     arcmenu
     caffeine
+    # clipboard-history
     clipboard-indicator
+    # gnome-clipboard
     gnome-40-ui-improvements
     gsconnect
     media-controls
-    pano
+    # pano
     switcher
     unblank
     vitals
