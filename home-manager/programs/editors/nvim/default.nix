@@ -13,7 +13,7 @@ let
 in
 {
   programs.neovim = {
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim;
     enable = true;
     defaultEditor = true;
 
@@ -42,6 +42,7 @@ in
        # hmts-nvim
        lspkind-nvim
        lspsaga-nvim
+       lsp-zero-nvim
        luasnip
        markdown-preview-nvim
        mini-nvim
@@ -51,6 +52,7 @@ in
        neotest-python
        nui-nvim
        nvim-cmp
+       nvim-colorizer-lua
        nvim-dap
        nvim-dap-python
        nvim-dap-ui
@@ -60,6 +62,7 @@ in
        nvim-treesitter-textobjects
        nvim-treesitter.withAllGrammars
        nvim-web-devicons
+       obsidian-nvim
        oil-nvim
        otter-nvim
        oxocarbon-nvim
@@ -83,17 +86,13 @@ in
        vimtex
        which-key-nvim
        # (fromGitHub "43bbefd410333a04baf62ddfa8bb2a2d30a1bbc1" "main" "MeanderingProgrammer/markdown.nvim")
-       (fromGitHub "0c06ade8876fac93369183341d6d7125b859071b" "main" "yujinyuz/gitpad.nvim")
+       (fromGitHub "9685127c3795821bdbd3dab5a5fee4422255a102" "main" "yujinyuz/gitpad.nvim")
        # (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
        # (fromGitHub "c0ec78ef10ba01ab841b3e870421c33b1bbd6292" "main" "milanglacier/yarepl.nvim")
        # (fromGitHub "70703d6ce1da56a07c50ad2dadc894410b9ebe34" "harpoon2" "ThePrimeagen/harpoon")
        # (fromGitHub "7a73c055cd405a72606509172a3cd35fbb91bbe9" "main" "mnowotnik/noteflow.nvim")
-     ] ++ (with pkgs.vimExtraPlugins; [
-       icon-picker-nvim
-       lsp-zero-nvim
-       nvim-colorizer-lua
-       obsidian-nvim
-     ]);
+       (fromGitHub "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3" "master" "ziontee113/icon-picker.nvim")
+     ];
 
      extraPackages = with pkgs; [
        tree-sitter
