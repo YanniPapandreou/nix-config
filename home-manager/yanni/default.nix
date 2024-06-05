@@ -67,17 +67,26 @@ in
     createDirectories = true;
   };
 
-  gtk.gtk3.bookmarks = [
-    "file://${homeDirectory}/Documents"
-    "file://${homeDirectory}/Music"
-    "file://${homeDirectory}/Pictures"
-    "file://${homeDirectory}/Videos"
-    "file://${homeDirectory}/Downloads"
-    "file://${homeDirectory}/nix-config Nix Config"
-    "file://${homeDirectory}/projects Projects"
-    "file://${homeDirectory}/.config Dotfiles"
-    "file://${homeDirectory}/.local/share Local (Share)"
-  ];
+  gtk = {
+    enable = true;
+    gtk3.bookmarks = [
+      "file://${homeDirectory}/Documents"
+      "file://${homeDirectory}/Music"
+      "file://${homeDirectory}/Pictures"
+      "file://${homeDirectory}/Videos"
+      "file://${homeDirectory}/Downloads"
+      "file://${homeDirectory}/nix-config Nix Config"
+      "file://${homeDirectory}/projects Projects"
+      "file://${homeDirectory}/.config Dotfiles"
+      "file://${homeDirectory}/.local/share Local (Share)"
+    ];
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 0;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 0;
+    };
+  };
 
   programs.password-store = {
     enable = true;

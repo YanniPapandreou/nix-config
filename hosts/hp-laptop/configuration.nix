@@ -13,6 +13,7 @@ in
     # ./hyprland.nix
     # ./kde.nix
     ../common/gnome.nix
+    # ../common/stylix.nix
     # ./cosmic.nix
     inputs.home-manager.nixosModules.home-manager
   ];

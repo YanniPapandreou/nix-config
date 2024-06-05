@@ -51,7 +51,6 @@
     gsconnect
     media-controls
     # pano
-    switcher
     unblank
     vitals
     wsp-windows-search-provider

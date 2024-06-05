@@ -56,6 +56,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/hp-laptop
+            # inputs.stylix.nixosModules.stylix
           ];
         };
         dell-desktop = nixpkgs.lib.nixosSystem {
