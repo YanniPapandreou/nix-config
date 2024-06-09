@@ -26,6 +26,7 @@
     hledger
     hledger-ui
     hledger-web
+    leafpad
     # ipe
     pamixer
     pavucontrol
