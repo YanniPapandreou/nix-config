@@ -6,8 +6,9 @@
     ./direnv.nix
     ./exercism.nix
     ./glow
-    ./lf
-    ./ranger
+    # ./lf
+    # ./ranger
+    ./yazi.nix
     ./zoxide.nix
     # ./zellij.nix
   ];
