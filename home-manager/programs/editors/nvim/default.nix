@@ -1,13 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 let
-  # python-debug = pkgs.python3.withPackages (p: with p; [ debugpy ]);
-  fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      ref = ref;
+  fromGitHub = owner: repo: rev: hash: pkgs.vimUtils.buildVimPlugin {
+    name = repo;
+    src = pkgs.fetchFromGitHub {
+      owner = owner;
+      repo = repo;
       rev = rev;
+      hash = hash;
     };
   };
 in
@@ -85,13 +84,8 @@ in
        vimwiki
        vimtex
        which-key-nvim
-       # (fromGitHub "43bbefd410333a04baf62ddfa8bb2a2d30a1bbc1" "main" "MeanderingProgrammer/markdown.nvim")
-       (fromGitHub "9685127c3795821bdbd3dab5a5fee4422255a102" "main" "yujinyuz/gitpad.nvim")
-       # (fromGitHub "087bbcfce3a7e3e9c4defa420493132bbdd16499" "main" "carbon-steel/detour.nvim")
-       # (fromGitHub "c0ec78ef10ba01ab841b3e870421c33b1bbd6292" "main" "milanglacier/yarepl.nvim")
-       # (fromGitHub "70703d6ce1da56a07c50ad2dadc894410b9ebe34" "harpoon2" "ThePrimeagen/harpoon")
-       # (fromGitHub "7a73c055cd405a72606509172a3cd35fbb91bbe9" "main" "mnowotnik/noteflow.nvim")
-       (fromGitHub "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3" "master" "ziontee113/icon-picker.nvim")
+       (fromGitHub "yujinyuz" "gitpad.nvim" "9685127c3795821bdbd3dab5a5fee4422255a102" "sha256-CAfeG38GI+E9mlltZ3nA81+6rcC+tbnTOtPZd4bBkuI=")
+       (fromGitHub "ziontee113" "icon-picker.nvim" "3ee9a0ea9feeef08ae35e40c8be6a2fa2c20f2d3" "sha256-VZKsVeSmPR3AA8267Mtd5sSTZl2CAqnbgqceCptgp4w=")
      ];
 
      extraPackages = with pkgs; [
