@@ -26,8 +26,8 @@
     hledger
     hledger-ui
     hledger-web
-    leafpad
     # ipe
+    kdePackages.okular
     pamixer
     pavucontrol
     remmina
