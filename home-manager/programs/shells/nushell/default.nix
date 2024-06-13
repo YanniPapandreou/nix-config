@@ -2,7 +2,7 @@
 {
 
   home.packages = with pkgs; [
-    nushellFull
+    nushell
   ];
 
   # programs.nushell = {
