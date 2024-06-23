@@ -9,7 +9,7 @@
     ./git.nix
     ./mailspring.nix
     ./python.nix
-    ./r.nix
+    # ./r.nix
     ./sioyek.nix
     ./variables.nix
     ./xdg.nix
@@ -34,7 +34,7 @@
     signal-desktop
     slack
     # texlive.combined.scheme-full
-    thunderbird
+    # thunderbird
     vlc
     zotero
   ];
