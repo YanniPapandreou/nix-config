@@ -5,16 +5,16 @@
 
   buildGoModule rec {
     pname = "bootdev";
-    version = "1.5.5";
+    version = "1.5.8";
 
     src = fetchFromGitHub {
       owner = "bootdotdev";
       repo = "bootdev";
-      rev = "11d2727a102f268ad6783c5bdc41d9fa7c74dc7e";
-      hash = "sha256-ogBTbQ9xTX1UxmVT0I6alTb15AUDES82DHRDUMeiQfc=";
+      rev = "0c301fab3ffb6bc0c1d57919e53a4c9c63d60f22";
+      hash = "sha256-FHh/TLbnyoqiM5L459nqDo0/4/LXnYT6gIy7TFKE/ZY=";
     };
 
-    vendorHash = "sha256-v5P+Pt9weZ6+kkxfgpk+8GIOJRqp+Jx5uF3AJdRnp0s=";
+    vendorHash = "sha256-jhRoPXgfntDauInD+F7koCaJlX4XDj+jQSe/uEEYIMM=";
 
     meta = with lib; {
       description = "Official command line tool for Boot.dev";
