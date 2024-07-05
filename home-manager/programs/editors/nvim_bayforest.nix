@@ -29,7 +29,7 @@
          mini-nvim
          nvim-cmp
          nvim-lspconfig
-         nvim-spectre
+         # nvim-spectre
          nvim-treesitter-textobjects
          nvim-web-devicons
          oil-nvim

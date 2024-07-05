@@ -21,12 +21,12 @@
 
   #xdg.configFile."hypr/keybind".source = ./keybind;
   home.packages = with pkgs; [
-    gnome.eog
-    gnome.gnome-calendar
-    gnome.gnome-clocks
-    gnome.gnome-disk-utility
-    gnome.gnome-system-monitor
-    gnome.nautilus
+    eog
+    gnome-calendar
+    gnome-clocks
+    gnome-disk-utility
+    gnome-system-monitor
+    nautilus
     grim
     hyprpicker
     hyprpaper

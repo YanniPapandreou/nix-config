@@ -18,18 +18,17 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
     gedit
-  ]) ++ (with pkgs.gnome; [
-    gnome-music
+    gnome.gnome-music
     gnome-terminal
     geary
     epiphany
     geary
     # evince
     # totem
-    tali
-    iagno
-    hitori
-    atomix
+    gnome.tali
+    gnome.iagno
+    gnome.hitori
+    gnome.atomix
   ]);
 
   # gnome extensions
@@ -37,9 +36,9 @@
     eyedropper
     gnome-photos
     kora-icon-theme
-    gnome.dconf-editor
-    gnome.eog
-    gnome.gnome-tweaks
+    dconf-editor
+    eog
+    gnome-tweaks
   ]) ++ (with pkgs.gnomeExtensions; [
     appindicator
     arcmenu
