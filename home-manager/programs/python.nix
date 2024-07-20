@@ -16,6 +16,7 @@ let
     setuptools
     # ward
     wheel
+    # z3-solver
     # pkgs.sec-edgar-downloader
     # pkgs.edgartools
   ];

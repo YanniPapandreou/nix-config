@@ -11,25 +11,37 @@ lspsaga.setup({
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+  lsp.default_keymaps({ buffer = bufnr })
   local bind = vim.keymap.set
-  bind('n', 'gd', '<cmd>Lspsaga goto_definition<cr>', {desc = 'LSP: Go to definition', noremap=true, silent=true, buffer=true})
-  bind('n', 'gD', vim.lsp.buf.declaration, {desc = 'LSP: Go to Declaration', noremap=true, silent=true, buffer=true})
-  bind('n', 'gh', '<cmd>Lspsaga lsp_finder<cr>', {desc = 'LSP: Go Hunt', noremap=true, silent=true, buffer=true})
-  bind('n', 'K', '<cmd>Lspsaga hover_doc<cr>', {desc = 'LSP: Hover', noremap=true, silent=true, buffer=true})
-  bind('n', 'gp', '<cmd>Lspsaga peek_definition<cr>', {desc = 'LSP: Go Peek Definition', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>K', '<cmd>Lspsaga hover_doc ++keep<cr>', {desc = 'LSP: Hover (Keep)', noremap=true, silent=true, buffer=true})
-  bind('n', 'gs', vim.lsp.buf.signature_help, {desc = 'LSP: Signature Help', noremap=true, silent=true, buffer=true})
-  bind('n', 'gi', vim.lsp.buf.implementation, {desc = 'LSP: Go to Implementation', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>', {desc = 'LSP: Code Action', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>co', '<cmd>Lspsaga outline<cr>', {desc = 'LSP: Code Outline', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>cb', '<cmd>Lspsaga show_buf_diagnostics<cr>', {desc = 'LSP: Show Buffer Diagnostics', noremap=true, silent=true, buffer=true})
-  bind('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<cr>', {desc = 'LSP: Show Line Diagnostics', noremap=true, silent=true, buffer=true})
-  bind('n', 'gr', vim.lsp.buf.references, {desc = 'LSP: Show References', noremap=true, silent=true, buffer=true})
-  bind('n', '[d', function() vim.diagnostic.goto_prev({ float = {border = "single"}}) end, { desc = 'Diagnostics: Previous', noremap=true, silent=true, buffer=true})
-  bind('n', ']d', function() vim.diagnostic.goto_next({ float = {border = "single"}}) end, { desc = 'Diagnostics: Next', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>q', vim.diagnostic.setloclist, {desc = 'Diagnostics: Show location list', noremap=true, silent=true, buffer=true})
-  bind('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end, {desc = 'LSP: Format File', noremap=true, silent=true, buffer=true})
+  bind('n', 'gd', '<cmd>Lspsaga goto_definition<cr>',
+    { desc = 'LSP: Go to definition', noremap = true, silent = true, buffer = true })
+  bind('n', 'gD', vim.lsp.buf.declaration, { desc = 'LSP: Go to Declaration', noremap = true, silent = true, buffer = true })
+  bind('n', 'gh', '<cmd>Lspsaga lsp_finder<cr>', { desc = 'LSP: Go Hunt', noremap = true, silent = true, buffer = true })
+  bind('n', 'K', '<cmd>Lspsaga hover_doc<cr>', { desc = 'LSP: Hover', noremap = true, silent = true, buffer = true })
+  bind('n', 'gp', '<cmd>Lspsaga peek_definition<cr>',
+    { desc = 'LSP: Go Peek Definition', noremap = true, silent = true, buffer = true })
+  bind('n', '<leader>K', '<cmd>Lspsaga hover_doc ++keep<cr>',
+    { desc = 'LSP: Hover (Keep)', noremap = true, silent = true, buffer = true })
+  bind('n', 'gs', vim.lsp.buf.signature_help, { desc = 'LSP: Signature Help', noremap = true, silent = true, buffer = true })
+  bind('n', 'gi', vim.lsp.buf.implementation,
+    { desc = 'LSP: Go to Implementation', noremap = true, silent = true, buffer = true })
+  bind('n', '<leader>ca', '<cmd>Lspsaga code_action<cr>',
+    { desc = 'LSP: Code Action', noremap = true, silent = true, buffer = true })
+  bind('n', '<leader>co', '<cmd>Lspsaga outline<cr>',
+    { desc = 'LSP: Code Outline', noremap = true, silent = true, buffer = true })
+  bind('n', '<leader>cb', '<cmd>Lspsaga show_buf_diagnostics<cr>',
+    { desc = 'LSP: Show Buffer Diagnostics', noremap = true, silent = true, buffer = true })
+  bind('n', 'gl', '<cmd>Lspsaga show_line_diagnostics<cr>',
+    { desc = 'LSP: Show Line Diagnostics', noremap = true, silent = true, buffer = true })
+  bind('n', 'gr', vim.lsp.buf.references, { desc = 'LSP: Show References', noremap = true, silent = true, buffer = true })
+  bind('n', '[d', function() vim.diagnostic.goto_prev({ float = { border = "single" } }) end,
+    { desc = 'Diagnostics: Previous', noremap = true, silent = true, buffer = true })
+  bind('n', ']d', function() vim.diagnostic.goto_next({ float = { border = "single" } }) end,
+    { desc = 'Diagnostics: Next', noremap = true, silent = true, buffer = true })
+  bind('n', '<leader>q', vim.diagnostic.setloclist,
+    { desc = 'Diagnostics: Show location list', noremap = true, silent = true, buffer = true })
+  bind('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end,
+    { desc = 'LSP: Format File', noremap = true, silent = true, buffer = true })
 end)
 
 -- set sign icons
@@ -42,16 +54,18 @@ lsp.set_sign_icons({
 
 -- IMPORTANT: list servers installed in your system
 lsp.setup_servers({
-  'pyright',
-  'lua_ls',
   'bashls',
-  'texlab',
   'hls',
   'julials',
+  'lua_ls',
   'marksman',
-  -- 'rnix',
   'nil_ls',
-  'ruff_lsp'
+  'pyright',
+  'r_language_server',
+  'ruff_lsp',
+  'rust_analyzer',
+  'texlab',
+  -- 'rnix',
 })
 
 -- (Optional) Configure lua language server for neovim and any other servers
@@ -68,18 +82,22 @@ lspconfig.nil_ls.setup({
   settings = {
     ['nil'] = {
       formatting = {
-        command = {"nixpkgs-fmt"},
+        command = { "nixpkgs-fmt" },
       }
     }
   }
 })
+
+lspconfig.rust_analyzer.setup {}
+
+lspconfig.r_language_server.setup{}
 
 lsp.setup()
 
 -- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
 local luasnip = require("luasnip")
-local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
+local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
 local lspkind = require('lspkind')
 
 luasnip.config.set_config({
@@ -91,7 +109,7 @@ luasnip.config.set_config({
   ext_opts = {
     [require("luasnip.util.types").choiceNode] = {
       active = {
-        virt_text = { {" ", "Error" } ,}
+        virt_text = { { " ", "Error" }, }
       },
     },
   },
@@ -109,12 +127,13 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert,noselect'
   },
   sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'buffer', keyword_length = 3},
-    {name = 'luasnip', keyword_length = 2},
-    {name = 'nvim_lsp_signature_help'},
-    {name = 'otter'},
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer',                 keyword_length = 3 },
+    { name = 'luasnip',                keyword_length = 2 },
+    { name = 'nvim_lsp_signature_help' },
+    -- { name = "cmp_r" },
+    { name = 'otter' },
     {
       name = 'latex_symbols',
       option = {
@@ -134,21 +153,21 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     -- `Enter` key to confirm completion
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ["<C-h>"] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
-    end, {"i", "s"}),
+    end, { "i", "s" }),
     ["<C-l>"] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
       else
         fallback()
       end
-    end, {"i", "s"}),
+    end, { "i", "s" }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       local col = vim.fn.col('.') - 1
       if cmp.visible() then
@@ -158,19 +177,19 @@ cmp.setup({
       else
         cmp.complete()
       end
-    end, {"i", "s"}),
+    end, { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item(cmp_select_opts)
       else
         fallback()
       end
-    end, {"i", "s"})
+    end, { "i", "s" })
   },
   formatting = {
     -- use `lspkind` to format
     format = lspkind.cmp_format({
-       -- before = function(entry, vim_item)
+      -- before = function(entry, vim_item)
       --   -- source
       --   vim_item.menu = ({
       --     buffer = "[Buffer]",
@@ -192,4 +211,4 @@ cmp.setup({
   -- },
 })
 
-
+-- require("cmp_r").setup({ })

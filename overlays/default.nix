@@ -11,6 +11,7 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    # external.snippets-ls = inputs.snippets-ls.packages.${prev.system}.snippets-ls;
   };
 
 }

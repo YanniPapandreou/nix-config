@@ -5,7 +5,12 @@ let
   radianWrapper = pkgs.radianWrapper;
   Rpackages = with pkgs.rPackages; [
     devtools
+    faraway
     ggthemes
+    ISLR
+    languageserver
+    MASS
+    modelr
     reshape2
     testthat
     tidyverse
@@ -37,6 +42,7 @@ in
 
   programs.fish.shellAliases = {
     r = "radian";
+    nvimr = "R_AUTO_START=true nvim";
   };
 
 }

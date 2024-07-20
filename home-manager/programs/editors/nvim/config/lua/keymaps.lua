@@ -77,7 +77,7 @@ bind("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
 --local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 --bind("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 
--- bind("x", "<leader>p", "\"_dP", { desc = "Paste over without deleting register" })
+bind("x", "<leader>p", "\"_dP", { desc = "Paste over without deleting register" })
 
 bind("n", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
 bind("v", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
@@ -106,3 +106,6 @@ vim.cmd([[:tnoremap <Esc> <C-\><C-n>]])
 
 bind("n", "<C-d>", "<C-d>zz")
 bind("n", "<C-u>", "<C-u>zz")
+
+bind("n", "]q", "<cmd>cnext<cr>", { desc = "Go to next quick fix item"})
+bind("n", "[q", "<cmd>cprevious<cr>", { desc = "Go to next quick fix item"})

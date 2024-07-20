@@ -8,4 +8,6 @@
   edgartools = pkgs.python3Packages.callPackage ./edgartools { };
   ward = pkgs.python3Packages.callPackage ./ward { };
   bootdev = pkgs.callPackage ./bootdev { };
+  polars = pkgs.python3Packages.callPackage ./polars { };
+  simple-completion-language-server = pkgs.callPackage ./simple-completion-language-server { };
 }

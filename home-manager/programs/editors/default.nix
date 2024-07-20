@@ -10,6 +10,8 @@
 
   home.packages = with pkgs; [
     helix
+    taplo
+    # zed-editor
     # neovide
   ];
 

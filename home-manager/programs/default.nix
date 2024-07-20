@@ -9,7 +9,7 @@
     ./git.nix
     ./mailspring.nix
     ./python.nix
-    # ./r.nix
+    ./r.nix
     ./sioyek.nix
     ./variables.nix
     ./xdg.nix
