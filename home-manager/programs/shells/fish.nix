@@ -6,7 +6,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       zoxide init fish | source
-      '';
+    '';
 
     shellAliases = {
       ls = "exa --color=always --group-directories-first --icons";
@@ -26,31 +26,31 @@
     };
 
     plugins = [
-    {
-      name = "fzf-fish";
-      src = pkgs.fetchFromGitHub {
-        owner = "PatrickF1";
-        repo = "fzf.fish";
-        rev = "46c7bc6354494be5d869d56a24a46823a9fdded0";
-        sha256 = "lxQZo6APemNjt2c21IL7+uY3YVs81nuaRUL7NDMcB6s=";
-      };
-    }
+      {
+        name = "fzf-fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "PatrickF1";
+          repo = "fzf.fish";
+          rev = "46c7bc6354494be5d869d56a24a46823a9fdded0";
+          sha256 = "lxQZo6APemNjt2c21IL7+uY3YVs81nuaRUL7NDMcB6s=";
+        };
+      }
 
-    {
-      name = "autopair-fish";
-      src = pkgs.fetchFromGitHub {
-        owner = "jorgebucaran";
-        repo = "autopair.fish";
-        rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
-        sha256 = "qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
-      };
-    }
+      {
+        name = "autopair-fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "autopair.fish";
+          rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
+          sha256 = "qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
+        };
+      }
     ];
 
     shellInit = ''
       # fzf_configure_bindings
       set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/.config/ /home/yanni/Documents/
-      '';
+    '';
 
     functions = {
       # flakify = ''

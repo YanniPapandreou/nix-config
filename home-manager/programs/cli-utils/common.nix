@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     #gnumake
@@ -11,6 +11,7 @@
     htop
     just
     marksman
+    markdown-oxide
     manix
     nb
     neofetch
@@ -21,6 +22,7 @@
     tealdeer
     wl-clipboard
     xdg-utils
+    xplr
   ];
 
   programs = {
@@ -29,7 +31,11 @@
       config = {
         theme = "Dracula";
       };
-      extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep ];
+      extraPackages = with pkgs.bat-extras; [
+        batdiff
+        batman
+        batgrep
+      ];
     };
     btop = {
       enable = true;

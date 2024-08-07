@@ -1,4 +1,11 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   username = "yanni";
 in
@@ -102,7 +109,10 @@ in
 
   systemd.services.NetworkManager-wait-online = {
     serviceConfig = {
-      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+      ExecStart = [
+        ""
+        "${pkgs.networkmanager}/bin/nm-online -q"
+      ];
     };
   };
 
@@ -111,7 +121,13 @@ in
     ${username} = {
       isNormalUser = true;
       description = "Yanni Papandreou";
-      extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" "audio" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+        "vboxusers"
+        "audio"
+      ];
 
       shell = pkgs.fish;
       # shell = pkgs.nushellFull;
@@ -120,7 +136,9 @@ in
 
   # enable home-manager to be build when running sudo nixos-rebuild --switch...
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs username; };
+    extraSpecialArgs = {
+      inherit inputs outputs username;
+    };
     users = {
       # Import your home-manager configuration
       ${username} = import ../../home-manager/${username};
@@ -131,7 +149,17 @@ in
   environment.systemPackages = with pkgs; [
     nil
     vim
+    openssl
+    pkg-config
   ];
+
+  environment.variables = {
+    EDITOR = "hx";
+    BROWSER = "brave";
+    TERMINAL = "kitty";
+    STEEL_HOME = "/home/yanni/.steel";
+    PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
+  };
   programs.fish.enable = true;
   virtualisation.docker.enable = true;
 

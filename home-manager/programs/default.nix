@@ -9,9 +9,11 @@
     ./git.nix
     ./mailspring.nix
     ./python.nix
-    ./r.nix
+    # ./r.nix
+    ./rust.nix
     ./sioyek.nix
-    ./variables.nix
+    ./scheme.nix
+    # ./variables.nix
     ./xdg.nix
   ];
 

@@ -10,7 +10,9 @@
 
   home.packages = with pkgs; [
     helix
+    # kakoune
     taplo
+    nixfmt-rfc-style
     # zed-editor
     # neovide
   ];

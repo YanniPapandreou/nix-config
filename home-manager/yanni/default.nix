@@ -1,4 +1,9 @@
-{ inputs, outputs, username, ... }:
+{
+  inputs,
+  outputs,
+  username,
+  ...
+}:
 let
   homeDirectory = "/home/${username}";
 in
@@ -35,6 +40,7 @@ in
       inputs.neovim-nightly-overlay.overlays.default
       # inputs.nixneovimplugins.overlays.default
       # inputs.neorg-overlay.overlays.default
+      inputs.rust-overlay.overlays.default
 
       # Or define it inline, for example:
       # (final: prev: {
@@ -98,7 +104,17 @@ in
   services.network-manager-applet.enable = true;
 
   # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
+  systemd.user = {
+    startServices = "sd-switch";
+    # see comment on github issue for this
+    # https://github.com/nix-community/home-manager/issues/2064#issuecomment-887300055
+    targets.tray = {
+      Unit = {
+        Description = "Home Manager System Tray";
+        Requires = [ "graphical-session-pre.target" ];
+      };
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
