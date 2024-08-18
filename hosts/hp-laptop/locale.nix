@@ -1,6 +1,6 @@
 {
-  time.timeZone = "Europe/London";
-  # time.timeZone = "Asia/Nicosia";
+  # time.timeZone = "Europe/London";
+  time.timeZone = "Asia/Nicosia";
 
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {
