@@ -6,10 +6,10 @@
     ./vscode.nix
     # ./nvim_bayforest.nix
     # ./nvim_barebones.nix
+    ./helix
   ];
 
   home.packages = with pkgs; [
-    helix
     # kakoune
     taplo
     nixfmt-rfc-style

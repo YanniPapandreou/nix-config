@@ -1,0 +1,56 @@
+theme = "dracula"
+
+[editor]
+line-number = "relative"
+cursorline = true
+true-color = true
+color-modes = true
+auto-pairs = true
+idle-timeout = 50
+completion-timeout = 5
+# popup-border = "all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = ["mode", "spacer", "version-control", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "selections", "register", "position", "position-percentage", "spacer", "file-encoding"]
+
+[keys.normal]
+H = ":bp"
+L = ":bn"
+C-x = ["extend_line_up", "extend_to_line_bounds"]
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-s = ":w"
+C-p = "save_selection"
+C-m = "decrement"
+# C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+[keys.normal."space"]
+q = ":bc"
+"space" = "file_picker"
+"," = "buffer_picker"
+"_" = "hsplit"
+"|" = "vsplit"
+t = { h = ":toggle-option lsp.display-inlay-hints", w = ":toggle-option soft-wrap.enable" }
+
+[keys.normal."+"]
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"
+r = ":run-shell-command cargo run"
+"s" = ":run-shell-command ~/.cargo/bin/steel main.scm"
+
+[keys.insert]
+A-j = ["normal_mode", "extend_to_line_bounds", "delete_selection", "paste_after", "insert_mode"]
+A-k = ["normal_mode", "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "insert_mode"]
