@@ -15,6 +15,12 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixos-cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     # nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
     # ags.url = "github:Aylur/ags";
     # stylix.url = "github:danth/stylix";
@@ -26,6 +32,7 @@
       nixpkgs,
       home-manager,
       rust-overlay,
+      # nixos-cosmic,
       ...
     }@inputs:
     let
@@ -75,6 +82,7 @@
             inherit inputs outputs;
           };
           modules = [
+            # nixos-cosmic.nixosModules.default
             ./hosts/hp-laptop
             # inputs.stylix.nixosModules.stylix
           ];
