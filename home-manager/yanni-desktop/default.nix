@@ -26,6 +26,7 @@
 
       # You can also add overlays exported from other flakes:
       inputs.neovim-nightly-overlay.overlays.default
+      inputs.rust-overlay.overlays.default
       # inputs.nixneovimplugins.overlays.default
 
       # Or define it inline, for example:
