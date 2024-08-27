@@ -24,7 +24,7 @@
     discord
     element-desktop
     # fragments
-    gnome.gnome-boxes
+    gnome-boxes
     hledger
     hledger-ui
     hledger-web

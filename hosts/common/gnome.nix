@@ -18,17 +18,17 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
     gedit
-    gnome.gnome-music
+    gnome-music
     gnome-terminal
     geary
     epiphany
     geary
     # evince
     # totem
-    gnome.tali
-    gnome.iagno
-    gnome.hitori
-    gnome.atomix
+    tali
+    iagno
+    hitori
+    atomix
   ]);
 
   # gnome extensions
