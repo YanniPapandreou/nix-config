@@ -4,7 +4,6 @@
   imports = [
     ./nvim
     ./vscode.nix
-    # ./nvim_bayforest.nix
     # ./nvim_barebones.nix
     ./helix
   ];
