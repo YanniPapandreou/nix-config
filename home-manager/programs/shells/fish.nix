@@ -1,12 +1,18 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.fish = {
     enable = true;
 
-    interactiveShellInit = ''
-      set fish_greeting # Disable greeting
-      zoxide init fish | source
-    '';
+    # interactiveShellInit = ''
+    #  set fish_greeting # Disable greeting
+    #   zoxide init fish | source
+    # '';
+
+    interactiveShellInit = lib.strings.concatLines [
+      "set fish_greeting # Disable greeting"
+      "zoxide init fish | source"
+      (builtins.readFile ../cli-utils/zellij-fish-completions.fish)
+    ];
 
     shellAliases = {
       ls = "exa --color=always --group-directories-first --icons";
@@ -23,6 +29,7 @@
       rip = "rip --graveyard ~/.local/share/Trash";
       todoist-cli = "todoist";
       gits = "git status";
+      zw = "zellij -l welcome";
     };
 
     plugins = [
@@ -52,14 +59,5 @@
       set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/.config/ /home/yanni/Documents/
     '';
 
-    functions = {
-      # flakify = ''
-      #   function flakify
-      #     if test ! -e flake.nix
-      #       nix flake new -t "github:numtide/devshell" .
-      #     end
-      #   end
-      # '';
-    };
   };
 }

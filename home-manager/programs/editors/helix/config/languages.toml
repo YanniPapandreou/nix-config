@@ -50,6 +50,11 @@ formatter = { command = "nixfmt" }
 auto-format = false
 
 [[language]]
+name = "kdl"
+language-servers = [ "scls" ]
+auto-format = false
+
+[[language]]
 name = "scheme"
 formatter = { command = "raco", args = ["fmt", "-i"] }
 auto-format = false

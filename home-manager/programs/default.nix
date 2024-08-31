@@ -9,7 +9,7 @@
     ./git.nix
     ./mailspring.nix
     ./python.nix
-    # ./r.nix
+    ./r.nix
     ./rust.nix
     ./sioyek.nix
     ./scheme.nix
@@ -21,6 +21,7 @@
   home.packages = with pkgs; [
     cachix
     # calibre
+    cowsay
     discord
     element-desktop
     # fragments

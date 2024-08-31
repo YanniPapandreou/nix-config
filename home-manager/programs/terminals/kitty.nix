@@ -41,6 +41,8 @@
         # hide_window_decorations = "yes";
         wayland_titlebar_color = "#21232D";
       };
+      # extraConfig = ''
+      # '';
     };
   };
 }

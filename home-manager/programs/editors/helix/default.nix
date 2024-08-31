@@ -5,8 +5,8 @@
     # external.snippets-ls
   ];
 
-  xdg.configFile.helix = {
-    source = ./config;
-    recursive = true;
-  };
+  # xdg.configFile.helix = {
+  #   source = ./config;
+  #   recursive = true;
+  # };
 }

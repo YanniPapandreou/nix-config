@@ -49,7 +49,7 @@ t = { h = ":toggle-option lsp.display-inlay-hints", w = ":toggle-option soft-wra
 c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo test"
 r = ":run-shell-command cargo run"
-"s" = ":run-shell-command ~/.cargo/bin/steel main.scm"
+s = ":run-shell-command ~/.cargo/bin/steel main.scm"
 
 [keys.insert]
 A-j = ["normal_mode", "extend_to_line_bounds", "delete_selection", "paste_after", "insert_mode"]

@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
 
   imports = [
@@ -10,7 +11,10 @@
     # ./ranger
     ./yazi.nix
     ./zoxide.nix
-    # ./zellij.nix
+  ];
+
+  home.packages = with pkgs; [
+    zellij
   ];
 
 }
