@@ -4,13 +4,17 @@ let
   rstudioWrapper = pkgs.rstudioWrapper;
   radianWrapper = pkgs.radianWrapper;
   Rpackages = with pkgs.rPackages; [
+    ISLR
+    MASS
+    cli
     devtools
     faraway
     ggthemes
-    ISLR
+    glue
     languageserver
-    MASS
+    lobstr
     modelr
+    pryr
     reshape2
     testthat
     tidyverse
