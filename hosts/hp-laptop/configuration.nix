@@ -143,6 +143,7 @@ in
       # Import your home-manager configuration
       ${username} = import ../../home-manager/${username};
     };
+    backupFileExtension = "hm-backup";
   };
 
   # packages and programs

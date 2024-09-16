@@ -6,6 +6,7 @@ let
   Rpackages = with pkgs.rPackages; [
     ISLR
     MASS
+    bench
     cli
     devtools
     faraway
@@ -13,11 +14,15 @@ let
     glue
     languageserver
     lobstr
+    microbenchmark
     modelr
+    palmerpenguins
     pryr
+    rbenchmark
     reshape2
     testthat
     tidyverse
+    tictoc
     usethis
   ];
   R-with-my-packages = rWrapper.override{ packages = Rpackages; };

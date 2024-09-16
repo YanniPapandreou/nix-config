@@ -6,7 +6,7 @@
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
     };
-    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    udev.packages = with pkgs; [ gnome-settings-daemon ];
     #dbus.packages = [ pkgs.dconf ];
     gnome = {
       gnome-keyring.enable = true;
