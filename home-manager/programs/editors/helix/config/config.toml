@@ -30,11 +30,12 @@ right = ["diagnostics", "selections", "register", "position", "position-percenta
 H = ":bp"
 L = ":bn"
 C-x = ["extend_line_up", "extend_to_line_bounds"]
-A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 C-s = ":w"
 C-p = "save_selection"
 C-m = "decrement"
+D = "hover"
 # C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.normal."space"]
@@ -44,6 +45,11 @@ q = ":bc"
 "_" = "hsplit"
 "|" = "vsplit"
 t = { h = ":toggle-option lsp.display-inlay-hints", w = ":toggle-option soft-wrap.enable" }
+o = "jumplist_picker"
+h = "jump_view_left"
+l = "jump_view_right"
+j = "jump_view_down"
+k = "jump_view_up"
 
 [keys.normal."+"]
 c = ":run-shell-command cargo build"

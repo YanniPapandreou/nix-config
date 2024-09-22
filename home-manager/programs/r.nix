@@ -5,6 +5,7 @@ let
   radianWrapper = pkgs.radianWrapper;
   Rpackages = with pkgs.rPackages; [
     ISLR
+    Lahman
     MASS
     bench
     cli
@@ -12,17 +13,22 @@ let
     faraway
     ggthemes
     glue
+    httpgd
     languageserver
     lobstr
     microbenchmark
     modelr
+    nycflights13
     palmerpenguins
     pryr
     rbenchmark
+    reactable
+    reprex
     reshape2
+    sloop
     testthat
-    tidyverse
     tictoc
+    tidyverse
     usethis
   ];
   R-with-my-packages = rWrapper.override{ packages = Rpackages; };

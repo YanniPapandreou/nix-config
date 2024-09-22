@@ -19,7 +19,6 @@ LOG_FILE = "/tmp/completion.log"
 command = "/home/yanni/.cargo/bin/steel-language-server"
 args = []
 
-
 # append language server to existing languages
 [[language]]
 name = "python"
@@ -59,6 +58,13 @@ name = "scheme"
 formatter = { command = "raco", args = ["fmt", "-i"] }
 auto-format = false
 language-servers = [ "scls", "steel-language-server" ]
+
+[[language]]
+name = "markdown"
+language-servers = [ "scls", "marksman", "markdown-oxide" ]
+auto-format = false
+file-types = [ "md", "qmd" ]
+# comment-token = "#"
 
 # introduce a new language to enable completion on any doc by forcing set language with :set-language stub
 [[language]]

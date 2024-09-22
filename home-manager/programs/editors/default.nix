@@ -5,7 +5,7 @@
     ./nvim
     ./vscode.nix
     # ./nvim_barebones.nix
-    ./helix
+    # ./helix
   ];
 
   home.packages = with pkgs; [

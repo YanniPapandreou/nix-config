@@ -12,6 +12,7 @@
       "set fish_greeting # Disable greeting"
       "zoxide init fish | source"
       (builtins.readFile ../cli-utils/zellij-fish-completions.fish)
+      "fish_add_path /home/yanni/.cargo/bin"
     ];
 
     shellAliases = {
@@ -57,7 +58,25 @@
     shellInit = ''
       # fzf_configure_bindings
       set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/.config/ /home/yanni/Documents/
+      set -gx HELIX_RUNTIME /home/yanni/projects/helix/runtime
     '';
+
+    # functions = {
+    #   r-ide = {
+    #     body = ''
+    #     set -x PROJECT_DIR $argv
+    #     nohup kitty --session r-ide.kitty & disown
+    #     exit
+    #     '';
+    #   };
+    #   py-ide = {
+    #     body = ''
+    #     set -x PROJECT_DIR $argv
+    #     nohup kitty --session py-ide.kitty & disown
+    #     exit
+    #     '';
+    #   };
+    # };
 
   };
 }

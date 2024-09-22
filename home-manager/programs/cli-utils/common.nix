@@ -8,6 +8,7 @@
     difftastic
     fd
     gh
+    gojq
     htop
     just
     marksman

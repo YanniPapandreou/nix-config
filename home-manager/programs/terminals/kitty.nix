@@ -1,4 +1,6 @@
+{pkgs, ... }:
 {
+
   programs = {
     kitty = {
       enable = true;
@@ -40,9 +42,16 @@
         confirm_os_window_close = "0";
         # hide_window_decorations = "yes";
         wayland_titlebar_color = "#21232D";
+        tab_bar_style = "powerline";
+        tab_powerline_style = "slanted";
       };
       # extraConfig = ''
       # '';
     };
   };
+
+  # home.packages = with pkgs; [
+  #   kitty
+  # ];
+
 }
