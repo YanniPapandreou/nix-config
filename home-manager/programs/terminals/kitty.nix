@@ -4,7 +4,7 @@
   programs = {
     kitty = {
       enable = true;
-      theme = "Dracula";
+      themeFile = "Catppuccin-Mocha";
       font = {
         name = "FiraCode Nerd Font";
         size = 11.0;
@@ -41,7 +41,8 @@
         initial_window_height = "24c";
         confirm_os_window_close = "0";
         # hide_window_decorations = "yes";
-        wayland_titlebar_color = "#21232D";
+        # wayland_titlebar_color = "#21232D";
+        wayland_titlebar_color = "#202030";
         tab_bar_style = "powerline";
         tab_powerline_style = "slanted";
       };

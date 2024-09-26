@@ -24,6 +24,7 @@
     wl-clipboard
     xdg-utils
     xplr
+    yaml-language-server
   ];
 
   programs = {

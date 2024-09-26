@@ -49,6 +49,10 @@ formatter = { command = "nixfmt" }
 auto-format = false
 
 [[language]]
+name = "yaml"
+language-servers = [ "scls", "yaml-language-server" ]
+
+[[language]]
 name = "kdl"
 language-servers = [ "scls" ]
 auto-format = false

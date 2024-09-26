@@ -1,0 +1,30 @@
+layout {
+    tab name="nix-config" hide_floating_panes=true {
+        floating_panes {
+            pane command="lazygit" {
+                cwd "/home/yanni/nix-config"
+                x "10%"
+                y "10%"
+                width "80%"
+                height "80%"
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        pane split_direction="horizontal" {
+            pane {
+                edit "."
+                cwd "/home/yanni/nix-config"
+                name "nix-config"
+                size "80%"
+            }
+            pane command="sudo" {
+                args "just" "switch-laptop"
+                start_suspended true
+                cwd "/home/yanni/nix-config"
+                name "rebuild nix config"
+            }
+        }
+    }
+}

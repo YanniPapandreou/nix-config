@@ -1,0 +1,30 @@
+layout {
+    tab name="Quarto IDE" hide_floating_panes=true {
+        floating_panes {
+            pane command="quarto" {
+                args "preview" "."
+                // x "10%"
+                // y "10%"
+                // width "80%"
+                // height "80%"
+                start_suspended true
+                name "preview"
+            }
+        }
+        pane {
+            pane {
+                name "Code"
+                size "70%"
+            }
+            pane command="radian" {
+                name "Console"
+            }
+        }
+        // pane size=2 borderless=true {
+        //     plugin location="status-bar"
+        // }
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+    }
+}

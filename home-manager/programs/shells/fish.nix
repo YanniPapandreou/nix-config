@@ -61,22 +61,33 @@
       set -gx HELIX_RUNTIME /home/yanni/projects/helix/runtime
     '';
 
-    # functions = {
-    #   r-ide = {
-    #     body = ''
-    #     set -x PROJECT_DIR $argv
-    #     nohup kitty --session r-ide.kitty & disown
-    #     exit
-    #     '';
-    #   };
-    #   py-ide = {
-    #     body = ''
-    #     set -x PROJECT_DIR $argv
-    #     nohup kitty --session py-ide.kitty & disown
-    #     exit
-    #     '';
-    #   };
-    # };
+    functions = {
+      r-ide = {
+        body = ''
+          if set -q argv[1]
+            zellij --layout ~/.config/zellij/layouts/r-ide.kdl --session $argv
+          else
+            zellij --layout ~/.config/zellij/layouts/r-ide.kdl
+          end
+        '';
+      };
+
+      # r-ide = {
+      #   body = ''
+      #   set -x PROJECT_DIR $argv
+      #   nohup kitty --session r-ide.kitty & disown
+      #   exit
+      #   '';
+      # };
+      # py-ide = {
+      #   body = ''
+      #   set -x PROJECT_DIR $argv
+      #   nohup kitty --session py-ide.kitty & disown
+      #   exit
+      #   '';
+      # };
+
+    };
 
   };
 }

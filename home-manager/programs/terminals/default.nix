@@ -6,9 +6,11 @@
   ];
 
   # home.packages = with pkgs; [
-  #   elvish
-  #   hilbish
-  #   xonsh
+  #   # alacritty
+  #   # wezterm
+  #   # elvish
+  #   # hilbish
+  #   # xonsh
   # ];
 
 }

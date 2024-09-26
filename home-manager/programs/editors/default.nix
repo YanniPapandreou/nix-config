@@ -9,7 +9,7 @@
   ];
 
   home.packages = with pkgs; [
-    # kakoune
+    kakoune
     taplo
     nixfmt-rfc-style
     # zed-editor
