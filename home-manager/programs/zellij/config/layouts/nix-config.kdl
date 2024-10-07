@@ -14,7 +14,6 @@ layout {
         }
         pane split_direction="horizontal" {
             pane {
-                edit "."
                 cwd "/home/yanni/nix-config"
                 name "nix-config"
                 size "80%"
