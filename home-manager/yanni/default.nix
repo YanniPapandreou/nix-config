@@ -36,10 +36,7 @@ in
       outputs.overlays.modifications
       # outputs.overlays.unstable-packages
 
-      # You can also add overlays exported from other flakes:
-      inputs.neovim-nightly-overlay.overlays.default
-      # inputs.nixneovimplugins.overlays.default
-      # inputs.neorg-overlay.overlays.default
+      # You can also add overlays exported from other flakes
       inputs.rust-overlay.overlays.default
 
       # Or define it inline, for example:

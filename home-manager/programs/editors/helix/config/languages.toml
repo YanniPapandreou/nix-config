@@ -70,6 +70,12 @@ auto-format = false
 file-types = [ "md", "qmd" ]
 # comment-token = "#"
 
+[[language]]
+name = "r"
+language-servers = [ "scls", "r" ]
+formatter = { command = "rstyler" }
+auto-format = true
+
 # introduce a new language to enable completion on any doc by forcing set language with :set-language stub
 [[language]]
 name = "stub"

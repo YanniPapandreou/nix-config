@@ -16,9 +16,7 @@
       outputs.overlays.modifications
       # outputs.overlays.unstable-packages
 
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
+      # You can also add overlays exported from other flakes
       # Or define it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {

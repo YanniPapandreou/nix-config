@@ -1,5 +1,5 @@
 switch-laptop:
-  nixos-rebuild switch --flake /home/yanni/nix-config#hp-laptop
+  /home/yanni/nix-config/check_success.sh nixos-rebuild switch --flake /home/yanni/nix-config#hp-laptop
 
 switch-desktop:
-  nixos-rebuild switch --flake /home/yanni/nix-config#dell-desktop
+  /home/yanni/nix-config/check_success.sh nixos-rebuild switch --flake /home/yanni/nix-config#dell-desktop

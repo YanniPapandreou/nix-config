@@ -9,7 +9,7 @@
     ./git.nix
     ./mailspring.nix
     ./python.nix
-    ./r.nix
+    ./r
     ./rust.nix
     ./sioyek.nix
     ./scheme.nix
