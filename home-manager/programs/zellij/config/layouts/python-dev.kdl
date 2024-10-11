@@ -1,4 +1,10 @@
 layout {
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        pane
+    }
     tab name="python dev" {
         pane size=1 borderless=true {
             plugin location="zjstatus"

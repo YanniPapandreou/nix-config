@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common/gnome.nix
+    ../common/utils.nix
     ./networking.nix
 
     inputs.home-manager.nixosModules.home-manager
@@ -56,12 +57,12 @@
       ];
     };
 
-    # Automatic garbage collection
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 20d";
-    };
+    # # Automatic garbage collection
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 20d";
+    # };
 
     extraOptions = ''
       keep-outputs = true

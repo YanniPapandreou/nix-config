@@ -13,6 +13,7 @@ let
     bench
     cli
     devtools
+    extRemes
     faraway
     ggthemes
     glue

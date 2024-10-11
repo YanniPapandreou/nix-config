@@ -20,6 +20,7 @@ in
     # ./hyprland.nix
     # ./kde.nix
     ../common/gnome.nix
+    ../common/utils.nix
     # ../common/stylix.nix
     # ./cosmic.nix
     inputs.home-manager.nixosModules.home-manager
@@ -72,12 +73,12 @@ in
       ];
     };
 
-    # Automatic garbage collection
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 20d";
-    };
+    # # Automatic garbage collection
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 20d";
+    # };
 
     extraOptions = ''
       keep-outputs = true
@@ -147,9 +148,11 @@ in
   # packages and programs
   environment.systemPackages = with pkgs; [
     nil
-    vim
+    nix-output-monitor
+    nvd
     openssl
     pkg-config
+    vim
   ];
 
   environment.variables = {

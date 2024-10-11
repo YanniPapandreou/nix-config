@@ -19,9 +19,13 @@
     ripgrep
     rm-improved
     stow
+    taskwarrior3
+    taskwarrior-tui
     tealdeer
+    todoist
     wl-clipboard
     xdg-utils
+    xdragon
     yaml-language-server
   ];
 
