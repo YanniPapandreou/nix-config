@@ -26,7 +26,6 @@ in
     # ../stylix.nix
     ../fonts.nix
     # ../gnome.nix
-    # ../themes
   ];
 
   nixpkgs = {
