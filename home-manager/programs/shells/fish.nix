@@ -58,7 +58,6 @@
     shellInit = ''
       # fzf_configure_bindings
       set -gx CDPATH $CDPATH ../ /home/yanni/projects /home/yanni/nix-config/ /home/yanni/.config/ /home/yanni/Documents/
-      set -gx HELIX_RUNTIME /home/yanni/projects/helix/runtime
     '';
 
     functions = {

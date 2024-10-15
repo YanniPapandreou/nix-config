@@ -10,6 +10,9 @@
       exec = ''
       mailspring --password-store="gnome-libsecret" %U
       '';
+      # exec = ''
+      # mailspring --password-store="kwallet5" %U
+      # '';
       icon = "mailspring";
       type = "Application";
       startupNotify = true;
@@ -17,4 +20,5 @@
       mimeType = ["x-scheme-handler/mailto" "x-scheme-handler/mailspring"];
     };
   };
+
 }

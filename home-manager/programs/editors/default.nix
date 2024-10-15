@@ -3,7 +3,7 @@
 
   imports = [
     ./vscode.nix
-    # ./helix
+    ./helix
   ];
 
   home.packages = with pkgs; [

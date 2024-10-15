@@ -1,13 +1,20 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
 
   services = {
     xserver = {
       enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
+    };
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
     };
     desktopManager.plasma6.enable = true;
     gnome = {
@@ -45,5 +52,12 @@
     # kdePackages.yakuake
   ];
 
-  # programs.kdeconnect.enable = true;
+  programs.chromium = {
+    enable = true;
+    enablePlasmaBrowserIntegration = true;
+    # plasmaBrowserIntegrationPackage = pkgs.kdePackages.plasma-browser-integration;
+  };
+
+  programs.kdeconnect.enable = true;
+
 }

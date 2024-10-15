@@ -7,7 +7,7 @@
 
   home.packages = with pkgs; [
     brave
-    google-chrome
+    # google-chrome
     # nyxt
   ];
 

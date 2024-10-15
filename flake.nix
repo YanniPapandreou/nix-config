@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    simple-completion-language-server = {
+      url = "github:estin/simple-completion-language-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nixos-cosmic = {
     #   url = "github:lilyinstarlight/nixos-cosmic";
     #   inputs.nixpkgs.follows = "nixpkgs";

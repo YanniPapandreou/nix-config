@@ -1,0 +1,13 @@
+[[snippets]]
+prefix = "roxycom"
+scope = [ "r" ]
+body = '''
+#' Title
+#'
+#' @param 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+'''

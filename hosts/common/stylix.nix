@@ -4,11 +4,13 @@ let
   # theme = "tokyo-night-dark";
   # theme = "tokyo-night-storm";
   # theme = "oxocarbon-dark";
-  theme = "dracula";
+  # theme = "dracula";
+  theme = "catppuccin-mocha";
   opacity = 0.95;
   font-size = 12;
 in
 {
+  stylix.enable = true;
   stylix.image = ../../resources/wallpapers/nix-wallpaper-simple-dark-gray.png;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";

@@ -21,7 +21,7 @@
   home.packages = with pkgs; [
     cachix
     # calibre
-    cowsay
+    # cowsay
     discord
     element-desktop
     # fragments

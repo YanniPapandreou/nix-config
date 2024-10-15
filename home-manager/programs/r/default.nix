@@ -9,6 +9,8 @@ let
     MASS
     R6
     RSQLite
+    argparse
+    argparser
     babynames
     bench
     cli
@@ -48,6 +50,7 @@ in
     radian-with-my-packages
     RStudio-with-my-packages
     pkgs.rstyler
+    pkgs.gnumake
   ];
 
   xdg.desktopEntries = {
