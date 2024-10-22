@@ -9,6 +9,7 @@ let
     MASS
     R6
     RSQLite
+    RcppTOML
     argparse
     argparser
     babynames
@@ -39,6 +40,7 @@ let
     tidyverse
     usethis
     zeallot
+DBI
   ];
   R-with-my-packages = rWrapper.override{ packages = Rpackages; };
   radian-with-my-packages = radianWrapper.override{ packages = Rpackages; };
