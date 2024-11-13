@@ -1,0 +1,43 @@
+layout {
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        pane
+    }
+    tab name="code" focus=true {
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        pane {
+            pane command="hx" {
+                args "."
+                name "Code"
+                size "75%"
+                // start_suspended true
+            }
+            pane {
+                name "terminal"
+            }
+        }
+    }
+    tab name="bacon"  {
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        pane command="bacon" {
+            name "Bacon"
+            start_suspended true
+        }
+    }
+    tab name="spotify" {
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+        pane command="ncspot" {
+            name "Spotify"
+            start_suspended true
+        }
+        
+    }
+}

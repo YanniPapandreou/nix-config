@@ -4,7 +4,7 @@
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
     rust-analyzer
     gcc
+    evcxr
   ];
 
-  
 }

@@ -14,8 +14,10 @@ let
     argparser
     babynames
     bench
+    broom_mixed
     cli
     devtools
+    dotwhisker
     extRemes
     faraway
     ggthemes
@@ -34,9 +36,13 @@ let
     reactable
     reprex
     reshape2
+    rstan
+    rstanarm
+    skimr
     sloop
     testthat
     tictoc
+    tidymodels
     tidyverse
     usethis
     zeallot

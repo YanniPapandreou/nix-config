@@ -129,7 +129,7 @@ in
       ];
 
       shell = pkgs.fish;
-      # shell = pkgs.nushellFull;
+      # shell = pkgs.nushell;
     };
   };
 

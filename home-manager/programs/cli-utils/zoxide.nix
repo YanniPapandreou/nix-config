@@ -3,6 +3,6 @@
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
-    enableNushellIntegration = false;
+    enableNushellIntegration = true;
   };
 }

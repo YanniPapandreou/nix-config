@@ -24,6 +24,9 @@ args = []
 [language-server.ruff]
 command = "ruff-lsp"
 
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
 # append language server to existing languages
 [[language]]
 name = "python"

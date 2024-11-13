@@ -39,6 +39,8 @@ A-a = "increment"
 A-x = "decrement"
 D = "hover"
 A-p = "save_selection"
+A-r = "remove_primary_selection"
+A-u = "switch_to_uppercase"
 # C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.normal."space"]

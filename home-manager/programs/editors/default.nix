@@ -10,6 +10,7 @@
     kakoune
     taplo
     nixfmt-rfc-style
+    emacs
     # zed-editor
     # neovide
   ];

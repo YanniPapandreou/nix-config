@@ -24,6 +24,7 @@
     tealdeer
     todoist
     wl-clipboard
+    wthrr
     xdg-utils
     xdragon
     yaml-language-server
@@ -65,6 +66,9 @@
     fzf = {
       enable = true;
     };
+    gitui = {
+      enable = true;
+    };
     lazygit.enable = true;
     nix-index = {
       enable = true;
@@ -74,7 +78,7 @@
       enable = true;
       enableFishIntegration = true;
       enableBashIntegration = true;
-      enableNushellIntegration = false;
+      enableNushellIntegration = true;
     };
   };
   home.file.".config/starship.toml".source = ./starship.toml;
