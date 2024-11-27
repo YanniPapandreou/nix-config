@@ -149,6 +149,7 @@ in
   environment.systemPackages = with pkgs; [
     nil
     nix-output-monitor
+    nixfmt-rfc-style
     nvd
     openssl
     pkg-config
