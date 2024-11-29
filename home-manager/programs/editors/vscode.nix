@@ -92,6 +92,12 @@
             version = "3.0.13";
             sha256 = "sha256-l5VvhQPxPaQsPhXUbFW2yGJjaqnNvijn4QkXPjf1WXo=";
           }
+          {
+            name = "code-spell-checker";
+            publisher = "streetsidesoftware";
+            version = "4.0.21";
+            sha256 = "sha256-AcZAhmJeAD4nGDhBXieUxldzNZhTPCOg6W44Sc7W4H0=";
+          }
         ];
     })
   ];
