@@ -65,8 +65,8 @@
           {
             name = "rust-analyzer";
             publisher = "rust-lang";
-            version = "0.4.2193";
-            sha256 = "sha256-j655DDvySasEfGs7pMw/Ri1QuFBb+sWm8LwJu9rNkkQ=";
+            version = "0.4.2200";
+            sha256 = "sha256-7NuHDuklQ2dIb8VVdx+Rx4BgtkBtLpHKKOWUsqwoeQc=";
           }
           {
             name = "vscode-pdf";
