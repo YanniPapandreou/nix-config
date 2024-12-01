@@ -11,7 +11,7 @@
     taplo
     nixfmt-rfc-style
     emacs
-    # zed-editor
+    zed-editor
     # neovide
   ];
 
