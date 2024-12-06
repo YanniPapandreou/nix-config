@@ -2,6 +2,7 @@
 
   imports = [
     ./hardware-configuration.nix
+    ../common/fonts.nix
     ../common/gnome.nix
     ../common/utils.nix
     ./networking.nix

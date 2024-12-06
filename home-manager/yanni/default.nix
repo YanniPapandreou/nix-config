@@ -24,7 +24,7 @@ in
     # ../fonts.nix
     # ../themes.nix
     # ../stylix.nix
-    ../fonts.nix
+    # ../fonts.nix
     # ../gnome.nix
   ];
 

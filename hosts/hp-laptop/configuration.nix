@@ -19,6 +19,7 @@ in
     ./steam.nix
     # ./hyprland.nix
     # ./kde.nix
+    ../common/fonts.nix
     ../common/gnome.nix
     ../common/utils.nix
     # ../common/stylix.nix
