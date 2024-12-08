@@ -171,6 +171,10 @@ in
   hardware.bluetooth.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
+  # virtualisation.vmware.host.enable = true;
+  virtualisation.libvirtd.enable = true;
+  virtualisation.kvmgt.enable = true;
+  users.extraUsers.yanni.extraGroups = [ "kvm" ];
   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

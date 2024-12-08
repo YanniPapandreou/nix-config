@@ -31,6 +31,7 @@
     hledger-web
     # ipe
     kdePackages.okular
+    mediawriter
     pamixer
     pavucontrol
     remmina
