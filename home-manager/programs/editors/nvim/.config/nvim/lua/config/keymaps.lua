@@ -1,11 +1,11 @@
 local bind = vim.keymap.set
 
-bind("n", "<space><space>x", "<cmd>source %<CR>", { desc = "Lua: Source current config file" })
-bind("n", "<space>x", ":.lua<CR>", { desc = "Lua: Run current line"})
-bind("v", "<space>x", ":lua<CR>", { desc = "Lua: Run visual selection" })
-
-bind('n', '<leader>w', '<cmd>w<cr><esc>', { desc = 'Save file'})
+bind("n", "<leader>w", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- bind('n', '<leader>qq', '<cmd>qa<cr>', { desc = "Quit all" })
+
+bind("n", "<leader><space>x", "<cmd>source %<CR>", { desc = "Source Lua file" })
+bind("n", "<leader>x", ":.lua<CR>", { desc = "Run line of Lua code" })
+bind("v", "<leader>x", ":lua<CR>", { desc = "Run visual selection of Lua code" })
 
 bind("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 bind("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
@@ -25,11 +25,19 @@ bind("n", "<leader><Down>", "<cmd>resize -2<cr>", { desc = "Decrease window heig
 bind("n", "<leader><Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 bind("n", "<leader><Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
-bind("n", "<leader>ts", function() Toggle("spell") end, { desc = "Toggle Spelling"} )
-bind("n", "<leader>tw", function() Toggle("wrap") end, { desc = "Toggle Word Wrap"} )
-bind("n", "<leader>tl", function() Toggle("relativenumber") end, { desc = "Toggle Line Numbers"} )
+bind("n", "<leader>ts", function()
+	Toggle("spell")
+end, { desc = "Toggle Spelling" })
+bind("n", "<leader>tw", function()
+	Toggle("wrap")
+end, { desc = "Toggle Word Wrap" })
+bind("n", "<leader>tl", function()
+	Toggle("relativenumber")
+end, { desc = "Toggle Line Numbers" })
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-bind("n", "<leader>tc", function() Toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal"} )
+bind("n", "<leader>tc", function()
+	Toggle("conceallevel", false, { 0, conceallevel })
+end, { desc = "Toggle Conceal" })
 
 -- bind("n", "]q", "<cmd>cnext<cr>", { desc = "Go to next quick fix item"})
 -- bind("n", "[q", "<cmd>cprevious<cr>", { desc = "Go to next quick fix item"})
@@ -53,10 +61,10 @@ bind("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search resul
 bind("v", "<", "<gv")
 bind("v", ">", ">gv")
 
-bind("x", "<leader>p", "\"_dP", { desc = "Paste over without deleting register" })
-bind("n", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
-bind("v", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
-bind("n", "<leader>Y", "\"+Y", { desc = "Yank to system clipboard" })
+bind("x", "<leader>p", '"_dP', { desc = "Paste over without deleting register" })
+bind("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+bind("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+bind("n", "<leader>Y", '"+Y', { desc = "Yank to system clipboard" })
 
 vim.cmd([[:tnoremap <Esc> <C-\><C-n>]])
 bind("n", "<C-d>", "<C-d>zz")
@@ -65,11 +73,10 @@ bind("n", "<C-u>", "<C-u>zz")
 -- remaping some editing commands to be more like Helix
 -- bind("n", "mm", "%")
 -- bind("n", "%", "ggVG")
-bind("n", "ge", "G", { desc = "Go to buffer end"} )
+bind("n", "ge", "G", { desc = "Go to buffer end" })
 -- bind("n", "gh", "0", { desc = "Go to line start" } )
 -- bind("n", "gl", "$", { desc = "Go to line end" } )
 bind("n", "U", "<C-r>")
 bind("n", "<C-r>", "U")
 
-bind("n", "<leader>ct", "<cmd>lua MiniTrailspace.trim()<cr>", { desc = "[T]rim trailing whitespace" })
--- bind("n", "<leader>gg", ':!zellij action go-to-tab-name "git"<cr>', { desc = "Open lazygit tab in Zellij" })
+bind("n", "<leader>ct", "<cmd>lua Trim()<cr>", { desc = "[T]rim trailing whitespace" })

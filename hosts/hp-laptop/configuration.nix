@@ -95,7 +95,7 @@ in
       systemd-boot.enable = true;
     };
     # encryption
-    initrd.luks.devices."luks-ab614ac9-9747-4ef5-afb9-9a6da7ff4599".device = "/dev/disk/by-uuid/ab614ac9-9747-4ef5-afb9-9a6da7ff4599";
+  initrd.luks.devices."luks-e1f65f9b-fba1-457a-a518-37d8f126497b".device = "/dev/disk/by-uuid/e1f65f9b-fba1-457a-a518-37d8f126497b";
   };
 
   # services

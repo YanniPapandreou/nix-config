@@ -2,7 +2,7 @@
 {
 
   imports = [
-    ./vscode.nix
+    # ./vscode.nix
     ./helix
     ./nvim
   ];
@@ -13,7 +13,7 @@
     nixfmt-rfc-style
     emacs
     zed-editor
-    # neovide
+    neovide
   ];
 
 }
