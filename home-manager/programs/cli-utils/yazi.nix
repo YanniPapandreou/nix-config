@@ -4,7 +4,7 @@ let
   catppuccinToml = builtins.fetchurl {
     # url = "https://raw.githubusercontent.com/catppuccin/yazi/refs/heads/main/themes/mocha.toml";
     url = "https://raw.githubusercontent.com/catppuccin/yazi/refs/heads/main/themes/mocha/catppuccin-mocha-lavender.toml";
-    sha256 = "sha256:0q5s628jxggila847dfxzw7mskazc1gr5gpzrqpl260cly4aqp0c";
+    sha256 = "sha256:1qnq7im1kpim8nlzy313zns4m23knkh7pwlnnfcq8vvsm598gbz3";
   };
 
   # read and parse the TOML file
