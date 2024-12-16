@@ -71,7 +71,7 @@ path add ~/.cargo/bin
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 
-$env.EDITOR = "hx"
+$env.EDITOR = "nvim"
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

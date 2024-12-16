@@ -158,7 +158,7 @@ in
   ];
 
   environment.variables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
     BROWSER = "brave";
     TERMINAL = "kitty";
     STEEL_HOME = "/home/yanni/.steel";

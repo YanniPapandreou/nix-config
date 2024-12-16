@@ -9,7 +9,7 @@
         defaultBranch = "main";
       };
       core = {
-        editor = "hx";
+        editor = "nvim";
       };
     };
   };

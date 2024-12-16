@@ -10,7 +10,7 @@ layout {
             plugin location="zjstatus"
         }
         pane {
-            pane command="hx" {
+            pane command="nvim" {
                 args "."
                 name "Code"
                 size "75%"
