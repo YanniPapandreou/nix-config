@@ -5,7 +5,7 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = ","
 
-vim.g.clipboard = {
+g.clipboard = {
 	name = "OSC 52",
 	copy = {
 		["+"] = require("vim.ui.clipboard.osc52").copy("+"),

@@ -14,6 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
     # simple-completion-language-server = {
     #   url = "github:estin/simple-completion-language-server";
     #   inputs.nixpkgs.follows = "nixpkgs";

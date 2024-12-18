@@ -58,8 +58,8 @@ bind("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search resul
 bind("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- better indenting
-bind("v", "<", "<gv")
-bind("v", ">", ">gv")
+-- bind("v", "<", "<gv")
+-- bind("v", ">", ">gv")
 
 bind("x", "<leader>p", '"_dP', { desc = "Paste over without deleting register" })
 bind("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
