@@ -1,7 +1,0 @@
-require("config.options")
-require("config.globals")
-require("config.lazy")
-require("config.keymaps")
-require("config.autocmds")
--- require("config.zellij-repl")
-require("config.quarto")
