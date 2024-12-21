@@ -43,6 +43,7 @@
     # thunderbird
     vlc
     zotero
+    zk
   ];
 
 }

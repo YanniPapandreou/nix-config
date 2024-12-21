@@ -1,5 +1,10 @@
 { pkgs, lib, inputs, ... }:
 {
+  home.packages = with pkgs; [
+    stylua
+    nixfmt-rfc-style
+    shfmt
+  ];
 
   programs.neovim = {
     enable = true;
@@ -24,19 +29,15 @@
     extraPackages = with pkgs; [
       tree-sitter
       ## Language servers
-      # TODO: set this up properly
-      markdown-oxide
       nodePackages.bash-language-server
       # Lua
       lua-language-server
       # Nix
-      nixfmt-rfc-style
       nil
       statix
       # Python
       pyright
       # python-debug
-      black
       # latex
       texlab
       # c++

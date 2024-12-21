@@ -172,6 +172,7 @@ in
     STEEL_HOME = "/home/yanni/.steel";
     PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
     NVIM_APPNAME = "y-nvim";
+    ZK_NOTEBOOK_DIR = "/home/yanni/notes";
   };
   programs.fish.enable = true;
   virtualisation.docker.enable = true;
