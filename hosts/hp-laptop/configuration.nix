@@ -156,6 +156,7 @@ in
 
   # packages and programs
   environment.systemPackages = with pkgs; [
+    inputs.ghostty.packages.x86_64-linux.default
     nil
     nix-output-monitor
     nixfmt-rfc-style

@@ -3,17 +3,17 @@
 
   imports = [
     # ./vscode.nix
-    ./helix
+    # ./helix
     ./nvim
   ];
 
   home.packages = with pkgs; [
-    kakoune
+    # kakoune
     taplo
     nixfmt-rfc-style
-    emacs
-    zed-editor
-    neovide
+    # emacs
+    # zed-editor
+    # neovide
   ];
 
 }

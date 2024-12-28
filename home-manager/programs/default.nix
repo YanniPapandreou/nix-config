@@ -7,6 +7,7 @@
     ./shells
     ./terminals
     ./git.nix
+    ./lua.nix
     ./mailspring.nix
     ./python.nix
     ./r
@@ -29,8 +30,6 @@
     hledger
     hledger-ui
     hledger-web
-    lua51Packages.lua
-    lua51Packages.luarocks
     # ipe
     kdePackages.okular
     mediawriter
