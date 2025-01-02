@@ -14,6 +14,7 @@ let
     requests
     rich
     setuptools
+    todoist-api-python
     # ward
     wheel
     # z3-solver

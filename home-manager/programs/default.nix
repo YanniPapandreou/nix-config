@@ -10,7 +10,7 @@
     ./lua.nix
     ./mailspring.nix
     ./python.nix
-    ./r
+    # ./r
     ./rust.nix
     ./sioyek.nix
     ./scheme.nix

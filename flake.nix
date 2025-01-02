@@ -16,10 +16,6 @@
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
     # simple-completion-language-server = {
     #   url = "github:estin/simple-completion-language-server";
     #   inputs.nixpkgs.follows = "nixpkgs";
