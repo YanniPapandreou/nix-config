@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     #gnumake
-    bootdev
+    # bootdev
     curl
     difftastic
     fd
@@ -11,22 +11,22 @@
     htop
     just
     marksman
-    markdown-oxide
+    # markdown-oxide
     manix
     nb
-    neofetch
-    pfetch
+    # neofetch
+    # pfetch
     ripgrep
     rm-improved
     stow
-    taskwarrior3
-    taskwarrior-tui
+    # taskwarrior3
+    # taskwarrior-tui
     tealdeer
     todoist
     wl-clipboard
-    wthrr
+    # wthrr
     xdg-utils
-    xdragon
+    # xdragon
     yaml-language-server
   ];
 
@@ -64,9 +64,6 @@
       enable = true;
     };
     fzf = {
-      enable = true;
-    };
-    gitui = {
       enable = true;
     };
     lazygit.enable = true;

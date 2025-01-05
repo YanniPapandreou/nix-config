@@ -10,10 +10,10 @@
     ./lua.nix
     ./mailspring.nix
     ./python.nix
-    # ./r
+    ./r
     ./rust.nix
     ./sioyek.nix
-    ./scheme.nix
+    # ./scheme.nix
     # ./variables.nix
     ./xdg.nix
   ];
@@ -31,17 +31,17 @@
     hledger-ui
     hledger-web
     # ipe
-    kdePackages.okular
+    # kdePackages.okular
     mediawriter
-    pamixer
-    pavucontrol
-    remmina
+    # pamixer
+    # pavucontrol
+    # remmina
     signal-desktop
     slack
     # texlive.combined.scheme-full
     # thunderbird
-    vlc
-    zotero
+    # vlc
+    # zotero
     zk
   ];
 

@@ -5,15 +5,17 @@
     ./common.nix
     ./atuin.nix
     ./direnv.nix
-    ./exercism.nix
     ./glow
     ./yazi.nix
     ./zoxide.nix
   ];
 
   home.packages = with pkgs; [
-    ncspot
-    wiki-tui
+    clipboard-jh
+    haskellPackages.greenclip
+    exercism
+    # ncspot
+    # wiki-tui
     zellij
   ];
 

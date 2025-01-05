@@ -4,22 +4,22 @@ let
   # rstudioWrapper = pkgs.rstudioWrapper;
   radianWrapper = pkgs.radianWrapper;
   Rpackages = with pkgs.rPackages; [
-    ISLR
-    Lahman
+    # ISLR
+    # Lahman
     MASS
     R6
     RSQLite
     RcppTOML
     argparse
     argparser
-    babynames
+    # babynames
     bench
-    broom_mixed
+    # broom_mixed
     cli
-    devtools
-    dotwhisker
-    extRemes
-    faraway
+    # devtools
+    # dotwhisker
+    # extRemes
+    # faraway
     ggthemes
     glue
     httpgd
@@ -27,24 +27,24 @@ let
     languageserver
     lobstr
     microbenchmark
-    modelr
-    nycflights13
-    palmerpenguins
+    # modelr
+    # nycflights13
+    # palmerpenguins
     prettycode
     pryr
     rbenchmark
     reactable
     reprex
     reshape2
-    rstan
-    rstanarm
+    # rstan
+    # rstanarm
     skimr
     sloop
     testthat
     tictoc
-    tidymodels
+    # tidymodels
     tidyverse
-    usethis
+    # usethis
     zeallot
 DBI
   ];

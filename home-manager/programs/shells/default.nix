@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+# { pkgs, ... }:
 {
 
   imports = [
@@ -6,13 +6,13 @@
     ./fish.nix
   ];
 
-  home.packages = with pkgs; [
-    # elvish
-    # hilbish
-    # xonsh
-    nushell
-    # carapace
-  ];
+  # home.packages = with pkgs; [
+  #   # elvish
+  #   # hilbish
+  #   # xonsh
+  #   nushell
+  #   # carapace
+  # ];
 
   # programs.carapace = {
   #   enable = true;

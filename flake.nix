@@ -23,7 +23,7 @@
 
     # nixos-cosmic = {
     #   url = "github:lilyinstarlight/nixos-cosmic";
-    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
     # };
 
     # ags.url = "github:Aylur/ags";
@@ -41,8 +41,7 @@
     }@inputs:
     let
       inherit (self) outputs;
-      forAllSystems = nixpkgs.lib.genAttrs [
-        "aarch64-linux"
+      forAllSystems = nixpkgs.lib.genAttrs [ "aarch64-linux"
         "i686-linux"
         "x86_64-linux"
         "aarch64-darwin"
