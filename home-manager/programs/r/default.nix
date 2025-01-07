@@ -16,7 +16,9 @@ let
     bench
     # broom_mixed
     cli
-    # devtools
+    data_table
+    # pkgs.debugadapter
+    devtools
     # dotwhisker
     # extRemes
     # faraway
@@ -44,7 +46,7 @@ let
     tictoc
     # tidymodels
     tidyverse
-    # usethis
+    usethis
     zeallot
 DBI
   ];

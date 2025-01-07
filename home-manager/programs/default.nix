@@ -27,9 +27,9 @@
     element-desktop
     # fragments
     gnome-boxes
-    hledger
-    hledger-ui
-    hledger-web
+    # hledger
+    # hledger-ui
+    # hledger-web
     # ipe
     # kdePackages.okular
     mediawriter

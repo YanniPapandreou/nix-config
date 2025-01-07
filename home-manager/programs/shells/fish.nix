@@ -64,9 +64,9 @@
       r-ide = {
         body = ''
           if set -q argv[1]
-            zellij --layout ~/.config/zellij/layouts/r-ide.kdl --session $argv
+            zellij -n r-ide -s $argv
           else
-            zellij --layout ~/.config/zellij/layouts/r-ide.kdl
+            zellij -n r-ide
           end
         '';
       };

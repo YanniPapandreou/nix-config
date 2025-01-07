@@ -9,7 +9,7 @@
     brave
     # google-chrome
     # nyxt
-    qutebrowser
+    # qutebrowser
   ];
 
 }

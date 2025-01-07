@@ -11,8 +11,7 @@
   ];
 
   home.packages = with pkgs; [
-    clipboard-jh
-    haskellPackages.greenclip
+    csvlens
     exercism
     # ncspot
     # wiki-tui

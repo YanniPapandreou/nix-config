@@ -270,6 +270,26 @@ plugins {
         cwd "/"
     }
 
+    // autolock location="file:/home/yanni/.config/zellij/plugins/autolock.wasm" {
+    //   is_enabled true
+    //   triggers "nvim" // Lock when any open these programs open. They are expected to unlock themselves when closed (e.g., using zellij.vim plugin).
+    //   watch_triggers "fzf|zoxide|atuin" // Lock when any of these open and monitor until closed.
+    //   watch_interval "1.0" // When monitoring, check every X seconds.
+    // }
+
+    // Define the "autolock" plugin.
+    autolock location="file:~/.config/zellij/plugins/zellij-autolock.wasm" {
+        // Enabled at start?
+        is_enabled true
+        // Lock when any open these programs open.
+        triggers "nvim|vim|git|fzf|zoxide|atuin"
+        // Reaction to input occurs after this many seconds. (default=0.3)
+        // (An existing scheduled reaction prevents additional reactions.)
+        reaction_seconds "0.3"
+        // Print to Zellij log? (default=false)
+        print_to_log true
+    }
+
     // ------------------
     // extra plugins config (so can reuse in layout)
     // ------------------
@@ -365,6 +385,11 @@ plugins {
     }
     
     
+}
+
+// load headless plugins on start
+load_plugins {
+  autolock
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
