@@ -16,7 +16,7 @@ in
     ./audio.nix
     ./locale.nix
     ./networking.nix
-    ./steam.nix
+    # ./steam.nix
     # ./hyprland.nix
     # ./kde.nix
     ../common/fonts.nix

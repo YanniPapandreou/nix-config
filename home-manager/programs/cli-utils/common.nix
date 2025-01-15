@@ -11,6 +11,7 @@
     htop
     just
     marksman
+    marp-cli
     # markdown-oxide
     manix
     nb

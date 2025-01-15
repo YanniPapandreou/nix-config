@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (lua.withPackages (ps: with ps; [ busted ]))
+    (lua.withPackages (ps: with ps; [ busted luasocket ]))
   ];
 }
