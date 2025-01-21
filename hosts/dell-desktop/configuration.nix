@@ -153,7 +153,15 @@
     nil
     vim
   ];
+  environment.variables = {
+    EDITOR = "nvim";
+    BROWSER = "brave";
+    TERMINAL = "kitty";
+    NVIM_APPNAME = "y-nvim";
+  };
   programs.fish.enable = true;
+
+  
   
   services.xserver.displayManager.gdm.enable = true;
   

@@ -10,7 +10,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./defaultApps.nix
-    ../fonts.nix
+    # ../fonts.nix
     ../programs/python.nix
     # ./themes.nix
   ];
