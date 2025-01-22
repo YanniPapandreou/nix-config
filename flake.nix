@@ -86,15 +86,18 @@
           };
           modules = [
             # nixos-cosmic.nixosModules.default
-            ./hosts/hp-laptop
             # inputs.stylix.nixosModules.stylix
+            ./hosts/hp-laptop
           ];
         };
         dell-desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./hosts/dell-desktop ];
+          modules = [ 
+            # inputs.stylix.nixosModules.stylix
+            ./hosts/dell-desktop
+          ];
         };
       };
 

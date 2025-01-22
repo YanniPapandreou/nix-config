@@ -5,6 +5,7 @@
     ../common/fonts.nix
     ../common/gnome.nix
     ../common/utils.nix
+    # ../common/stylix.nix
     ./networking.nix
 
     inputs.home-manager.nixosModules.home-manager
@@ -167,7 +168,7 @@
   
   # enable sound with pipewire
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
